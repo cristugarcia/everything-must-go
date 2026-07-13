@@ -9,6 +9,13 @@ export default function StatusBadge({
     .trim()
     .toLowerCase();
 
+  const displayStatus =
+    normalizedStatus === "vendido"
+      ? "Vendido"
+      : normalizedStatus === "reservado"
+        ? "Reservado"
+        : "Disponible";
+
   const styles =
     normalizedStatus === "vendido"
       ? "bg-red-100 text-red-700"
@@ -29,9 +36,10 @@ export default function StatusBadge({
     >
       <span
         className={`h-2 w-2 rounded-full ${dotStyles}`}
+        aria-hidden="true"
       />
 
-      {status}
+      {displayStatus}
     </span>
   );
 }

@@ -7,6 +7,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const WHATSAPP_NUMBER = "5491123897526";
+const SITE_URL =
+  "https://everything-must-go-cyan.vercel.app";
 
 type Props = {
   params: Promise<{
@@ -30,21 +32,66 @@ export default async function ProductPage({
   }
 
   const relatedProducts = productList
-    .filter(
-      (item) =>
-        item.id !== product.id &&
-        item.category === product.category
-    )
-    .slice(0, 3);
+  .filter(
+    (item) =>
+      item.id !== product.id &&
+      item.category === product.category &&
+      item.publish
+  )
+  .sort((a, b) => {
+    const statusPriority: Record<string, number> = {
+      disponible: 0,
+      reservado: 1,
+      vendido: 2,
+    };
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    `Hola Cristina 👋
+    const aStatus = a.status.trim().toLowerCase();
+    const bStatus = b.status.trim().toLowerCase();
 
-Vi el producto "${product.name}" en Everything Must Go y quería saber si todavía está disponible.`
-  )}`;
+    return (
+      (statusPriority[aStatus] ?? 3) -
+      (statusPriority[bStatus] ?? 3)
+    );
+  })
+  .slice(0, 3);
 
-  const isSold =
-    product.status.trim().toLowerCase() === "vendido";
+  const normalizedStatus = product.status
+  .trim()
+  .toLowerCase();
+
+const isSold = normalizedStatus === "vendido";
+const isReserved = normalizedStatus === "reservado";
+
+const formattedPrice =
+  product.price > 0
+    ? `$ ${product.price.toLocaleString("es-AR")}`
+    : "Precio a consultar";
+
+const productUrl = `${SITE_URL}/item/${product.id}`;
+
+const whatsappMessage = isReserved
+  ? `Hola Cristina 👋
+
+Vi que el producto "${product.name}" está reservado.
+
+¿Podrías avisarme si vuelve a estar disponible?
+
+Precio publicado: ${formattedPrice}
+
+${productUrl}`
+  : `Hola Cristina 👋
+
+Me interesa el producto "${product.name}" publicado en Everything Must Go.
+
+Precio: ${formattedPrice}
+
+¿Sigue disponible?
+
+${productUrl}`;
+
+const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  whatsappMessage
+)}`;
 
   return (
     <main className="min-h-screen bg-white">
@@ -169,19 +216,21 @@ Vi el producto "${product.name}" en Everything Must Go y quería saber si todav�
             )}
 
             {isSold ? (
-              <div className="mt-10 rounded-3xl border border-red-200 bg-red-50 px-6 py-5 text-red-700">
-                Este artículo ya fue vendido.
-              </div>
-            ) : (
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-10 inline-flex w-full items-center justify-center rounded-full bg-black px-8 py-4 font-medium text-white transition hover:-translate-y-0.5 hover:bg-zinc-800 sm:w-auto"
-              >
-                Consultar por WhatsApp
-              </a>
-            )}
+  <div className="mt-10 rounded-3xl border border-red-200 bg-red-50 px-6 py-5 text-red-700">
+    Este artículo ya fue vendido.
+  </div>
+) : (
+  <a
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-10 inline-flex w-full items-center justify-center rounded-full bg-black px-8 py-4 font-medium text-white transition hover:-translate-y-0.5 hover:bg-zinc-800 sm:w-auto"
+  >
+    {isReserved
+      ? "Avisarme si vuelve a estar disponible"
+      : "Consultar por WhatsApp"}
+  </a>
+)}
           </section>
         </div>
 
