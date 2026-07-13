@@ -8,11 +8,19 @@ type ProductCatalogProps = {
   products: Product[];
 };
 
+const statusPriority: Record<string, number> = {
+  disponible: 0,
+  reservado: 1,
+  vendido: 2,
+};
+
 export default function ProductCatalog({
   products,
 }: ProductCatalogProps) {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] =
+    useState("Todos");
+  const [selectedStatus, setSelectedStatus] =
     useState("Todos");
   const [sortBy, setSortBy] = useState("default");
 
@@ -38,6 +46,15 @@ export default function ProductCatalog({
         selectedCategory === "Todos" ||
         product.category === selectedCategory;
 
+      const normalizedStatus = product.status
+        .trim()
+        .toLowerCase();
+
+      const matchesStatus =
+        selectedStatus === "Todos" ||
+        normalizedStatus ===
+          selectedStatus.toLowerCase();
+
       const searchableText = [
         product.name,
         product.brand,
@@ -55,7 +72,11 @@ export default function ProductCatalog({
         normalizedSearch === "" ||
         searchableText.includes(normalizedSearch);
 
-      return matchesCategory && matchesSearch;
+      return (
+        matchesCategory &&
+        matchesStatus &&
+        matchesSearch
+      );
     });
 
     switch (sortBy) {
@@ -75,19 +96,40 @@ export default function ProductCatalog({
         );
 
       default:
-        return filtered;
+        return [...filtered].sort((a, b) => {
+          const aStatus = a.status
+            .trim()
+            .toLowerCase();
+
+          const bStatus = b.status
+            .trim()
+            .toLowerCase();
+
+          return (
+            (statusPriority[aStatus] ?? 3) -
+            (statusPriority[bStatus] ?? 3)
+          );
+        });
     }
-  }, [products, search, selectedCategory, sortBy]);
+  }, [
+    products,
+    search,
+    selectedCategory,
+    selectedStatus,
+    sortBy,
+  ]);
 
   const clearFilters = () => {
     setSearch("");
     setSelectedCategory("Todos");
+    setSelectedStatus("Todos");
     setSortBy("default");
   };
 
   const hasActiveFilters =
-    search !== "" ||
+    search.trim() !== "" ||
     selectedCategory !== "Todos" ||
+    selectedStatus !== "Todos" ||
     sortBy !== "default";
 
   return (
@@ -149,6 +191,41 @@ export default function ProductCatalog({
               Nombre A-Z
             </option>
           </select>
+        </div>
+
+        <div className="mt-6">
+          <p className="text-sm font-medium text-zinc-700">
+            Estado
+          </p>
+
+          <div className="mt-3 flex flex-wrap gap-2">
+            {[
+              "Todos",
+              "Disponible",
+              "Reservado",
+              "Vendido",
+            ].map((status) => {
+              const isSelected =
+                selectedStatus === status;
+
+              return (
+                <button
+                  key={status}
+                  type="button"
+                  onClick={() =>
+                    setSelectedStatus(status)
+                  }
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                    isSelected
+                      ? "bg-black text-white"
+                      : "border border-zinc-300 bg-white text-zinc-700 hover:border-black hover:text-black"
+                  }`}
+                >
+                  {status}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className="mt-6">
