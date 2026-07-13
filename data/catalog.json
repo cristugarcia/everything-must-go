@@ -1,0 +1,168 @@
+[
+  {
+    "id": "EMG-0001",
+    "sku": "MUE-001",
+    "name": "Sofá cama en L 3 cuerpos",
+    "brand": "Malor Design",
+    "model": "Esquinero bilbao",
+    "category": "Muebles",
+    "subcategory": "Living",
+    "price": 1600000,
+    "quantity": 1,
+    "condition": "Excelente",
+    "status": "Disponible",
+    "description": "",
+    "images": [
+      "/products/EMG-0001/EMG-0001-1.png",
+      "/products/EMG-0001/EMG-0001-2.png",
+      "/products/EMG-0001/EMG-0001-3.png",
+      "/products/EMG-0001/EMG-0001-4.png"
+    ]
+  },
+  {
+    "id": "EMG-0002",
+    "sku": "ELE-001",
+    "name": "TV Noblex 54 pulgadas",
+    "brand": "Noblex",
+    "model": "54\"",
+    "category": "Electrónica",
+    "subcategory": "TV",
+    "price": 900000,
+    "quantity": 1,
+    "condition": "Excelente",
+    "status": "Disponible",
+    "description": "",
+    "images": [
+      "/products/EMG-0002/EMG-0002-1.jpg",
+      "/products/EMG-0002/EMG-0002-2.jpg",
+      "/products/EMG-0002/EMG-0002-3.jpg",
+      "/products/EMG-0002/EMG-0002-4.jpg"
+    ]
+  },
+  {
+    "id": "EMG-0003",
+    "sku": "MUE-002",
+    "name": "Banquetas altas x3",
+    "brand": "Mobilarg",
+    "model": "Sidewalk Anana",
+    "category": "Muebles",
+    "subcategory": "Barra",
+    "price": 360000,
+    "quantity": 3,
+    "condition": "Muy bueno",
+    "status": "Disponible",
+    "description": "",
+    "images": [
+      "/products/EMG-0003/EMG-0003-1.jpg",
+      "/products/EMG-0003/EMG-0003-2.jpg"
+    ]
+  },
+  {
+    "id": "EMG-0004",
+    "sku": "EXT-001",
+    "name": "Sillas rojas terraza",
+    "brand": "",
+    "model": "",
+    "category": "Exterior",
+    "subcategory": "Terraza",
+    "price": 60000,
+    "quantity": 2,
+    "condition": "Muy bueno",
+    "status": "Disponible",
+    "description": "",
+    "images": [
+      "/products/EMG-0004/EMG-0004-1.jpg"
+    ]
+  },
+  {
+    "id": "EMG-0005",
+    "sku": "DEP-001",
+    "name": "Bicicleta GT MTB",
+    "brand": "GT",
+    "model": "",
+    "category": "Deportes",
+    "subcategory": "Bicicletas",
+    "price": 300000,
+    "quantity": 1,
+    "condition": "Bueno",
+    "status": "Disponible",
+    "description": "",
+    "images": [
+      "/products/EMG-0005/EMG-0005-1.jpg",
+      "/products/EMG-0005/EMG-0005-2.jpg",
+      "/products/EMG-0005/EMG-0005-3.jpg"
+    ]
+  },
+  {
+    "id": "EMG-0006",
+    "sku": "EXT-002",
+    "name": "Parrilla tipo Weber",
+    "brand": "",
+    "model": "",
+    "category": "Exterior",
+    "subcategory": "Parrilla",
+    "price": 200000,
+    "quantity": 1,
+    "condition": "Bueno",
+    "status": "Disponible",
+    "description": "",
+    "images": [
+      "/products/EMG-0006/EMG-0006-1.jpg",
+      "/products/EMG-0006/EMG-0006-2.jpg",
+      "/products/EMG-0006/EMG-0006-3.jpg"
+    ]
+  },
+  {
+    "id": "EMG-0007",
+    "sku": "ELE-002",
+    "name": "Motorola",
+    "brand": "",
+    "model": "",
+    "category": "Electrónica",
+    "subcategory": "Telefonía",
+    "price": 0,
+    "quantity": 1,
+    "condition": "Excelente",
+    "status": "Disponible",
+    "description": "",
+    "images": []
+  },
+  {
+    "id": "EMG-0008",
+    "sku": "VEH-001",
+    "name": "Hero Hunk 150",
+    "brand": "Hero",
+    "model": "Hunk 150",
+    "category": "Vehículos",
+    "subcategory": "Moto",
+    "price": 2200000,
+    "quantity": 1,
+    "condition": "Muy bueno",
+    "status": "Disponible",
+    "description": "",
+    "images": [
+      "/products/EMG-0008/EMG-0008-1.jpg",
+      "/products/EMG-0008/EMG-0008-2.jpg",
+      "/products/EMG-0008/EMG-0008-2.jpg"
+    ]
+  },
+  {
+    "id": "EMG-0009",
+    "sku": "VEH-002",
+    "name": "Volkswagen Suran",
+    "brand": "Volkswagen",
+    "model": "Suran",
+    "category": "Vehículos",
+    "subcategory": "Auto",
+    "price": 19575000,
+    "quantity": 1,
+    "condition": "Muy bueno",
+    "status": "Disponible",
+    "description": "",
+    "images": [
+      "/products/EMG-0009/EMG-0009-1.jpg",
+      "/products/EMG-0009/EMG-0009-2.jpg",
+      "/products/EMG-0009/EMG-0009-3.jpg"
+    ]
+  }
+]

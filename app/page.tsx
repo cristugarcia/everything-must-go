@@ -1,4 +1,6 @@
+import products from "../data/catalog.json";
 import ProductCard from "../components/ProductCard";
+import { Product } from "@/lib/types";
 
 export default function Home() {
   return (
@@ -14,17 +16,16 @@ export default function Home() {
 
         <p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-500">
           Estoy renovando mi hogar y vendiendo artículos que ya no utilizo,
-          pero que todavía tienen mucho por ofrecer. Todos están en muy buen
-          estado y fueron cuidadosamente seleccionados.
+          pero que todavía tienen mucho por ofrecer.
         </p>
 
         <div className="mt-12">
-        <a
-  href="#productos"
-  className="rounded-full bg-black px-8 py-4 text-white transition hover:bg-zinc-800"
->
-  Explorar productos
-</a>
+          <a
+            href="#productos"
+            className="rounded-full bg-black px-8 py-4 text-white transition hover:bg-zinc-800"
+          >
+            Explorar productos
+          </a>
         </div>
 
         <p className="mt-16 text-sm uppercase tracking-[0.3em] text-zinc-400">
@@ -32,45 +33,23 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 👇 ESTA PARTE VA DENTRO DEL MAIN */}
-     <section
-  id="productos"
-  className="mx-auto max-w-6xl px-8 pb-24"
->
-  <h2 className="mb-10 text-4xl font-bold text-zinc-900">
-    Productos destacados
-  </h2>
+      <section
+        id="productos"
+        className="mx-auto max-w-6xl px-8 pb-24"
+      >
+        <h2 className="mb-10 text-4xl font-bold text-zinc-900">
+          Productos destacados
+        </h2>
 
-  <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-    <ProductCard
-      emoji="🤖"
-      name="Robot Aspirador"
-      price="$280.000"
-      status="Excelente estado"
-    />
-
-    <ProductCard
-      emoji="🍟"
-      name="Freidora de Aire"
-      price="$120.000"
-      status="Como nueva"
-    />
-
-    <ProductCard
-      emoji="🛏️"
-      name="Mesas de Luz"
-      price="$80.000"
-      status="Impecables"
-    />
-
-    <ProductCard
-      emoji="🖥️"
-      name='Monitor Dell 24"'
-      price="$60.000"
-      status="Muy buen estado"
-    />
-  </div>
-</section>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {products.map((product: Product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
