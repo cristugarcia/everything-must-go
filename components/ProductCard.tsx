@@ -1,72 +1,58 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
+import Link from "next/link";
+import StatusBadge from "@/components/StatusBadge";
+import { Product } from "@/lib/types";
+import { formatPrice } from "@/lib/utils";
 
-type ProductGalleryProps = {
-  images: string[];
-  name: string;
+type ProductCardProps = {
+  product: Product;
 };
 
-export default function ProductGallery({
-  images,
-  name,
-}: ProductGalleryProps) {
-  const validImages = images?.filter(Boolean) ?? [];
-  const [selectedImage, setSelectedImage] = useState(
-    validImages[0] ?? ""
-  );
-
-  if (validImages.length === 0) {
-    return (
-      <div className="flex aspect-square items-center justify-center rounded-3xl bg-zinc-100 text-8xl">
-        📦
-      </div>
-    );
-  }
+export default function ProductCard({
+  product,
+}: ProductCardProps) {
+  const image = product.images?.[0];
 
   return (
-    <div>
-      <div className="relative aspect-square overflow-hidden rounded-3xl bg-zinc-100">
-        <Image
-          src={selectedImage}
-          alt={name}
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover"
-        />
-      </div>
-
-      {validImages.length > 1 && (
-        <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-5">
-          {validImages.map((image, index) => {
-            const isSelected = image === selectedImage;
-
-            return (
-              <button
-                key={`${image}-${index}`}
-                type="button"
-                onClick={() => setSelectedImage(image)}
-                aria-label={`Ver imagen ${index + 1} de ${name}`}
-                className={`relative aspect-square overflow-hidden rounded-2xl border-2 bg-zinc-100 transition ${
-                  isSelected
-                    ? "border-black"
-                    : "border-transparent hover:border-zinc-300"
-                }`}
-              >
-                <Image
-                  src={image}
-                  alt={`${name} - imagen ${index + 1}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
-                />
-              </button>
-            );
-          })}
+    <Link
+      href={`/item/${product.id}`}
+      className="group block"
+    >
+      <article className="h-full overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+        <div className="relative aspect-square overflow-hidden bg-zinc-100">
+          {image ? (
+            <Image
+              src={image}
+              alt={product.name}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center text-6xl">
+              📦
+            </div>
+          )}
         </div>
-      )}
-    </div>
+
+        <div className="p-6">
+          <p className="text-sm font-medium uppercase tracking-[0.15em] text-zinc-400">
+            {product.category}
+          </p>
+
+          <h3 className="mt-2 text-xl font-semibold text-zinc-900">
+            {product.name}
+          </h3>
+
+          <p className="mt-4 text-2xl font-bold text-zinc-900">
+            {formatPrice(product.price)}
+          </p>
+
+          <div className="mt-5">
+            <StatusBadge status={product.status} />
+          </div>
+        </div>
+      </article>
+    </Link>
   );
 }
