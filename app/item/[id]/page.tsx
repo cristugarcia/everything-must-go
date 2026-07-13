@@ -1,8 +1,12 @@
 import products from "@/data/catalog.json";
 import ProductGallery from "@/components/ProductGallery";
+import RelatedProducts from "@/components/RelatedProducts";
+import StatusBadge from "@/components/StatusBadge";
 import { Product } from "@/lib/types";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+const WHATSAPP_NUMBER = "5491123897526";
 
 type Props = {
   params: Promise<{
@@ -10,16 +14,37 @@ type Props = {
   }>;
 };
 
-export default async function ProductPage({ params }: Props) {
+export default async function ProductPage({
+  params,
+}: Props) {
   const { id } = await params;
 
-  const product = (products as Product[]).find(
+  const productList = products as Product[];
+
+  const product = productList.find(
     (item) => item.id === id
   );
 
   if (!product) {
     notFound();
   }
+
+  const relatedProducts = productList
+    .filter(
+      (item) =>
+        item.id !== product.id &&
+        item.category === product.category
+    )
+    .slice(0, 3);
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hola Cristina 👋
+
+Vi el producto "${product.name}" en Everything Must Go y quería saber si todavía está disponible.`
+  )}`;
+
+  const isSold =
+    product.status.trim().toLowerCase() === "vendido";
 
   return (
     <main className="min-h-screen bg-white">
@@ -50,20 +75,23 @@ export default async function ProductPage({ params }: Props) {
             </h1>
 
             <p className="mt-6 text-4xl font-bold text-zinc-900">
-              {product.price != null
+              {product.price > 0
                 ? `$ ${product.price.toLocaleString("es-AR")}`
                 : "Consultar"}
             </p>
 
-            <span className="mt-6 inline-block rounded-full bg-green-100 px-4 py-2 text-sm font-medium text-green-700">
-              {product.condition}
-            </span>
+            <div className="mt-6">
+              <StatusBadge status={product.status} />
+            </div>
 
             <div className="mt-8 rounded-3xl border border-zinc-200 bg-zinc-50 p-6">
               <dl className="space-y-4">
                 {product.brand && (
                   <div className="flex justify-between gap-4">
-                    <dt className="text-zinc-500">Marca</dt>
+                    <dt className="text-zinc-500">
+                      Marca
+                    </dt>
+
                     <dd className="text-right font-medium text-zinc-900">
                       {product.brand}
                     </dd>
@@ -72,7 +100,10 @@ export default async function ProductPage({ params }: Props) {
 
                 {product.model && (
                   <div className="flex justify-between gap-4">
-                    <dt className="text-zinc-500">Modelo</dt>
+                    <dt className="text-zinc-500">
+                      Modelo
+                    </dt>
+
                     <dd className="text-right font-medium text-zinc-900">
                       {product.model}
                     </dd>
@@ -80,14 +111,20 @@ export default async function ProductPage({ params }: Props) {
                 )}
 
                 <div className="flex justify-between gap-4">
-                  <dt className="text-zinc-500">Condición</dt>
+                  <dt className="text-zinc-500">
+                    Condición
+                  </dt>
+
                   <dd className="text-right font-medium text-zinc-900">
                     {product.condition}
                   </dd>
                 </div>
 
                 <div className="flex justify-between gap-4">
-                  <dt className="text-zinc-500">Cantidad</dt>
+                  <dt className="text-zinc-500">
+                    Cantidad
+                  </dt>
+
                   <dd className="text-right font-medium text-zinc-900">
                     {product.quantity}
                   </dd>
@@ -98,6 +135,7 @@ export default async function ProductPage({ params }: Props) {
                     <dt className="text-zinc-500">
                       Año de compra
                     </dt>
+
                     <dd className="text-right font-medium text-zinc-900">
                       {product.purchaseYear}
                     </dd>
@@ -106,7 +144,10 @@ export default async function ProductPage({ params }: Props) {
 
                 {product.location && (
                   <div className="flex justify-between gap-4">
-                    <dt className="text-zinc-500">Ubicación</dt>
+                    <dt className="text-zinc-500">
+                      Ubicación
+                    </dt>
+
                     <dd className="text-right font-medium text-zinc-900">
                       {product.location}
                     </dd>
@@ -127,14 +168,24 @@ export default async function ProductPage({ params }: Props) {
               </div>
             )}
 
-            <button
-              type="button"
-              className="mt-10 w-full rounded-full bg-black px-8 py-4 font-medium text-white transition hover:bg-zinc-800 sm:w-auto"
-            >
-              Reservar artículo
-            </button>
+            {isSold ? (
+              <div className="mt-10 rounded-3xl border border-red-200 bg-red-50 px-6 py-5 text-red-700">
+                Este artículo ya fue vendido.
+              </div>
+            ) : (
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-10 inline-flex w-full items-center justify-center rounded-full bg-black px-8 py-4 font-medium text-white transition hover:-translate-y-0.5 hover:bg-zinc-800 sm:w-auto"
+              >
+                Consultar por WhatsApp
+              </a>
+            )}
           </section>
         </div>
+
+        <RelatedProducts products={relatedProducts} />
       </div>
     </main>
   );
