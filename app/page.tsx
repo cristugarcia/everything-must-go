@@ -1,6 +1,9 @@
 import products from "@/data/catalog.json";
 import ProductCatalog from "@/components/ProductCatalog";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ProjectPreview from "@/components/ProjectPreview";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 import { Product } from "@/lib/types";
 
 const WHATSAPP_NUMBER = "5491123897526";
@@ -8,27 +11,30 @@ const WHATSAPP_NUMBER = "5491123897526";
 export default function Home() {
   const productList = products as Product[];
 
-const publishedProducts = productList.filter(
-  (product) => product.publish
-);
+  const publishedProducts = productList.filter(
+    (product) => product.publish
+  );
 
-const availableProducts = publishedProducts.filter(
-  (product) =>
-    product.status.trim().toLowerCase() === "disponible"
-).length;
+  const availableProducts = publishedProducts.filter(
+    (product) =>
+      product.status.trim().toLowerCase() === "disponible"
+  ).length;
 
-const categories = new Set(
-  publishedProducts
-    .map((product) => product.category)
-    .filter(Boolean)
-).size;
+  const categories = new Set(
+    publishedProducts
+      .map((product) => product.category)
+      .filter(Boolean)
+  ).size;
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     "Hola Cristina 👋 Vi tu catálogo de Everything Must Go y quería hacerte una consulta."
   )}`;
 
   return (
-    <main className="min-h-screen bg-white">
+  <main className="min-h-screen bg-white">
+    <SiteHeader currentPage="catalogo" />
+
+    {/* Hero */}
       <section className="relative overflow-hidden border-b border-zinc-100">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-zinc-50 to-white" />
 
@@ -46,9 +52,8 @@ const categories = new Set(
           </p>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-500">
-            Estoy vendiendo muebles, electrónica, vehículos y otros
-            artículos en muy buen estado que todavía tienen mucho por
-            ofrecer.
+            Estoy vendiendo muebles, electrónica, vehículos y otros artículos
+            en muy buen estado que todavía tienen mucho por ofrecer.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -107,6 +112,7 @@ const categories = new Set(
         </div>
       </section>
 
+      {/* Catálogo */}
       <section
         id="productos"
         className="mx-auto max-w-6xl scroll-mt-8 px-6 py-24 sm:px-8"
@@ -116,52 +122,24 @@ const categories = new Set(
             Catálogo
           </p>
 
-        <h2 className="mt-2 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+          <h2 className="mt-2 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
             Productos en venta
-         </h2>
+          </h2>
 
           <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-500">
-            Busca por nombre, marca o categoría y consulta directamente
-            por WhatsApp.
+            Busca por nombre, marca o categoría y consulta directamente por
+            WhatsApp.
           </p>
         </div>
 
         <ProductCatalog products={publishedProducts} />
       </section>
 
-      <footer className="border-t border-zinc-200 bg-zinc-950 text-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-14 sm:px-8 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-2xl font-bold">
-              Everything Must Go
-            </p>
+      {/* Proyecto */}
+      <ProjectPreview />
+      
+      <SiteFooter variant="catalogo" />
 
-            <p className="mt-3 max-w-md leading-7 text-zinc-400">
-              Artículos en excelente estado buscando un nuevo hogar en
-              Buenos Aires.
-            </p>
-
-            <p className="mt-5 text-sm text-zinc-500">
-              © 2026 Everything Must Go
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start gap-4 md:items-end">
-            <p className="text-sm uppercase tracking-[0.2em] text-zinc-500">
-              ¿Tienes alguna pregunta?
-            </p>
-
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-white px-6 py-3 font-medium text-black transition hover:bg-zinc-200"
-            >
-              Escribir por WhatsApp
-            </a>
-          </div>
-        </div>
-      </footer>
       <FloatingWhatsApp />
     </main>
   );
