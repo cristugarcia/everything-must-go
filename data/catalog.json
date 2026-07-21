@@ -38,10 +38,10 @@
     "originalPrice": 900000,
     "condition": "Excelente",
     "images": [
-      "/products/EMG-0002/EMG-0002-1.png",
-      "/products/EMG-0002/EMG-0002-2.png",
-      "/products/EMG-0002/EMG-0002-3.png",
-      "/products/EMG-0002/EMG-0002-4.png"
+      "/products/EMG-0002/EMG-0002-1.jpg",
+      "/products/EMG-0002/EMG-0002-2.jpg",
+      "/products/EMG-0002/EMG-0002-3.jpg",
+      "/products/EMG-0002/EMG-0002-4.jpg"
     ]
   },
   {
@@ -60,9 +60,11 @@
     "originalPrice": 240000,
     "condition": "Muy bueno",
     "images": [
-      "/products/EMG-0003/EMG-0003-1.png",
-      "/products/EMG-0003/EMG-0003-2.png",
-      "/products/EMG-0003/EMG-0003-4.png"
+      "/products/EMG-0003/EMG-0003-1.jpg",
+      "/products/EMG-0003/EMG-0003-2.jpeg",
+      "/products/EMG-0003/EMG-0003-3.jpeg",
+      "/products/EMG-0003/EMG-0003-4.jpeg",
+      "/products/EMG-0003/EMG-0003-5.jpeg"
     ]
   },
   {
@@ -81,8 +83,10 @@
     "originalPrice": 0,
     "condition": "Muy bueno",
     "images": [
-      "/products/EMG-0004/EMG-0004-1.png",
-      "/products/EMG-0004/EMG-0004-4.png"
+      "/products/EMG-0004/EMG-0004-1.jpg",
+      "/products/EMG-0004/EMG-0004-2.jpeg",
+      "/products/EMG-0004/EMG-0004-3.jpeg",
+      "/products/EMG-0004/EMG-0004-4.jpeg"
     ]
   },
   {
@@ -103,8 +107,7 @@
     "images": [
       "/products/EMG-0005/EMG-0005-1.jpg",
       "/products/EMG-0005/EMG-0005-2.jpg",
-      "/products/EMG-0005/EMG-0005-3.jpg",
-      "/products/EMG-0005/EMG-0005-4.jpg"
+      "/products/EMG-0005/EMG-0005-3.jpg"
     ]
   },
   {
@@ -125,8 +128,7 @@
     "images": [
       "/products/EMG-0006/EMG-0006-1.jpg",
       "/products/EMG-0006/EMG-0006-2.jpg",
-      "/products/EMG-0006/EMG-0003-1.jpg",
-      "/products/EMG-0006/EMG-0006-4.jpg"
+      "/products/EMG-0006/EMG-0006-3.jpg"
     ]
   },
   {
@@ -144,10 +146,7 @@
     "minimumPrice": 0,
     "originalPrice": 0,
     "condition": "Excelente",
-    "images": [
-      "/products/EMG-0007/EMG-0007-1.jpg",
-      "/products/EMG-0007/EMG-0007-4.jpg"
-    ]
+    "images": []
   },
   {
     "id": "EMG-0008",
@@ -257,9 +256,7 @@
     "condition": "Muy bueno",
     "publicDescription": "Espejo de 180 x 50 cm con estructura de hierro color blanco, calidad premium.",
     "images": [
-      "/products/EMG-0012/EMG-0012-1.jpeg",
-      "/products/EMG-0012/EMG-0012-3.jpeg",
-      "/products/EMG-0012/EMG-0012-4.jpeg"
+      "/products/EMG-0012/EMG-0012-1.jpeg"
     ]
   },
   {
@@ -421,9 +418,7 @@
     "publicDescription": "Mixer Minipimer de 600 W con tecnología ProMix y vaso portátil.",
     "images": [
       "/products/EMG-0019/EMG-0019-1.jpeg",
-      "/products/EMG-0019/EMG-0019-2.jpeg",
-      "/products/EMG-0019/EMG-0019-4.jpeg",
-      "/products/EMG-0019/EMG-0019-5.jpeg"
+      "/products/EMG-0019/EMG-0019-2.jpeg"
     ]
   },
   {
@@ -468,9 +463,7 @@
     "publicDescription": "Pava eléctrica blanca con corte automático, ideal para mate.",
     "images": [
       "/products/EMG-0021/EMG-0021-1.jpeg",
-      "/products/EMG-0021/EMG-0021-2.jpeg",
-      "/products/EMG-0021/EMG-0021-4.jpeg",
-      "/products/EMG-0021/EMG-0021-5.jpeg"
+      "/products/EMG-0021/EMG-0021-2.jpeg"
     ]
   },
   {
