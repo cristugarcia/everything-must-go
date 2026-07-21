@@ -1,5 +1,6 @@
 import products from "@/data/catalog.json";
 import ProductCatalog from "@/components/ProductCatalog";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { Product } from "@/lib/types";
 
 const WHATSAPP_NUMBER = "5491123897526";
@@ -7,16 +8,20 @@ const WHATSAPP_NUMBER = "5491123897526";
 export default function Home() {
   const productList = products as Product[];
 
-  const availableProducts = productList.filter(
-    (product) =>
-      product.status.trim().toLowerCase() === "disponible"
-  ).length;
+const publishedProducts = productList.filter(
+  (product) => product.publish
+);
 
-  const categories = new Set(
-    productList
-      .map((product) => product.category)
-      .filter(Boolean)
-  ).size;
+const availableProducts = publishedProducts.filter(
+  (product) =>
+    product.status.trim().toLowerCase() === "disponible"
+).length;
+
+const categories = new Set(
+  publishedProducts
+    .map((product) => product.category)
+    .filter(Boolean)
+).size;
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     "Hola Cristina 👋 Vi tu catálogo de Everything Must Go y quería hacerte una consulta."
@@ -67,7 +72,7 @@ export default function Home() {
           <div className="mt-16 grid w-full max-w-2xl grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
               <p className="text-3xl font-bold text-zinc-900">
-                {productList.length}
+                {publishedProducts.length}
               </p>
 
               <p className="mt-1 text-sm text-zinc-500">
@@ -97,7 +102,7 @@ export default function Home() {
           </div>
 
           <p className="mt-14 text-sm uppercase tracking-[0.25em] text-zinc-400">
-            Disponible hasta el 31 de julio de 2026
+            Disponible hasta el 20 de agosto de 2026
           </p>
         </div>
       </section>
@@ -111,9 +116,9 @@ export default function Home() {
             Catálogo
           </p>
 
-          <h2 className="mt-2 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
-            Productos disponibles
-          </h2>
+        <h2 className="mt-2 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+            Productos en venta
+         </h2>
 
           <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-500">
             Busca por nombre, marca o categoría y consulta directamente
@@ -121,7 +126,7 @@ export default function Home() {
           </p>
         </div>
 
-        <ProductCatalog products={productList} />
+        <ProductCatalog products={publishedProducts} />
       </section>
 
       <footer className="border-t border-zinc-200 bg-zinc-950 text-white">
@@ -157,6 +162,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <FloatingWhatsApp />
     </main>
   );
 }
