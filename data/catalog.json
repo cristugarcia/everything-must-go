@@ -15,7 +15,12 @@
     "originalPrice": 900000,
     "purchaseYear": 2025,
     "condition": "Excelente",
-    "images": []
+    "images": [
+      "/products/EMG-0001/EMG-0001-1.png",
+      "/products/EMG-0001/EMG-0001-2.png",
+      "/products/EMG-0001/EMG-0001-3.png",
+      "/products/EMG-0001/EMG-0001-4.png"
+    ]
   },
   {
     "id": "EMG-0002",
@@ -32,7 +37,12 @@
     "minimumPrice": 450000,
     "originalPrice": 900000,
     "condition": "Excelente",
-    "images": []
+    "images": [
+      "/products/EMG-0002/EMG-0002-1.png",
+      "/products/EMG-0002/EMG-0002-2.png",
+      "/products/EMG-0002/EMG-0002-3.png",
+      "/products/EMG-0002/EMG-0002-4.png"
+    ]
   },
   {
     "id": "EMG-0003",
@@ -49,7 +59,11 @@
     "minimumPrice": 180000,
     "originalPrice": 240000,
     "condition": "Muy bueno",
-    "images": []
+    "images": [
+      "/products/EMG-0003/EMG-0003-1.png",
+      "/products/EMG-0003/EMG-0003-2.png",
+      "/products/EMG-0003/EMG-0003-4.png"
+    ]
   },
   {
     "id": "EMG-0004",
@@ -66,7 +80,10 @@
     "minimumPrice": 40000,
     "originalPrice": 0,
     "condition": "Muy bueno",
-    "images": []
+    "images": [
+      "/products/EMG-0004/EMG-0004-1.png",
+      "/products/EMG-0004/EMG-0004-4.png"
+    ]
   },
   {
     "id": "EMG-0005",
@@ -83,7 +100,12 @@
     "minimumPrice": 150000,
     "originalPrice": 300000,
     "condition": "Bueno",
-    "images": []
+    "images": [
+      "/products/EMG-0005/EMG-0005-1.jpg",
+      "/products/EMG-0005/EMG-0005-2.jpg",
+      "/products/EMG-0005/EMG-0005-3.jpg",
+      "/products/EMG-0005/EMG-0005-4.jpg"
+    ]
   },
   {
     "id": "EMG-0006",
@@ -100,7 +122,12 @@
     "minimumPrice": 100000,
     "originalPrice": 0,
     "condition": "Bueno",
-    "images": []
+    "images": [
+      "/products/EMG-0006/EMG-0006-1.jpg",
+      "/products/EMG-0006/EMG-0006-2.jpg",
+      "/products/EMG-0006/EMG-0003-1.jpg",
+      "/products/EMG-0006/EMG-0006-4.jpg"
+    ]
   },
   {
     "id": "EMG-0007",
@@ -117,7 +144,10 @@
     "minimumPrice": 0,
     "originalPrice": 0,
     "condition": "Excelente",
-    "images": []
+    "images": [
+      "/products/EMG-0007/EMG-0007-1.jpg",
+      "/products/EMG-0007/EMG-0007-4.jpg"
+    ]
   },
   {
     "id": "EMG-0008",
@@ -134,7 +164,12 @@
     "minimumPrice": 1800000,
     "originalPrice": 60000,
     "condition": "Muy bueno",
-    "images": []
+    "images": [
+      "/products/EMG-0008/EMG-0008-1.jpg",
+      "/products/EMG-0008/EMG-0008-2.jpg",
+      "/products/EMG-0008/EMG-0008-3.jpg",
+      "/products/EMG-0008/EMG-0008-4.jpg"
+    ]
   },
   {
     "id": "EMG-0009",
@@ -151,7 +186,12 @@
     "minimumPrice": 17400000,
     "originalPrice": 10000000,
     "condition": "Muy bueno",
-    "images": []
+    "images": [
+      "/products/EMG-0009/EMG-0009-1.jpg",
+      "/products/EMG-0009/EMG-0009-2.jpg",
+      "/products/EMG-0009/EMG-0009-3.jpg",
+      "/products/EMG-0009/EMG-0009-4.jpg"
+    ]
   },
   {
     "id": "EMG-0010",
@@ -169,7 +209,13 @@
     "originalPrice": 139980,
     "condition": "Muy bueno",
     "publicDescription": "Freidora de aire de 6,5 litros, 1500 W, panel de control digital, recipiente antiadherente y 8 programas de cocción.",
-    "images": []
+    "images": [
+      "/products/EMG-0010/EMG-0010-1.jpeg",
+      "/products/EMG-0010/EMG-0010-2.jpeg",
+      "/products/EMG-0010/EMG-0010-3.jpeg",
+      "/products/EMG-0010/EMG-0010-4.jpeg",
+      "/products/EMG-0010/EMG-0010-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0011",
@@ -187,7 +233,12 @@
     "originalPrice": 100000,
     "condition": "Muy bueno",
     "publicDescription": "Cafetera digital automática negra y gris para café de filtro.",
-    "images": []
+    "images": [
+      "/products/EMG-0011/EMG-0011-1.jpeg",
+      "/products/EMG-0011/EMG-0011-2.jpeg",
+      "/products/EMG-0011/EMG-0011-3.jpeg",
+      "/products/EMG-0011/EMG-0011-4.jpeg"
+    ]
   },
   {
     "id": "EMG-0012",
@@ -205,7 +256,11 @@
     "originalPrice": 152000,
     "condition": "Muy bueno",
     "publicDescription": "Espejo de 180 x 50 cm con estructura de hierro color blanco, calidad premium.",
-    "images": []
+    "images": [
+      "/products/EMG-0012/EMG-0012-1.jpeg",
+      "/products/EMG-0012/EMG-0012-3.jpeg",
+      "/products/EMG-0012/EMG-0012-4.jpeg"
+    ]
   },
   {
     "id": "EMG-0013",
@@ -223,7 +278,12 @@
     "originalPrice": 158000,
     "condition": "Muy bueno",
     "publicDescription": "Grifería monocomando para cocina, acabado negro mate, pico extensible y giratorio.",
-    "images": []
+    "images": [
+      "/products/EMG-0013/EMG-0013-1.jpeg",
+      "/products/EMG-0013/EMG-0013-2.jpeg",
+      "/products/EMG-0013/EMG-0013-3.jpeg",
+      "/products/EMG-0013/EMG-0013-4.jpeg"
+    ]
   },
   {
     "id": "EMG-0014",
@@ -241,7 +301,12 @@
     "originalPrice": 50000,
     "condition": "Muy bueno",
     "publicDescription": "Jarra purificadora de agua Humma.",
-    "images": []
+    "images": [
+      "/products/EMG-0014/EMG-0014-1.jpeg",
+      "/products/EMG-0014/EMG-0014-2.jpeg",
+      "/products/EMG-0014/EMG-0014-3.jpeg",
+      "/products/EMG-0014/EMG-0014-4.jpeg"
+    ]
   },
   {
     "id": "EMG-0015",
@@ -259,7 +324,12 @@
     "originalPrice": 220000,
     "condition": "Muy bueno",
     "publicDescription": "Juego de dos mesas de luz modernas de la línea Star.",
-    "images": []
+    "images": [
+      "/products/EMG-0015/EMG-0015-1.jpeg",
+      "/products/EMG-0015/EMG-0015-2.jpeg",
+      "/products/EMG-0015/EMG-0015-3.jpeg",
+      "/products/EMG-0015/EMG-0015-4.jpeg"
+    ]
   },
   {
     "id": "EMG-0016",
@@ -277,7 +347,13 @@
     "originalPrice": 130000,
     "condition": "Muy bueno",
     "publicDescription": "Mesa plegable blanca de 180 cm, ideal para jardín, camping y reuniones familiares.",
-    "images": []
+    "images": [
+      "/products/EMG-0016/EMG-0016-1.jpeg",
+      "/products/EMG-0016/EMG-0016-2.jpeg",
+      "/products/EMG-0016/EMG-0016-3.jpeg",
+      "/products/EMG-0016/EMG-0016-4.jpeg",
+      "/products/EMG-0016/EMG-0016-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0017",
@@ -295,7 +371,13 @@
     "originalPrice": 213200,
     "condition": "Muy bueno",
     "publicDescription": "Mesa ratona elevable de melamina, 90 cm de largo.",
-    "images": []
+    "images": [
+      "/products/EMG-0017/EMG-0017-1.jpeg",
+      "/products/EMG-0017/EMG-0017-2.jpeg",
+      "/products/EMG-0017/EMG-0017-3.jpeg",
+      "/products/EMG-0017/EMG-0017-4.jpeg",
+      "/products/EMG-0017/EMG-0017-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0018",
@@ -313,7 +395,13 @@
     "originalPrice": 247000,
     "condition": "Muy bueno",
     "publicDescription": "Microondas Whirlpool de 20 litros, color silver.",
-    "images": []
+    "images": [
+      "/products/EMG-0018/EMG-0018-1.jpeg",
+      "/products/EMG-0018/EMG-0018-2.jpeg",
+      "/products/EMG-0018/EMG-0018-3.jpeg",
+      "/products/EMG-0018/EMG-0018-4.jpeg",
+      "/products/EMG-0018/EMG-0018-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0019",
@@ -331,7 +419,12 @@
     "originalPrice": 205000,
     "condition": "Muy bueno",
     "publicDescription": "Mixer Minipimer de 600 W con tecnología ProMix y vaso portátil.",
-    "images": []
+    "images": [
+      "/products/EMG-0019/EMG-0019-1.jpeg",
+      "/products/EMG-0019/EMG-0019-2.jpeg",
+      "/products/EMG-0019/EMG-0019-4.jpeg",
+      "/products/EMG-0019/EMG-0019-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0020",
@@ -349,7 +442,13 @@
     "originalPrice": 156000,
     "condition": "Muy bueno",
     "publicDescription": "Rack moderno y minimalista de melamina para TV de hasta 50 pulgadas, con 3 puertas y 2 estantes.",
-    "images": []
+    "images": [
+      "/products/EMG-0020/EMG-0020-1.jpeg",
+      "/products/EMG-0020/EMG-0020-2.jpeg",
+      "/products/EMG-0020/EMG-0020-3.jpeg",
+      "/products/EMG-0020/EMG-0020-4.jpeg",
+      "/products/EMG-0020/EMG-0020-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0021",
@@ -367,7 +466,12 @@
     "originalPrice": 62000,
     "condition": "Muy bueno",
     "publicDescription": "Pava eléctrica blanca con corte automático, ideal para mate.",
-    "images": []
+    "images": [
+      "/products/EMG-0021/EMG-0021-1.jpeg",
+      "/products/EMG-0021/EMG-0021-2.jpeg",
+      "/products/EMG-0021/EMG-0021-4.jpeg",
+      "/products/EMG-0021/EMG-0021-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0022",
@@ -385,7 +489,13 @@
     "originalPrice": 50000,
     "condition": "Muy bueno",
     "publicDescription": "Escurridor secaplatos tipo rack para bacha, de acero, 65 cm, color negro.",
-    "images": []
+    "images": [
+      "/products/EMG-0022/EMG-0022-1.jpeg",
+      "/products/EMG-0022/EMG-0022-2.jpeg",
+      "/products/EMG-0022/EMG-0022-3.jpeg",
+      "/products/EMG-0022/EMG-0022-4.jpeg",
+      "/products/EMG-0022/EMG-0022-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0023",
@@ -403,7 +513,13 @@
     "originalPrice": 147000,
     "condition": "Muy bueno",
     "publicDescription": "Juego de dos reposeras plegables gravedad cero con mesa auxiliar.",
-    "images": []
+    "images": [
+      "/products/EMG-0023/EMG-0023-1.jpeg",
+      "/products/EMG-0023/EMG-0023-2.jpeg",
+      "/products/EMG-0023/EMG-0023-3.jpeg",
+      "/products/EMG-0023/EMG-0023-4.jpeg",
+      "/products/EMG-0023/EMG-0023-5.jpeg"
+    ]
   },
   {
     "id": "EMG-0024",
@@ -421,6 +537,9 @@
     "originalPrice": 132000,
     "condition": "Muy bueno",
     "publicDescription": "Máquina para hacer soda Terra, incluye un cilindro extra.",
-    "images": []
+    "images": [
+      "/products/EMG-0024/EMG-0024-1.jpeg",
+      "/products/EMG-0024/EMG-0024-2.jpeg"
+    ]
   }
 ]
