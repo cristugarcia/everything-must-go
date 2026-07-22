@@ -2,13 +2,12 @@ import products from "@/data/catalog.json";
 import ProductGallery from "@/components/ProductGallery";
 import RelatedProducts from "@/components/RelatedProducts";
 import StatusBadge from "@/components/StatusBadge";
+import { SITE } from "@/lib/site";
 import { Product } from "@/lib/types";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-const WHATSAPP_NUMBER = "5491123897526";
-const SITE_URL =
-  "https://everything-must-go-cyan.vercel.app";
+const SITE_URL = SITE.url;
 
 type Props = {
   params: Promise<{
@@ -89,9 +88,9 @@ Precio: ${formattedPrice}
 
 ${productUrl}`;
 
-const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  whatsappMessage
-)}`;
+const whatsappUrl = `https://wa.me/${
+  SITE.whatsapp.number
+}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <main className="min-h-screen bg-white">

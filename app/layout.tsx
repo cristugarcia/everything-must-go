@@ -1,79 +1,66 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { SITE } from "@/lib/site";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const SITE_URL =
-  "https://everything-must-go-cyan.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(SITE.url),
 
   title: {
-    default: "Everything Must Go | Venta por mudanza",
-    template: "%s | Everything Must Go",
+    default: `${SITE.name} | Venta por mudanza`,
+    template: `%s | ${SITE.name}`,
   },
 
   description:
-    "Muebles, electrodomésticos, electrónica, vehículos y artículos para el hogar en venta por mudanza en Buenos Aires.",
+    "Catálogo de muebles, electrónica, vehículos y otros artículos en venta por mudanza en Buenos Aires.",
 
   applicationName: "Everything Must Go",
 
-  keywords: [
-    "venta por mudanza",
-    "muebles usados",
-    "electrodomésticos",
-    "artículos para el hogar",
-    "Buenos Aires",
-    "productos usados",
-  ],
-
   authors: [
     {
-      name: "Cristina García",
+      name: "Cristina García Mijares",
     },
   ],
 
-  creator: "Cristina García",
+  creator: "Cristina García Mijares",
+
+  keywords: [
+    "venta por mudanza",
+    "artículos usados",
+    "muebles usados",
+    "electrónica usada",
+    "Buenos Aires",
+    "Everything Must Go",
+    "catálogo online",
+  ],
 
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: SITE_URL,
+    url: "/",
     siteName: "Everything Must Go",
     title: "Everything Must Go | Venta por mudanza",
     description:
-      "Todo debe encontrar un nuevo hogar antes de mi mudanza. Explora muebles, electrodomésticos, electrónica y más.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Everything Must Go - Venta por mudanza",
-      },
-    ],
+      "Todo debe encontrar un nuevo hogar antes de mi mudanza. Explora el catálogo completo de productos disponibles.",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Everything Must Go | Venta por mudanza",
     description:
-      "Muebles, electrodomésticos, electrónica y otros artículos en venta en Buenos Aires.",
-    images: ["/og-image.jpg"],
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+      "Todo debe encontrar un nuevo hogar antes de mi mudanza.",
   },
 
   robots: {
@@ -82,17 +69,22 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col">
+    <html lang="es">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-white font-sans text-zinc-900 antialiased`}
+      >
         {children}
       </body>
     </html>

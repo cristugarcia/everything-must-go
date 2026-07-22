@@ -2,7 +2,23 @@ import Link from "next/link";
 import products from "@/data/catalog.json";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import type { Metadata } from "next";
 import { Product } from "@/lib/types";
+
+export const metadata: Metadata = {
+  title: "Caso de estudio",
+  description:
+    "Descubre cómo diseñé y desarrollé Everything Must Go con Next.js, TypeScript, Google Sheets y Vercel para resolver una necesidad real.",
+  alternates: {
+    canonical: "/proyecto",
+  },
+  openGraph: {
+    title: "Caso de estudio | Everything Must Go",
+    description:
+      "Un proyecto real de desarrollo web, automatización y diseño creado para gestionar una venta por mudanza.",
+    url: "/proyecto",
+  },
+};
 
 const technologies = [
   "Next.js",

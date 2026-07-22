@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE } from "@/lib/site";
 
 type SiteHeaderProps = {
   currentPage?: "catalogo" | "proyecto" | "sobre-mi";
@@ -32,7 +33,7 @@ export default function SiteHeader({
           href="/"
           className="text-lg font-bold tracking-tight text-zinc-900"
         >
-          Everything Must Go
+          {SITE.name}
         </Link>
 
         <nav

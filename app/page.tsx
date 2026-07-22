@@ -4,9 +4,12 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ProjectPreview from "@/components/ProjectPreview";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { SITE } from "@/lib/site";
 import { Product } from "@/lib/types";
 
-const WHATSAPP_NUMBER = "5491123897526";
+const whatsappUrl = `https://wa.me/${
+  SITE.whatsapp.number
+}?text=${encodeURIComponent(SITE.whatsapp.message)}`;
 
 export default function Home() {
   const productList = products as Product[];
@@ -26,10 +29,6 @@ export default function Home() {
       .filter(Boolean)
   ).size;
 
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hola Cristina 👋 Vi tu catálogo de Everything Must Go y quería hacerte una consulta."
-  )}`;
-
   return (
   <main className="min-h-screen bg-white">
     <SiteHeader currentPage="catalogo" />
@@ -40,15 +39,15 @@ export default function Home() {
 
         <div className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 py-24 text-center sm:px-8">
           <p className="text-sm font-medium uppercase tracking-[0.3em] text-zinc-400">
-            Venta por mudanza · Buenos Aires
+            Venta por mudanza · {SITE.city}
           </p>
 
           <h1 className="mt-6 max-w-5xl text-5xl font-bold tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl">
-            Everything Must Go
+            {SITE.name}
           </h1>
 
           <p className="mt-6 max-w-3xl text-2xl font-medium leading-relaxed text-zinc-700 sm:text-3xl">
-            Todo debe encontrar un nuevo hogar antes de mi mudanza.
+            {SITE.slogan}
           </p>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-500">
@@ -107,7 +106,7 @@ export default function Home() {
           </div>
 
           <p className="mt-14 text-sm uppercase tracking-[0.25em] text-zinc-400">
-            Disponible hasta el 20 de agosto de 2026
+            Disponible hasta el {SITE.deadline.text}
           </p>
         </div>
       </section>

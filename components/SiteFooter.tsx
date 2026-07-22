@@ -1,17 +1,16 @@
 import Link from "next/link";
+import { SITE } from "@/lib/site";
 
 type SiteFooterProps = {
   variant?: "catalogo" | "portfolio";
 };
 
-const WHATSAPP_NUMBER = "5491123897526";
-
 export default function SiteFooter({
   variant = "portfolio",
 }: SiteFooterProps) {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hola Cristina 👋 Vi tu catálogo de Everything Must Go y quería hacerte una consulta."
-  )}`;
+  const whatsappUrl = `https://wa.me/${
+  SITE.whatsapp.number
+}?text=${encodeURIComponent(SITE.whatsapp.message)}`;
 
   return (
     <footer className="bg-zinc-950 text-white">
@@ -19,7 +18,7 @@ export default function SiteFooter({
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-2xl font-bold tracking-tight">
-              Everything Must Go
+              {SITE.name}
             </p>
 
             <p className="mt-3 max-w-md leading-7 text-zinc-400">
@@ -29,7 +28,7 @@ export default function SiteFooter({
             </p>
 
             <p className="mt-5 text-sm text-zinc-500">
-              © 2026 Cristina García Mijares
+              © 2026 {SITE.author.name}
             </p>
           </div>
 

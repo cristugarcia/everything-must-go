@@ -16,10 +16,11 @@
     "purchaseYear": 2025,
     "condition": "Excelente",
     "images": [
-      "/products/EMG-0001/EMG-0001-1.png",
+      "/products/EMG-0001/EMG-0001-1.jpeg",
       "/products/EMG-0001/EMG-0001-2.png",
-      "/products/EMG-0001/EMG-0001-3.png",
-      "/products/EMG-0001/EMG-0001-4.png"
+      "/products/EMG-0001/EMG-0001-4.png",
+      "/products/EMG-0001/EMG-0001-6.jpeg",
+      "/products/EMG-0001/EMG-0001-7.jpeg"
     ]
   },
   {
@@ -61,8 +62,8 @@
     "originalPrice": 240000,
     "condition": "Muy bueno",
     "images": [
-      "/products/EMG-0003/EMG-0003-1.jpg",
       "/products/EMG-0003/EMG-0003-2.jpeg",
+      "/products/EMG-0003/EMG-0003-1.jpg",
       "/products/EMG-0003/EMG-0003-3.jpeg",
       "/products/EMG-0003/EMG-0003-4.jpeg",
       "/products/EMG-0003/EMG-0003-5.jpeg"
@@ -189,8 +190,7 @@
     "images": [
       "/products/EMG-0009/EMG-0009-1.jpg",
       "/products/EMG-0009/EMG-0009-2.jpg",
-      "/products/EMG-0009/EMG-0009-3.jpg",
-      "/products/EMG-0009/EMG-0009-4.jpg"
+      "/products/EMG-0009/EMG-0009-3.jpg"
     ]
   },
   {
@@ -235,9 +235,7 @@
     "publicDescription": "Cafetera digital automática negra y gris para café de filtro.",
     "images": [
       "/products/EMG-0011/EMG-0011-1.jpeg",
-      "/products/EMG-0011/EMG-0011-2.jpeg",
-      "/products/EMG-0011/EMG-0011-3.jpeg",
-      "/products/EMG-0011/EMG-0011-4.jpeg"
+      "/products/EMG-0011/EMG-0011-2.jpeg"
     ]
   },
   {
@@ -267,7 +265,7 @@
     "status": "Disponible",
     "category": "Hogar",
     "subcategory": "Grifería",
-    "name": "Grifería de cocina monocomando negra mate",
+    "name": "Volkswagen Suran",
     "brand": "Waggs",
     "model": "",
     "quantity": 1,
@@ -278,9 +276,7 @@
     "publicDescription": "Grifería monocomando para cocina, acabado negro mate, pico extensible y giratorio.",
     "images": [
       "/products/EMG-0013/EMG-0013-1.jpeg",
-      "/products/EMG-0013/EMG-0013-2.jpeg",
-      "/products/EMG-0013/EMG-0013-3.jpeg",
-      "/products/EMG-0013/EMG-0013-4.jpeg"
+      "/products/EMG-0013/EMG-0013-2.jpeg"
     ]
   },
   {
@@ -301,9 +297,7 @@
     "publicDescription": "Jarra purificadora de agua Humma.",
     "images": [
       "/products/EMG-0014/EMG-0014-1.jpeg",
-      "/products/EMG-0014/EMG-0014-2.jpeg",
-      "/products/EMG-0014/EMG-0014-3.jpeg",
-      "/products/EMG-0014/EMG-0014-4.jpeg"
+      "/products/EMG-0014/EMG-0014-2.jpeg"
     ]
   },
   {
@@ -349,7 +343,6 @@
       "/products/EMG-0016/EMG-0016-1.jpeg",
       "/products/EMG-0016/EMG-0016-2.jpeg",
       "/products/EMG-0016/EMG-0016-3.jpeg",
-      "/products/EMG-0016/EMG-0016-4.jpeg",
       "/products/EMG-0016/EMG-0016-5.jpeg"
     ]
   },
@@ -396,9 +389,7 @@
     "images": [
       "/products/EMG-0018/EMG-0018-1.jpeg",
       "/products/EMG-0018/EMG-0018-2.jpeg",
-      "/products/EMG-0018/EMG-0018-3.jpeg",
-      "/products/EMG-0018/EMG-0018-4.jpeg",
-      "/products/EMG-0018/EMG-0018-5.jpeg"
+      "/products/EMG-0018/EMG-0018-3.jpeg"
     ]
   },
   {
@@ -441,9 +432,7 @@
     "images": [
       "/products/EMG-0020/EMG-0020-1.jpeg",
       "/products/EMG-0020/EMG-0020-2.jpeg",
-      "/products/EMG-0020/EMG-0020-3.jpeg",
-      "/products/EMG-0020/EMG-0020-4.jpeg",
-      "/products/EMG-0020/EMG-0020-5.jpeg"
+      "/products/EMG-0020/EMG-0020-3.jpeg"
     ]
   },
   {
@@ -463,15 +452,14 @@
     "condition": "Muy bueno",
     "publicDescription": "Pava eléctrica blanca con corte automático, ideal para mate.",
     "images": [
-      "/products/EMG-0021/EMG-0021-1.jpeg",
-      "/products/EMG-0021/EMG-0021-2.jpeg"
+      "/products/EMG-0021/EMG-0021-1.jpeg"
     ]
   },
   {
     "id": "EMG-0022",
     "sku": "HOG-003",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Hogar",
     "subcategory": "Cocina",
     "name": "Escurridor de platos 65 cm",
@@ -486,9 +474,7 @@
     "images": [
       "/products/EMG-0022/EMG-0022-1.jpeg",
       "/products/EMG-0022/EMG-0022-2.jpeg",
-      "/products/EMG-0022/EMG-0022-3.jpeg",
-      "/products/EMG-0022/EMG-0022-4.jpeg",
-      "/products/EMG-0022/EMG-0022-5.jpeg"
+      "/products/EMG-0022/EMG-0022-3.jpeg"
     ]
   },
   {
@@ -534,6 +520,26 @@
     "images": [
       "/products/EMG-0024/EMG-0024-1.jpeg",
       "/products/EMG-0024/EMG-0024-2.jpeg"
+    ]
+  },
+  {
+    "id": "EMG-0025",
+    "sku": "HOG-005",
+    "publish": false,
+    "status": "Disponible",
+    "category": "Hogar",
+    "subcategory": "Cafeteras",
+    "name": "Prensa Francesa 350 ml",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 0,
+    "minimumPrice": 0,
+    "originalPrice": 0,
+    "condition": "Muy bueno",
+    "publicDescription": "Prensa francesa de 350 ml, ideal para preparar café o infusiones. Capacidad aproximada para 2 tazas.",
+    "images": [
+      "/products/EMG-0025/EMG-0025-1.jpeg"
     ]
   }
 ]
