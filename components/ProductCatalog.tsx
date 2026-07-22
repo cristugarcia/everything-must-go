@@ -1,7 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+
+import Stagger from "@/components/animations/Stagger";
 import ProductCard from "@/components/ProductCard";
+
 import { Product } from "@/lib/types";
 
 type ProductCatalogProps = {
@@ -131,6 +134,10 @@ export default function ProductCatalog({
     selectedCategory !== "Todos" ||
     selectedStatus !== "Todos" ||
     sortBy !== "default";
+
+  const staggerKey = filteredProducts
+    .map((product) => product.id)
+    .join("-");
 
   return (
     <div>
@@ -278,14 +285,18 @@ export default function ProductCatalog({
       </div>
 
       {filteredProducts.length > 0 ? (
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <Stagger
+          key={staggerKey}
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          staggerDelay={0.07}
+        >
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
             />
           ))}
-        </div>
+        </Stagger>
       ) : (
         <div className="rounded-3xl border border-dashed border-zinc-300 px-6 py-20 text-center">
           <div className="text-5xl">🔎</div>

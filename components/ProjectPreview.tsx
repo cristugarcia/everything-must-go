@@ -1,62 +1,84 @@
 import Link from "next/link";
+import Button from "@/components/ui/Button";
+import FadeIn from "@/components/animations/FadeIn";
 
-const highlights = [
-  "Next.js y TypeScript",
-  "Inventario desde Google Sheets",
-  "Filtros y búsqueda",
-  "Integración con WhatsApp",
+const technologies = [
+  "Next.js",
+  "TypeScript",
+  "Google Sheets",
+  "Vercel",
 ];
 
 export default function ProjectPreview() {
   return (
-    <section className="border-t border-zinc-200 bg-zinc-50">
-      <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:py-24">
-        <div className="grid items-center gap-10 rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm sm:p-10 lg:grid-cols-[1.25fr_0.75fr] lg:p-14">
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">
-              Detrás del proyecto
-            </p>
+    <section className="border-t border-zinc-200 bg-white">
+      <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-24 lg:py-28">
+        <FadeIn>
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">
+                Detrás del proyecto
+              </p>
 
-            <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-              Esta tienda también es un proyecto de tecnología y resolución de
-              problemas.
-            </h2>
+              <h2 className="mt-3 max-w-xl text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">
+                Más que una venta por mudanza.
+              </h2>
+            </div>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-500">
-              Everything Must Go nació como una solución real para organizar y
-              vender mis pertenencias antes de una mudanza internacional. En el
-              caso de estudio cuento cómo diseñé, desarrollé y publiqué la
-              plataforma.
-            </p>
+            <div>
+              <div className="space-y-5 text-lg leading-8 text-zinc-600">
+                <p>
+                  Everything Must Go nació como una forma de organizar la venta
+                  de todas mis pertenencias antes de una mudanza internacional.
+                </p>
 
-            <div className="mt-7 flex flex-wrap gap-2">
-              {highlights.map((highlight) => (
-                <span
-                  key={highlight}
-                  className="rounded-full bg-zinc-100 px-3 py-1.5 text-sm font-medium text-zinc-700"
+                <p>
+                  Lo que comenzó como una necesidad personal terminó
+                  convirtiéndose en un proyecto donde combiné desarrollo web,
+                  automatización y diseño para construir un catálogo dinámico,
+                  fácil de administrar y pensado para resolver un problema real.
+                </p>
+              </div>
+
+              <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-zinc-500">
+                {technologies.map((technology, index) => (
+                  <span key={technology} className="inline-flex items-center">
+                    {index > 0 && (
+                      <span
+                        aria-hidden="true"
+                        className="mr-4 text-zinc-300"
+                      >
+                        •
+                      </span>
+                    )}
+
+                    {technology}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
+                <Button href="/proyecto" size="lg">
+                  Conocer el caso de estudio
+                </Button>
+
+                <Link
+                  href="/sobre-mi"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 transition hover:text-zinc-950"
                 >
-                  {highlight}
-                </span>
-              ))}
+                  Conoce un poco más sobre mí
+
+                  <span
+                    aria-hidden="true"
+                    className="transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </Link>
+              </div>
             </div>
           </div>
-
-          <div className="flex flex-col items-start gap-4 lg:items-end">
-            <Link
-              href="/proyecto"
-              className="inline-flex w-full items-center justify-center rounded-full bg-black px-7 py-4 font-medium text-white transition hover:-translate-y-0.5 hover:bg-zinc-800 sm:w-auto"
-            >
-              Conocer el proyecto
-            </Link>
-
-            <Link
-              href="/sobre-mi"
-              className="inline-flex w-full items-center justify-center rounded-full border border-zinc-300 bg-white px-7 py-4 font-medium text-zinc-900 transition hover:-translate-y-0.5 hover:border-black sm:w-auto"
-            >
-              Sobre mí
-            </Link>
-          </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
