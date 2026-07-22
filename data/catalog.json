@@ -525,7 +525,7 @@
   {
     "id": "EMG-0025",
     "sku": "HOG-005",
-    "publish": false,
+    "publish": true,
     "status": "Disponible",
     "category": "Hogar",
     "subcategory": "Cafeteras",
@@ -533,9 +533,9 @@
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
+    "price": 22500,
+    "minimumPrice": 15000,
+    "originalPrice": 30000,
     "condition": "Muy bueno",
     "publicDescription": "Prensa francesa de 350 ml, ideal para preparar café o infusiones. Capacidad aproximada para 2 tazas.",
     "images": [
