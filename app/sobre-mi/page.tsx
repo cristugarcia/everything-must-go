@@ -1,6 +1,22 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+
+export const metadata: Metadata = {
+  title: "Sobre mí",
+  description:
+    "Conoce a Cristina García Mijares, profesional de finanzas, operaciones, automatización y desarrollo de soluciones digitales.",
+  alternates: {
+    canonical: "/sobre-mi",
+  },
+  openGraph: {
+    title: "Cristina García Mijares | Sobre mí",
+    description:
+      "Finanzas, operaciones y tecnología aplicadas a la resolución de problemas reales.",
+    url: "/sobre-mi",
+  },
+};
 
 const professionalAreas = [
   "Finanzas",
