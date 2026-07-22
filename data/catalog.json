@@ -106,6 +106,7 @@
     "minimumPrice": 150000,
     "originalPrice": 300000,
     "condition": "Bueno",
+    "privateNotes": "Roman",
     "images": [
       "/products/EMG-0005/EMG-0005-1.jpg",
       "/products/EMG-0005/EMG-0005-2.jpg",
@@ -187,6 +188,7 @@
     "minimumPrice": 17400000,
     "originalPrice": 10000000,
     "condition": "Muy bueno",
+    "privateNotes": "Roman, Noe",
     "images": [
       "/products/EMG-0009/EMG-0009-1.jpg",
       "/products/EMG-0009/EMG-0009-2.jpg",
@@ -319,8 +321,7 @@
     "images": [
       "/products/EMG-0015/EMG-0015-1.jpeg",
       "/products/EMG-0015/EMG-0015-2.jpeg",
-      "/products/EMG-0015/EMG-0015-3.jpeg",
-      "/products/EMG-0015/EMG-0015-4.jpeg"
+      "/products/EMG-0015/EMG-0015-3.jpeg"
     ]
   },
   {
@@ -471,6 +472,7 @@
     "originalPrice": 50000,
     "condition": "Muy bueno",
     "publicDescription": "Escurridor secaplatos tipo rack para bacha, de acero, 65 cm, color negro.",
+    "privateNotes": "Johan",
     "images": [
       "/products/EMG-0022/EMG-0022-1.jpeg",
       "/products/EMG-0022/EMG-0022-2.jpeg",
