@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import products from "@/data/catalog.json";
-
+import ShareProductStoryButton from "@/components/ShareProductStoryButton";
 import ProductGallery from "@/components/ProductGallery";
 import RelatedProducts from "@/components/RelatedProducts";
 import SiteFooter from "@/components/SiteFooter";
@@ -159,7 +159,7 @@ ${productUrl}`;
 
             {/* CTA */}
             <div className="mt-8">
-              {isSold ? (
+            {isSold ? (
                 <div className="rounded-3xl border border-red-200 bg-red-50 px-6 py-5 text-center font-medium text-red-700">
                   Este artículo ya fue vendido.
                 </div>
@@ -176,7 +176,15 @@ ${productUrl}`;
                     : "Consultar por WhatsApp"}
                 </Button>
               )}
-            </div>
+
+  <ShareProductStoryButton
+    productId={product.id}
+    name={product.name}
+    formattedPrice={formattedPrice}
+    status={product.status}
+    productUrl={productUrl}
+  />
+</div>
 
             {!isSold && (
               <div className="mt-5 grid grid-cols-1 gap-3 text-sm text-zinc-600 sm:grid-cols-3">
