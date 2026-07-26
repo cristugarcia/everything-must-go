@@ -4,8 +4,10 @@ import {
   Children,
   isValidElement,
   type ReactNode,
+  useEffect,
+  useState,
 } from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 type StaggerProps = {
   children: ReactNode;
@@ -17,7 +19,7 @@ type StaggerProps = {
 const itemVariants = {
   hidden: {
     opacity: 0,
-    y: 20,
+    y: 14,
   },
   visible: {
     opacity: 1,
@@ -29,9 +31,62 @@ export default function Stagger({
   children,
   className = "",
   delay = 0,
-  staggerDelay = 0.07,
+  staggerDelay = 0.04,
 }: StaggerProps) {
   const items = Children.toArray(children);
+  const shouldReduceMotion = useReducedMotion();
+
+  const [isMobile, setIsMobile] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      "(max-width: 767px)"
+    );
+
+    const updateIsMobile = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    updateIsMobile();
+    setHasMounted(true);
+
+    mediaQuery.addEventListener(
+      "change",
+      updateIsMobile
+    );
+
+    return () => {
+      mediaQuery.removeEventListener(
+        "change",
+        updateIsMobile
+      );
+    };
+  }, []);
+
+  // El contenido siempre se muestra durante el primer render.
+  // Así nunca depende de JavaScript para ser visible.
+  if (
+    !hasMounted ||
+    isMobile ||
+    shouldReduceMotion
+  ) {
+    return (
+      <div className={className}>
+        {items.map((child, index) => {
+          const childKey =
+            isValidElement(child) &&
+            child.key != null
+              ? child.key
+              : index;
+
+          return (
+            <div key={childKey}>{child}</div>
+          );
+        })}
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -39,8 +94,8 @@ export default function Stagger({
       initial="hidden"
       whileInView="visible"
       viewport={{
-        once: false,
-        amount: 0.05,
+        once: true,
+        amount: 0.01,
       }}
       variants={{
         hidden: {},
@@ -54,7 +109,8 @@ export default function Stagger({
     >
       {items.map((child, index) => {
         const childKey =
-          isValidElement(child) && child.key != null
+          isValidElement(child) &&
+          child.key != null
             ? child.key
             : index;
 
@@ -63,7 +119,7 @@ export default function Stagger({
             key={childKey}
             variants={itemVariants}
             transition={{
-              duration: 0.4,
+              duration: 0.25,
               ease: "easeOut",
             }}
           >
