@@ -1,4 +1,25 @@
 const en = {
+    shareStory: {
+  movingSale: "Moving Sale",
+  loadingImage: "Preparing image...",
+  openingShare: "Opening options...",
+  shareInstagram: "Share on Instagram",
+
+  prepareFailed:
+    "We couldn't prepare the image. Please try again.",
+
+  sharedSuccess:
+    "Image shared. The link is ready to paste into the sticker.",
+
+  downloadedSuccess:
+    "The image was downloaded. You can upload it manually to Instagram.",
+
+  downloadFallback:
+    "We couldn't open the share menu. The image was downloaded so you can upload it manually.",
+
+  footerText:
+    "See the details and more products at the link",
+},
   metadata: {
     title: "Moving Sale",
     description:
@@ -7,6 +28,13 @@ const en = {
       "Everything must find a new home before I move. Explore the complete catalog of available products.",
   },
 
+  conditions: {
+  nuevo: "New",
+  excelente: "Excellent",
+  "muy bueno": "Very good",
+  bueno: "Good",
+  regular: "Fair",
+},
   navigation: {
     catalog: "Catalog",
     project: "Project",
@@ -68,14 +96,6 @@ projectPreview: {
     "What started as a personal need became a project where I combined web development, automation, and design to build a dynamic catalog that is easy to manage and designed to solve a real problem.",
   projectButton: "View the case study",
   aboutButton: "Learn more about me",
-},
-
-conditions: {
-  excelente: "Excellent",
-  muyBueno: "Very good",
-  bueno: "Good",
-  usado: "Used",
-  nuevo: "New",
 },
 
   productCatalog: {

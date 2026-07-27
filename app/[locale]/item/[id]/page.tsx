@@ -207,12 +207,13 @@ ${productUrl}`;
               )}
 
   <ShareProductStoryButton
-    productId={product.id}
-    name={product.name}
-    formattedPrice={formattedPrice}
-    status={product.status}
-    productUrl={productUrl}
-  />
+  productId={product.id}
+  name={product.name}
+  formattedPrice={formattedPrice}
+  status={product.status}
+  productUrl={productUrl}
+  dictionary={dictionary.shareStory}
+/>
 </div>
 
 {!isSold && (
@@ -287,7 +288,7 @@ ${productUrl}`;
                   </dt>
 
                   <dd className="text-right font-medium text-zinc-950">
-                    {translatedCondition}
+                    {product.condition}
                   </dd>
                 </div>
 

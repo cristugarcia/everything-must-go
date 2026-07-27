@@ -1,4 +1,25 @@
 const es = {
+    shareStory: {
+  movingSale: "Venta por mudanza",
+  loadingImage: "Preparando imagen...",
+  openingShare: "Abriendo opciones...",
+  shareInstagram: "Compartir para Instagram",
+
+  prepareFailed:
+    "No pudimos preparar la imagen. Intenta nuevamente.",
+
+  sharedSuccess:
+    "Imagen compartida. El enlace quedó listo para pegar en el sticker.",
+
+  downloadedSuccess:
+    "La imagen fue descargada. Puedes subirla manualmente a Instagram.",
+
+  downloadFallback:
+    "No se pudo abrir el menú. Descargamos la imagen para que puedas subirla manualmente.",
+
+  footerText:
+    "Mira los detalles y más productos en el enlace",
+},
   metadata: {
     title: "Venta por mudanza",
     description:
@@ -23,6 +44,14 @@ const es = {
     deadlineLabel: "Disponible hasta el",
     deadline: "20 de agosto de 2026",
   },
+
+  conditions: {
+  nuevo: "Nuevo",
+  excelente: "Excelente",
+  "muy bueno": "Muy bueno",
+  bueno: "Bueno",
+  regular: "Regular",
+},
 
   home: {
     eyebrow: "Venta por mudanza",
@@ -72,14 +101,6 @@ subcategories: {
     Barra: "Barra",
     Living: "Living",
     TV: "TV",
-    },
-
-    conditions: {
-    excelente: "Excelente",
-    muyBueno: "Muy bueno",
-    bueno: "Bueno",
-    usado: "Usado",
-     nuevo: "Nuevo",
     },
 
     productCatalog: {
