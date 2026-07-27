@@ -10,11 +10,17 @@ import SiteHeader from "@/components/SiteHeader";
 import StatusBadge from "@/components/StatusBadge";
 import Button from "@/components/ui/Button";
 
+import {
+  isLocale,
+  type Locale,
+} from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/getDictionary";
 import { SITE } from "@/lib/site";
 import { Product } from "@/lib/types";
 
 type Props = {
   params: Promise<{
+    locale: string;
     id: string;
   }>;
 };
@@ -28,7 +34,19 @@ const statusPriority: Record<string, number> = {
 export default async function ProductPage({
   params,
 }: Props) {
-  const { id } = await params;
+  const {
+  locale: localeParam,
+  id,
+} = await params;
+
+if (!isLocale(localeParam)) {
+  notFound();
+}
+
+const locale: Locale = localeParam;
+
+const dictionary =
+  await getDictionary(locale);
 
   const productList = products as Product[];
 
@@ -71,11 +89,14 @@ export default async function ProductPage({
   const isReserved = normalizedStatus === "reservado";
 
   const formattedPrice =
-    product.price > 0
-      ? `$ ${product.price.toLocaleString("es-AR")}`
-      : "Precio a consultar";
+  product.price > 0
+    ? `$ ${product.price.toLocaleString(
+        locale === "es" ? "es-AR" : "en-US"
+      )}`
+    : dictionary.product.priceOnRequest;
 
-  const productUrl = `${SITE.url}/item/${product.id}`;
+  const productUrl =
+  `${SITE.url}/${locale}/item/${product.id}`;
 
   const whatsappMessage = isReserved
     ? `Hola Cristina 👋
@@ -103,11 +124,15 @@ ${productUrl}`;
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
-      <SiteHeader />
+      <SiteHeader
+        locale={locale}
+        dictionary={dictionary}
+        currentPage="proyecto"
+      />
 
       <div className="mx-auto max-w-6xl px-6 py-8 sm:px-8 sm:py-12">
         <Link
-          href="/#productos"
+  href={`/${locale}#productos`}
           className="group inline-flex items-center gap-2 text-sm font-medium text-zinc-500 transition hover:text-zinc-950"
         >
           <span
@@ -117,7 +142,7 @@ ${productUrl}`;
             ←
           </span>
 
-          Volver al catálogo
+          {dictionary.actions.backToCatalog}
         </Link>
 
         <div className="mt-8 grid items-start gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
@@ -139,7 +164,10 @@ ${productUrl}`;
                   : ""}
               </p>
 
-              <StatusBadge status={product.status} />
+              <StatusBadge
+  status={product.status}
+  labels={dictionary.status}
+/>
             </div>
 
             <h1 className="mt-5 text-4xl font-bold tracking-[-0.035em] text-zinc-950 sm:text-5xl lg:text-6xl">
@@ -172,8 +200,8 @@ ${productUrl}`;
                   fullWidth
                 >
                   {isReserved
-                    ? "Consultar por disponibilidad"
-                    : "Consultar por WhatsApp"}
+                    ? dictionary.actions.reserved
+                    : dictionary.actions.whatsapp}
                 </Button>
               )}
 
@@ -319,7 +347,17 @@ ${productUrl}`;
         </div>
 
         <div className="mt-24 border-t border-zinc-200 pt-16">
-          <RelatedProducts products={relatedProducts} />
+          <RelatedProducts
+          products={relatedProducts}
+          locale={locale}
+          dictionary={dictionary.relatedProducts}
+          productCardDictionary={{
+            ...dictionary.productCard,
+            priceOnRequest:
+              dictionary.product.priceOnRequest,
+            status: dictionary.status,
+            }}
+         />
         </div>
       </div>
 

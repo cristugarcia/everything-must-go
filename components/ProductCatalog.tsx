@@ -5,38 +5,109 @@ import { useMemo, useState } from "react";
 import Stagger from "@/components/animations/Stagger";
 import ProductCard from "@/components/ProductCard";
 
-import { Product } from "@/lib/types";
+import type { Locale } from "@/lib/i18n/config";
+import type { Product } from "@/lib/types";
+
+type CatalogDictionary = {
+  searchLabel: string;
+  searchPlaceholder: string;
+  sortLabel: string;
+  sortRecommended: string;
+  sortPriceAsc: string;
+  sortPriceDesc: string;
+  sortName: string;
+
+  statusLabel: string;
+  all: string;
+  available: string;
+  reserved: string;
+  sold: string;
+
+  categoriesLabel: string;
+
+  productSingular: string;
+  productPlural: string;
+  clearFilters: string;
+
+  emptyTitle: string;
+  emptyDescription: string;
+  showAll: string;
+
+  categories: Record<string, string>;
+};
 
 type ProductCatalogProps = {
   products: Product[];
-};
+  locale: Locale;
+  dictionary: {
+    productCatalog: CatalogDictionary;
 
+    productCard: {
+      viewProduct: string;
+      soldOverlay: string;
+      reservedOverlay: string;
+      soldMessage: string;
+      reservedMessage: string;
+    };
+
+    product: {
+      priceOnRequest: string;
+    };
+
+    status: {
+      available: string;
+      reserved: string;
+      sold: string;
+    };
+  };
+};
 const statusPriority: Record<string, number> = {
   disponible: 0,
   reservado: 1,
   vendido: 2,
 };
 
+const statusOptions = [
+  {
+    value: "all",
+    dictionaryKey: "all",
+  },
+  {
+    value: "disponible",
+    dictionaryKey: "available",
+  },
+  {
+    value: "reservado",
+    dictionaryKey: "reserved",
+  },
+  {
+    value: "vendido",
+    dictionaryKey: "sold",
+  },
+] as const;
+
 export default function ProductCatalog({
   products,
+  locale,
+  dictionary,
 }: ProductCatalogProps) {
+  const catalog = dictionary.productCatalog;
+
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] =
-    useState("Todos");
+    useState("all");
   const [selectedStatus, setSelectedStatus] =
-    useState("Todos");
+    useState("all");
   const [sortBy, setSortBy] = useState("default");
 
   const categories = useMemo(() => {
-    const uniqueCategories = Array.from(
+    return Array.from(
       new Set(
         products
           .map((product) => product.category)
           .filter(Boolean)
       )
     );
-
-    return ["Todos", ...uniqueCategories];
   }, [products]);
 
   const filteredProducts = useMemo(() => {
@@ -46,7 +117,7 @@ export default function ProductCatalog({
 
     const filtered = products.filter((product) => {
       const matchesCategory =
-        selectedCategory === "Todos" ||
+        selectedCategory === "all" ||
         product.category === selectedCategory;
 
       const normalizedStatus = product.status
@@ -54,9 +125,8 @@ export default function ProductCatalog({
         .toLowerCase();
 
       const matchesStatus =
-        selectedStatus === "Todos" ||
-        normalizedStatus ===
-          selectedStatus.toLowerCase();
+        selectedStatus === "all" ||
+        normalizedStatus === selectedStatus;
 
       const searchableText = [
         product.name,
@@ -95,7 +165,10 @@ export default function ProductCatalog({
 
       case "name":
         return [...filtered].sort((a, b) =>
-          a.name.localeCompare(b.name, "es")
+          a.name.localeCompare(
+            b.name,
+            locale === "es" ? "es-AR" : "en-US"
+          )
         );
 
       default:
@@ -120,19 +193,20 @@ export default function ProductCatalog({
     selectedCategory,
     selectedStatus,
     sortBy,
+    locale,
   ]);
 
   const clearFilters = () => {
     setSearch("");
-    setSelectedCategory("Todos");
-    setSelectedStatus("Todos");
+    setSelectedCategory("all");
+    setSelectedStatus("all");
     setSortBy("default");
   };
 
   const hasActiveFilters =
     search.trim() !== "" ||
-    selectedCategory !== "Todos" ||
-    selectedStatus !== "Todos" ||
+    selectedCategory !== "all" ||
+    selectedStatus !== "all" ||
     sortBy !== "default";
 
   const staggerKey = filteredProducts
@@ -146,7 +220,7 @@ export default function ProductCatalog({
           htmlFor="product-search"
           className="text-sm font-medium text-zinc-700"
         >
-          Buscar productos
+          {catalog.searchLabel}
         </label>
 
         <div className="relative mt-3">
@@ -161,7 +235,7 @@ export default function ProductCatalog({
             onChange={(event) =>
               setSearch(event.target.value)
             }
-            placeholder="Buscar sofá, televisión, moto..."
+            placeholder={catalog.searchPlaceholder}
             className="w-full rounded-2xl border border-zinc-300 bg-white py-4 pl-12 pr-4 text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-black"
           />
         </div>
@@ -171,7 +245,7 @@ export default function ProductCatalog({
             htmlFor="sort"
             className="text-sm font-medium text-zinc-700"
           >
-            Ordenar por
+            {catalog.sortLabel}
           </label>
 
           <select
@@ -183,44 +257,39 @@ export default function ProductCatalog({
             className="mt-2 w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-zinc-900 outline-none transition focus:border-black"
           >
             <option value="default">
-              Recomendados
+              {catalog.sortRecommended}
             </option>
 
             <option value="price-asc">
-              Precio: menor a mayor
+              {catalog.sortPriceAsc}
             </option>
 
             <option value="price-desc">
-              Precio: mayor a menor
+              {catalog.sortPriceDesc}
             </option>
 
             <option value="name">
-              Nombre A-Z
+              {catalog.sortName}
             </option>
           </select>
         </div>
 
         <div className="mt-6">
           <p className="text-sm font-medium text-zinc-700">
-            Estado
+            {catalog.statusLabel}
           </p>
 
           <div className="mt-3 flex flex-wrap gap-2">
-            {[
-              "Todos",
-              "Disponible",
-              "Reservado",
-              "Vendido",
-            ].map((status) => {
+            {statusOptions.map((status) => {
               const isSelected =
-                selectedStatus === status;
+                selectedStatus === status.value;
 
               return (
                 <button
-                  key={status}
+                  key={status.value}
                   type="button"
                   onClick={() =>
-                    setSelectedStatus(status)
+                    setSelectedStatus(status.value)
                   }
                   className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                     isSelected
@@ -228,7 +297,7 @@ export default function ProductCatalog({
                       : "border border-zinc-300 bg-white text-zinc-700 hover:border-black hover:text-black"
                   }`}
                 >
-                  {status}
+                  {catalog[status.dictionaryKey]}
                 </button>
               );
             })}
@@ -237,10 +306,24 @@ export default function ProductCatalog({
 
         <div className="mt-6">
           <p className="text-sm font-medium text-zinc-700">
-            Categorías
+            {catalog.categoriesLabel}
           </p>
 
           <div className="mt-3 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() =>
+                setSelectedCategory("all")
+              }
+              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                selectedCategory === "all"
+                  ? "bg-black text-white"
+                  : "border border-zinc-300 bg-white text-zinc-700 hover:border-black hover:text-black"
+              }`}
+            >
+              {catalog.all}
+            </button>
+
             {categories.map((category) => {
               const isSelected =
                 selectedCategory === category;
@@ -258,7 +341,8 @@ export default function ProductCatalog({
                       : "border border-zinc-300 bg-white text-zinc-700 hover:border-black hover:text-black"
                   }`}
                 >
-                  {category}
+                  {catalog.categories[category] ??
+                    category}
                 </button>
               );
             })}
@@ -268,9 +352,10 @@ export default function ProductCatalog({
 
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <p className="text-sm text-zinc-500">
+          {filteredProducts.length}{" "}
           {filteredProducts.length === 1
-            ? "1 producto"
-            : `${filteredProducts.length} productos`}
+            ? catalog.productSingular
+            : catalog.productPlural}
         </p>
 
         {hasActiveFilters && (
@@ -279,7 +364,7 @@ export default function ProductCatalog({
             onClick={clearFilters}
             className="text-sm font-medium text-zinc-600 underline underline-offset-4 transition hover:text-black"
           >
-            Limpiar filtros
+            {catalog.clearFilters}
           </button>
         )}
       </div>
@@ -288,12 +373,19 @@ export default function ProductCatalog({
         <Stagger
           key={staggerKey}
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-          staggerDelay={0.07}
+          staggerDelay={0.04}
         >
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
+              locale={locale}
+              dictionary={{
+                ...dictionary.productCard,
+                priceOnRequest:
+              dictionary.product.priceOnRequest,
+              status: dictionary.status,
+             }}
             />
           ))}
         </Stagger>
@@ -302,11 +394,11 @@ export default function ProductCatalog({
           <div className="text-5xl">🔎</div>
 
           <h3 className="mt-5 text-2xl font-semibold text-zinc-900">
-            No encontramos productos
+            {catalog.emptyTitle}
           </h3>
 
           <p className="mt-2 text-zinc-500">
-            Prueba con otra palabra o elimina los filtros.
+            {catalog.emptyDescription}
           </p>
 
           <button
@@ -314,7 +406,7 @@ export default function ProductCatalog({
             onClick={clearFilters}
             className="mt-6 rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-800"
           >
-            Ver todos los productos
+            {catalog.showAll}
           </button>
         </div>
       )}

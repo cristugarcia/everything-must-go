@@ -1,25 +1,19 @@
 import "server-only";
 
 import type { Locale } from "./config";
+import es from "./dictionaries/es";
+import en from "./dictionaries/en";
 
 const dictionaries = {
-  es: () =>
-    import("./dictionaries/es").then(
-      (module) => module.default
-    ),
-
-  en: () =>
-    import("./dictionaries/en").then(
-      (module) => module.default
-    ),
+  es,
+  en,
 };
+
+export type Dictionary =
+  (typeof dictionaries)[Locale];
 
 export async function getDictionary(
   locale: Locale
-) {
-  return dictionaries[locale]();
+): Promise<Dictionary> {
+  return dictionaries[locale];
 }
-
-export type Dictionary = Awaited<
-  ReturnType<typeof getDictionary>
->;
