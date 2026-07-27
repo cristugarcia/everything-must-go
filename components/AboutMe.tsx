@@ -1,25 +1,5 @@
 import Link from "next/link";
 
-type Props = {
-  locale: string;
-  dictionary: {
-    projectButton: string;
-    aboutButton: string;
-  };
-};
-
-export default function AboutMe({ locale }: Props) {
-  return (
-    <section>
-      {/* resto del contenido */}
-
-      <Link href={`/${locale}/sobre-mi`}>
-         {dictionary.aboutButton} →
-      </Link>
-    </section>
-  );
-}
-
 const skills = [
   "Finanzas",
   "Operaciones",

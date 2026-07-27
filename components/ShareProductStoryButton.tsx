@@ -12,6 +12,19 @@ type ShareProductStoryButtonProps = {
   formattedPrice: string;
   status: string;
   productUrl: string;
+  dictionary: {
+    movingSale: string;
+    loadingImage: string;
+    openingShare: string;
+    shareInstagram: string;
+
+    prepareFailed: string;
+    sharedSuccess: string;
+    downloadedSuccess: string;
+    downloadFallback: string;
+
+    footerText: string;
+  };
 };
 
 const STORY_WIDTH = 1080;
@@ -209,6 +222,7 @@ export default function ShareProductStoryButton({
   formattedPrice,
   status,
   productUrl,
+  dictionary,
 }: ShareProductStoryButtonProps) {
   const [storyFile, setStoryFile] =
     useState<File | null>(null);
@@ -274,11 +288,10 @@ export default function ShareProductStoryButton({
           "400 30px Arial, sans-serif";
 
         context.fillText(
-          "Venta por mudanza",
-          72,
-          150
+        dictionary.movingSale,
+        72,
+        150
         );
-
         // Contenedor de la foto
         const imageX = 72;
         const imageY = 220;
@@ -411,9 +424,9 @@ export default function ShareProductStoryButton({
           "400 28px Arial, sans-serif";
 
         context.fillText(
-          "Mira los detalles y más productos en el enlace",
-          72,
-          1830
+        dictionary.footerText,
+        72,
+        1830
         );
 
         context.fillStyle = "#18181B";
@@ -455,9 +468,7 @@ export default function ShareProductStoryButton({
           error
         );
 
-        setMessage(
-          "No pudimos preparar la imagen. Intenta nuevamente."
-        );
+        setMessage(dictionary.prepareFailed);
       } finally {
         setIsPreparing(false);
       }
@@ -531,18 +542,14 @@ export default function ShareProductStoryButton({
           files: [storyFile],
         });
 
-        setMessage(
-          "Imagen compartida. El enlace quedó listo para pegar en el sticker."
-        );
+        setMessage(dictionary.sharedSuccess);
 
         return;
       }
 
       downloadStory(storyFile);
 
-      setMessage(
-        "La imagen fue descargada. Puedes subirla manualmente a Instagram."
-      );
+      setMessage(dictionary.downloadedSuccess);
     } catch (error) {
       if (
         error instanceof DOMException &&
@@ -558,9 +565,7 @@ export default function ShareProductStoryButton({
 
       downloadStory(storyFile);
 
-      setMessage(
-        "No se pudo abrir el menú. Descargamos la imagen para que puedas subirla manualmente."
-      );
+      setMessage(dictionary.downloadFallback);
     } finally {
       setIsSharing(false);
     }
@@ -609,10 +614,10 @@ export default function ShareProductStoryButton({
         </svg>
 
         {isPreparing
-          ? "Preparando imagen..."
-          : isSharing
-            ? "Abriendo opciones..."
-            : "Compartir para Instagram"}
+        ? dictionary.loadingImage
+        : isSharing
+            ? dictionary.openingShare
+            : dictionary.shareInstagram}
       </button>
 
       {message && (
