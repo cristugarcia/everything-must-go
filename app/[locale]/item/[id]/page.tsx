@@ -158,7 +158,9 @@ ${productUrl}`;
           <section>
             <div className="flex flex-wrap items-center gap-3">
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">
-                {product.category}
+                {dictionary.productCatalog.categories[
+  product.category as keyof typeof dictionary.productCatalog.categories
+] ?? product.category}
                 {product.subcategory
                   ? ` · ${product.subcategory}`
                   : ""}
@@ -180,8 +182,7 @@ ${productUrl}`;
 
             {isReserved && (
               <p className="mt-4 max-w-xl leading-7 text-amber-700">
-                Este artículo está reservado actualmente, pero puedes
-                consultarme por si vuelve a estar disponible.
+                {dictionary.product.messages.reserved}
               </p>
             )}
 
@@ -189,7 +190,7 @@ ${productUrl}`;
             <div className="mt-8">
             {isSold ? (
                 <div className="rounded-3xl border border-red-200 bg-red-50 px-6 py-5 text-center font-medium text-red-700">
-                  Este artículo ya fue vendido.
+                  {dictionary.product.messages.sold}
                 </div>
               ) : (
                 <Button
@@ -214,45 +215,44 @@ ${productUrl}`;
   />
 </div>
 
-            {!isSold && (
-              <div className="mt-5 grid grid-cols-1 gap-3 text-sm text-zinc-600 sm:grid-cols-3">
-                <div className="rounded-2xl bg-zinc-50 px-4 py-4">
-                  <p className="font-semibold text-zinc-900">
-                    Consulta directa
-                  </p>
+{!isSold && (
+  <div className="mt-5 grid grid-cols-1 gap-3 text-sm text-zinc-600 sm:grid-cols-3">
+    <div className="rounded-2xl bg-zinc-50 px-4 py-4">
+      <p className="font-semibold text-zinc-900">
+        {dictionary.product.infoCards.contactTitle}
+      </p>
 
-                  <p className="mt-1 leading-5">
-                    Escríbeme por WhatsApp.
-                  </p>
-                </div>
+      <p className="mt-1 leading-5">
+        {dictionary.product.infoCards.contactDescription}
+      </p>
+    </div>
 
-                <div className="rounded-2xl bg-zinc-50 px-4 py-4">
-                  <p className="font-semibold text-zinc-900">
-                    Estado actualizado
-                  </p>
+    <div className="rounded-2xl bg-zinc-50 px-4 py-4">
+      <p className="font-semibold text-zinc-900">
+        {dictionary.product.infoCards.availabilityTitle}
+      </p>
 
-                  <p className="mt-1 leading-5">
-                    La disponibilidad se mantiene al día.
-                  </p>
-                </div>
+      <p className="mt-1 leading-5">
+        {dictionary.product.infoCards.availabilityDescription}
+      </p>
+    </div>
 
-                <div className="rounded-2xl bg-zinc-50 px-4 py-4">
-                  <p className="font-semibold text-zinc-900">
-                    Buenos Aires
-                  </p>
+    <div className="rounded-2xl bg-zinc-50 px-4 py-4">
+      <p className="font-semibold text-zinc-900">
+        {dictionary.product.infoCards.locationTitle}
+      </p>
 
-                  <p className="mt-1 leading-5">
-                    Coordinamos retiro o entrega.
-                  </p>
-                </div>
-              </div>
-            )}
-
+      <p className="mt-1 leading-5">
+        {dictionary.product.infoCards.locationDescription}
+      </p>
+    </div>
+  </div>
+)}
             {/* Detalles */}
             <div className="mt-10 overflow-hidden rounded-3xl border border-zinc-200 bg-white">
               <div className="border-b border-zinc-200 bg-zinc-50 px-6 py-4">
                 <h2 className="font-semibold text-zinc-950">
-                  Detalles del producto
+                  {dictionary.product.details}
                 </h2>
               </div>
 
@@ -260,7 +260,7 @@ ${productUrl}`;
                 {product.brand && (
                   <div className="flex justify-between gap-6 py-4">
                     <dt className="text-zinc-500">
-                      Marca
+                      {dictionary.product.brand}
                     </dt>
 
                     <dd className="text-right font-medium text-zinc-950">
@@ -272,7 +272,7 @@ ${productUrl}`;
                 {product.model && (
                   <div className="flex justify-between gap-6 py-4">
                     <dt className="text-zinc-500">
-                      Modelo
+                      {dictionary.product.model}
                     </dt>
 
                     <dd className="text-right font-medium text-zinc-950">
@@ -283,17 +283,17 @@ ${productUrl}`;
 
                 <div className="flex justify-between gap-6 py-4">
                   <dt className="text-zinc-500">
-                    Condición
+                    {dictionary.product.condition}
                   </dt>
 
                   <dd className="text-right font-medium text-zinc-950">
-                    {product.condition}
+                    {translatedCondition}
                   </dd>
                 </div>
 
                 <div className="flex justify-between gap-6 py-4">
                   <dt className="text-zinc-500">
-                    Cantidad
+                    {dictionary.product.quantity}
                   </dt>
 
                   <dd className="text-right font-medium text-zinc-950">
@@ -304,7 +304,7 @@ ${productUrl}`;
                 {product.purchaseYear && (
                   <div className="flex justify-between gap-6 py-4">
                     <dt className="text-zinc-500">
-                      Año de compra
+                      {dictionary.product.purchaseYear}
                     </dt>
 
                     <dd className="text-right font-medium text-zinc-950">
@@ -316,7 +316,7 @@ ${productUrl}`;
                 {product.location && (
                   <div className="flex justify-between gap-6 py-4">
                     <dt className="text-zinc-500">
-                      Ubicación
+                      {dictionary.product.location}
                     </dt>
 
                     <dd className="text-right font-medium text-zinc-950">
@@ -331,11 +331,11 @@ ${productUrl}`;
             {product.publicDescription && (
               <div className="mt-10 border-t border-zinc-200 pt-10">
                 <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">
-                  Descripción
+                  {dictionary.product.description}
                 </p>
 
                 <h2 className="mt-3 text-2xl font-bold tracking-tight text-zinc-950">
-                  Sobre este producto
+                  {dictionary.product.aboutProduct}
                 </h2>
 
                 <p className="mt-4 whitespace-pre-line text-lg leading-8 text-zinc-600">
@@ -348,16 +348,15 @@ ${productUrl}`;
 
         <div className="mt-24 border-t border-zinc-200 pt-16">
           <RelatedProducts
-          products={relatedProducts}
-          locale={locale}
-          dictionary={dictionary.relatedProducts}
-          productCardDictionary={{
-            ...dictionary.productCard,
-            priceOnRequest:
-              dictionary.product.priceOnRequest,
-            status: dictionary.status,
+            products={relatedProducts}
+            locale={locale}
+            dictionary={dictionary.relatedProducts}
+            productCardDictionary={{
+              ...dictionary.productCard,
+              priceOnRequest: dictionary.product.priceOnRequest,
+              status: dictionary.status,
             }}
-         />
+          />
         </div>
       </div>
 
