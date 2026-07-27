@@ -469,8 +469,14 @@ export default function ShareProductStoryButton({
     ]);
 
   useEffect(() => {
+  const timeoutId = window.setTimeout(() => {
     void createStoryFile();
-  }, [createStoryFile]);
+  }, 0);
+
+  return () => {
+    window.clearTimeout(timeoutId);
+  };
+}, [createStoryFile]);
 
   function downloadStory(file: File) {
     const fileUrl =
