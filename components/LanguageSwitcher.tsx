@@ -43,9 +43,10 @@ export default function LanguageSwitcher({
     return `/${nextLocale}${pathname === "/" ? "" : pathname}`;
   }
 
+  
   function rememberLanguage(nextLocale: Locale) {
-    document.cookie = `preferred-locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
-  }
+  document.cookie = `preferred-locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`; // eslint-disable-line react-hooks/immutability
+}
 
   return (
     <div

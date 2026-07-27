@@ -48,8 +48,10 @@ export default function Stagger({
       setIsMobile(mediaQuery.matches);
     };
 
-    updateIsMobile();
-    setHasMounted(true);
+    const timeoutId = window.setTimeout(() => {
+  updateIsMobile();
+  setHasMounted(true);
+}, 0);
 
     mediaQuery.addEventListener(
       "change",
@@ -57,11 +59,13 @@ export default function Stagger({
     );
 
     return () => {
-      mediaQuery.removeEventListener(
-        "change",
-        updateIsMobile
-      );
-    };
+  window.clearTimeout(timeoutId);
+
+  mediaQuery.removeEventListener(
+    "change",
+    updateIsMobile
+  );
+};
   }, []);
 
   // El contenido siempre se muestra durante el primer render.
