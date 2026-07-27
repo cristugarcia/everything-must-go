@@ -59,6 +59,25 @@ const en = {
     "You can ask in case it becomes available again.",
 },
 
+projectPreview: {
+  eyebrow: "Behind the project",
+  title: "More than a moving sale.",
+  paragraph1:
+    "Everything Must Go began as a way to organize the sale of my belongings before an international move.",
+  paragraph2:
+    "What started as a personal need became a project where I combined web development, automation, and design to build a dynamic catalog that is easy to manage and designed to solve a real problem.",
+  projectButton: "View the case study",
+  aboutButton: "Learn more about me",
+},
+
+conditions: {
+  excelente: "Excellent",
+  muyBueno: "Very good",
+  bueno: "Good",
+  usado: "Used",
+  nuevo: "New",
+},
+
   productCatalog: {
     searchLabel: "Search products",
     searchPlaceholder:
@@ -379,18 +398,40 @@ const en = {
   },
 
   product: {
-    details: "Product details",
-    description: "Description",
-    aboutProduct: "About this product",
-    brand: "Brand",
-    model: "Model",
-    condition: "Condition",
-    quantity: "Quantity",
-    purchaseYear: "Year purchased",
-    location: "Location",
-    priceOnRequest: "Price on request",
+  details: "Product details",
+  description: "Description",
+  aboutProduct: "About this product",
+  brand: "Brand",
+  model: "Model",
+  condition: "Condition",
+  quantity: "Quantity",
+  purchaseYear: "Year purchased",
+  location: "Location",
+  priceOnRequest: "Price on request",
+
+  messages: {
+    reserved:
+      "This item is currently reserved, but feel free to ask in case it becomes available again.",
+    sold:
+      "This item has already been sold.",
   },
-  relatedProducts: {
+
+  infoCards: {
+    contactTitle: "Direct contact",
+    contactDescription:
+      "Send me a message on WhatsApp.",
+
+    availabilityTitle: "Live availability",
+    availabilityDescription:
+      "Availability is kept up to date.",
+
+    locationTitle: "Buenos Aires",
+    locationDescription:
+      "Pickup or delivery available.",
+  },
+},
+
+relatedProducts: {
   eyebrow: "You may also like",
   title: "Related products",
 },

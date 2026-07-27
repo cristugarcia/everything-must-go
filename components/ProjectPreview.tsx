@@ -9,7 +9,22 @@ const technologies = [
   "Vercel",
 ];
 
-export default function ProjectPreview() {
+type Props = {
+  locale: string;
+  dictionary: {
+    eyebrow: string;
+    title: string;
+    paragraph1: string;
+    paragraph2: string;
+    projectButton: string;
+    aboutButton: string;
+  };
+};
+
+export default function ProjectPreview({
+  locale,
+  dictionary,
+}: Props) {
   return (
     <section className="border-t border-zinc-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-24 lg:py-28">
@@ -17,26 +32,22 @@ export default function ProjectPreview() {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">
-                Detrás del proyecto
+                {dictionary.eyebrow}
               </p>
 
               <h2 className="mt-3 max-w-xl text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">
-                Más que una venta por mudanza.
+                {dictionary.title}
               </h2>
             </div>
 
             <div>
               <div className="space-y-5 text-lg leading-8 text-zinc-600">
                 <p>
-                  Everything Must Go nació como una forma de organizar la venta
-                  de todas mis pertenencias antes de una mudanza internacional.
+                  {dictionary.paragraph1}
                 </p>
 
                 <p>
-                  Lo que comenzó como una necesidad personal terminó
-                  convirtiéndose en un proyecto donde combiné desarrollo web,
-                  automatización y diseño para construir un catálogo dinámico,
-                  fácil de administrar y pensado para resolver un problema real.
+                  {dictionary.paragraph2}
                 </p>
               </div>
 
@@ -58,15 +69,15 @@ export default function ProjectPreview() {
               </div>
 
               <div className="mt-9 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-                <Button href="/proyecto" size="lg">
-                  Conocer el caso de estudio
+                <Button href={`/${locale}/proyecto`} size="lg">
+                  {dictionary.projectButton}
                 </Button>
 
                 <Link
-                  href="/sobre-mi"
+                  href={`/${locale}/sobre-mi`}
                   className="group inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 transition hover:text-zinc-950"
                 >
-                  Conoce un poco más sobre mí
+                  {dictionary.aboutButton}
 
                   <span
                     aria-hidden="true"

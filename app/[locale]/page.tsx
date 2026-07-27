@@ -189,7 +189,10 @@ export default async function Home({
       </Section>
 
       {/* Proyecto */}
-      <ProjectPreview />
+      <ProjectPreview
+        locale={locale}
+        dictionary={dictionary.projectPreview}
+        />
 
       {/* Footer */}
       <SiteFooter variant="catalogo" />

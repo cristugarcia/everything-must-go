@@ -57,8 +57,32 @@ const es = {
   reservedMessage:
     "Puedes consultar por si vuelve a estar disponible.",
 },
+    projectPreview: {
+  eyebrow: "Detrás del proyecto",
+  title: "Más que una venta por mudanza.",
+  paragraph1:
+    "Everything Must Go nació como una forma de organizar la venta de todas mis pertenencias antes de una mudanza internacional.",
+  paragraph2:
+    "Lo que comenzó como una necesidad personal terminó convirtiéndose en un proyecto donde combiné desarrollo web, automatización y diseño para construir un catálogo dinámico, fácil de administrar y pensado para resolver un problema real.",
+  projectButton: "Conocer el caso de estudio",
+  aboutButton: "Conoce un poco más sobre mí",
+},
 
-  productCatalog: {
+subcategories: {
+    Barra: "Barra",
+    Living: "Living",
+    TV: "TV",
+    },
+
+    conditions: {
+    excelente: "Excelente",
+    muyBueno: "Muy bueno",
+    bueno: "Bueno",
+    usado: "Usado",
+     nuevo: "Nuevo",
+    },
+
+    productCatalog: {
     searchLabel: "Buscar productos",
     searchPlaceholder: "Buscar sofá, televisión, moto...",
     sortLabel: "Ordenar por",
@@ -376,18 +400,39 @@ const es = {
   },
 
   product: {
-    details: "Detalles del producto",
-    description: "Descripción",
-    aboutProduct: "Sobre este producto",
-    brand: "Marca",
-    model: "Modelo",
-    condition: "Condición",
-    quantity: "Cantidad",
-    purchaseYear: "Año de compra",
-    location: "Ubicación",
-    priceOnRequest: "Precio a consultar",
+  details: "Detalles del producto",
+  description: "Descripción",
+  aboutProduct: "Sobre este producto",
+  brand: "Marca",
+  model: "Modelo",
+  condition: "Condición",
+  quantity: "Cantidad",
+  purchaseYear: "Año de compra",
+  location: "Ubicación",
+  priceOnRequest: "Precio a consultar",
+
+  messages: {
+    reserved:
+      "Este artículo está reservado actualmente, pero puedes consultarme por si vuelve a estar disponible.",
+    sold:
+      "Este artículo ya fue vendido.",
   },
-  relatedProducts: {
+
+  infoCards: {
+    contactTitle: "Consulta directa",
+    contactDescription: "Escríbeme por WhatsApp.",
+
+    availabilityTitle: "Estado actualizado",
+    availabilityDescription:
+      "La disponibilidad se mantiene al día.",
+
+    locationTitle: "Buenos Aires",
+    locationDescription:
+      "Coordinamos retiro o entrega.",
+  },
+},
+
+relatedProducts: {
   eyebrow: "También te puede interesar",
   title: "Productos relacionados",
 },
