@@ -43,7 +43,7 @@ export default function SiteHeader({
             className="shrink-0 font-bold tracking-tight text-zinc-900"
           >
             <span className="text-lg sm:hidden">
-              Everithing must Go
+              Everithing Must Go
             </span>
 
             <span className="hidden text-lg sm:inline">
