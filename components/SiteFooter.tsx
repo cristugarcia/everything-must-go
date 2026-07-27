@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { SITE } from "@/lib/site";
 
 type SiteFooterProps = {
@@ -8,9 +9,12 @@ type SiteFooterProps = {
 export default function SiteFooter({
   variant = "portfolio",
 }: SiteFooterProps) {
+  const whatsappMessage =
+    "Hola Cristina 👋 Vi tu catálogo de Everything Must Go y quería hacerte una consulta.";
+
   const whatsappUrl = `https://wa.me/${
-  SITE.whatsapp.number
-}?text=${encodeURIComponent(SITE.whatsapp.message)}`;
+    SITE.whatsapp.number
+  }?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <footer className="bg-zinc-950 text-white">

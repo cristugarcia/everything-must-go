@@ -1,9 +1,17 @@
+type StatusLabels = {
+  available: string;
+  reserved: string;
+  sold: string;
+};
+
 type StatusBadgeProps = {
   status: string;
+  labels: StatusLabels;
 };
 
 export default function StatusBadge({
   status,
+  labels,
 }: StatusBadgeProps) {
   const normalizedStatus = status
     .trim()
@@ -11,10 +19,10 @@ export default function StatusBadge({
 
   const displayStatus =
     normalizedStatus === "vendido"
-      ? "Vendido"
+      ? labels.sold
       : normalizedStatus === "reservado"
-        ? "Reservado"
-        : "Disponible";
+        ? labels.reserved
+        : labels.available;
 
   const styles =
     normalizedStatus === "vendido"

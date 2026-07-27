@@ -67,7 +67,11 @@ export default async function Home({
 
   return (
     <main className="min-h-screen bg-white">
-      <SiteHeader currentPage="catalogo" />
+      <SiteHeader
+  locale={locale}
+  dictionary={dictionary}
+  currentPage="catalogo"
+/>
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden border-b border-zinc-100 bg-white">
@@ -178,7 +182,9 @@ export default async function Home({
         className="scroll-mt-8"
       >
         <ProductCatalog
-          products={publishedProducts}
+        products={publishedProducts}
+        locale={locale}
+        dictionary={dictionary}
         />
       </Section>
 

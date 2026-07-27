@@ -1,15 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import StatusBadge from "@/components/StatusBadge";
+
+import type { Locale } from "@/lib/i18n/config";
 import { Product } from "@/lib/types";
-import { formatPrice } from "@/lib/utils";
+
+type ProductCardDictionary = {
+  viewProduct: string;
+  soldOverlay: string;
+  reservedOverlay: string;
+  soldMessage: string;
+  reservedMessage: string;
+  priceOnRequest: string;
+  status: {
+    available: string;
+    reserved: string;
+    sold: string;
+  };
+};
 
 type ProductCardProps = {
   product: Product;
+  locale: Locale;
+  dictionary: ProductCardDictionary;
 };
 
 export default function ProductCard({
   product,
+  locale,
+  dictionary,
 }: ProductCardProps) {
   const image = product.images?.[0];
 
@@ -21,11 +41,18 @@ export default function ProductCard({
   const isReserved =
     normalizedStatus === "reservado";
 
+  const formattedPrice =
+    product.price > 0
+      ? `$ ${product.price.toLocaleString(
+          locale === "es" ? "es-AR" : "en-US"
+        )}`
+      : dictionary.priceOnRequest;
+
   return (
     <Link
-      href={`/item/${product.id}`}
+      href={`/${locale}/item/${product.id}`}
       className="group block h-full"
-      aria-label={`Ver ${product.name}`}
+      aria-label={`${dictionary.viewProduct} ${product.name}`}
     >
       <article
         className={[
@@ -70,13 +97,16 @@ export default function ProductCard({
           )}
 
           <div className="absolute left-4 top-4">
-            <StatusBadge status={product.status} />
+              <StatusBadge
+  status={product.status}
+  labels={dictionary.status}
+/>
           </div>
 
           {isSold && (
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="rounded-full bg-black/80 px-5 py-2 text-sm font-bold uppercase tracking-[0.2em] text-white">
-                Vendido
+                {dictionary.soldOverlay}
               </span>
             </div>
           )}
@@ -84,7 +114,7 @@ export default function ProductCard({
           {isReserved && (
             <div className="absolute bottom-4 left-4 right-4">
               <div className="rounded-2xl bg-white/95 px-4 py-3 text-center text-sm font-medium text-amber-800 shadow-sm backdrop-blur">
-                Reservado, pero puedes consultar
+                {dictionary.reservedOverlay}
               </div>
             </div>
           )}
@@ -107,24 +137,27 @@ export default function ProductCard({
                 : "text-zinc-900",
             ].join(" ")}
           >
-            {formatPrice(product.price)}
+            {formattedPrice}
           </p>
 
           {!isSold && !isReserved && (
             <div className="mt-5">
-              <StatusBadge status={product.status} />
+              <StatusBadge
+  status={product.status}
+  labels={dictionary.status}
+/>
             </div>
           )}
 
           {isSold && (
             <p className="mt-5 text-sm font-medium text-zinc-500">
-              Este producto ya no está disponible.
+              {dictionary.soldMessage}
             </p>
           )}
 
           {isReserved && (
             <p className="mt-5 text-sm font-medium text-amber-700">
-              Puedes consultar por si vuelve a estar disponible.
+              {dictionary.reservedMessage}
             </p>
           )}
         </div>
