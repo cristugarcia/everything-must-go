@@ -24,12 +24,14 @@ type ProductCardProps = {
   product: Product;
   locale: Locale;
   dictionary: ProductCardDictionary;
+  categories: Record<string, string>;
 };
 
 export default function ProductCard({
   product,
   locale,
   dictionary,
+  categories,
 }: ProductCardProps) {
   const image = product.images?.[0];
 
@@ -47,6 +49,10 @@ export default function ProductCard({
           locale === "es" ? "es-AR" : "en-US"
         )}`
       : dictionary.priceOnRequest;
+
+    const translatedCategory =
+      categories[product.category] ??
+      product.category;
 
   return (
     <Link
@@ -122,7 +128,7 @@ export default function ProductCard({
 
         <div className="p-6">
           <p className="text-sm font-medium uppercase tracking-[0.15em] text-zinc-400">
-            {product.category}
+            {translatedCategory}
           </p>
 
           <h3 className="mt-2 text-xl font-semibold text-zinc-900">

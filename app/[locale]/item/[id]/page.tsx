@@ -349,15 +349,17 @@ ${productUrl}`;
 
         <div className="mt-24 border-t border-zinc-200 pt-16">
           <RelatedProducts
-            products={relatedProducts}
-            locale={locale}
-            dictionary={dictionary.relatedProducts}
-            productCardDictionary={{
-              ...dictionary.productCard,
-              priceOnRequest: dictionary.product.priceOnRequest,
-              status: dictionary.status,
-            }}
-          />
+          products={relatedProducts}
+          locale={locale}
+          dictionary={{
+            eyebrow: dictionary.relatedProducts.eyebrow,
+            title: dictionary.relatedProducts.title,
+            ...dictionary.productCard,
+            priceOnRequest: dictionary.product.priceOnRequest,
+            status: dictionary.status,
+          }}
+          categories={dictionary.productCatalog.categories}
+        />
         </div>
       </div>
 

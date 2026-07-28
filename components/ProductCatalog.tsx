@@ -386,6 +386,7 @@ export default function ProductCatalog({
               dictionary.product.priceOnRequest,
               status: dictionary.status,
              }}
+             categories={catalog.categories}
             />
           ))}
         </Stagger>
