@@ -152,7 +152,8 @@ projectPreview: {
       "Finance, operations, and technology to solve real-world problems.",
     description:
       "I’m Cristina García Mijares, a finance and operations professional with experience in international companies and a strong interest in automation and digital solution development.",
-  },
+    imageAlt: "Cristina García Mijares smiling with her dog Kala in a park"
+    },
 
   story: {
     eyebrow: "My story",

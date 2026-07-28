@@ -5,6 +5,13 @@ import {
 } from "next/font/google";
 
 import "./globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(
+    "https://everything-must-go-cyan.vercel.app"
+  ),
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

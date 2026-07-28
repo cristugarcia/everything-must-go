@@ -185,7 +185,7 @@
     "quantity": 1,
     "price": 0,
     "minimumPrice": 17400000,
-    "originalPrice": 10000000,
+    "originalPrice": 19795000,
     "condition": "Muy bueno",
     "privateNotes": "Roman, Noe",
     "images": [
@@ -198,7 +198,7 @@
     "id": "EMG-0010",
     "sku": "ELE-003",
     "publish": true,
-    "status": "Reservado",
+    "status": "Vendido",
     "category": "Electrodomésticos",
     "subcategory": "Cocina",
     "name": "Freidora de aire Maverick 6,5 L",

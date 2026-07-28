@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -30,6 +31,16 @@ export async function generateMetadata({
   const dictionary = await getDictionary(locale);
   const metadata = dictionary.aboutPage.metadata;
 
+  const socialImage =
+    locale === "es"
+      ? "/brand/emg-share-es.png"
+      : "/brand/emg-share-en.png";
+
+  const socialImageAlt =
+    locale === "es"
+      ? "Everything Must Go — catálogo, producto digital y portfolio"
+      : "Everything Must Go — catalog, digital product and portfolio";
+
   return {
     title: metadata.title,
     description: metadata.description,
@@ -43,9 +54,27 @@ export async function generateMetadata({
     },
 
     openGraph: {
+      type: "website",
+      siteName: "Everything Must Go",
+      locale: locale === "es" ? "es_AR" : "en_US",
       title: metadata.openGraphTitle,
       description: metadata.openGraphDescription,
       url: `/${locale}/sobre-mi`,
+      images: [
+        {
+          url: socialImage,
+          width: 1200,
+          height: 630,
+          alt: socialImageAlt,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: metadata.openGraphTitle,
+      description: metadata.openGraphDescription,
+      images: [socialImage],
     },
   };
 }
@@ -72,21 +101,44 @@ export default async function AboutPage({
       />
 
       {/* Hero */}
-      <section className="border-b border-zinc-100 bg-zinc-50">
-        <div className="mx-auto max-w-6xl px-6 py-24 sm:px-8 lg:py-32">
-          <p className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-400">
-            {about.hero.eyebrow}
-          </p>
+<section className="overflow-hidden border-b border-zinc-100 bg-zinc-50">
+  <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-28">
+    {/* Texto */}
+    <div>
+      <p className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-400">
+        {about.hero.eyebrow}
+      </p>
 
-          <h1 className="mt-5 max-w-4xl text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-            {about.hero.title}
-          </h1>
+      <h1 className="mt-5 max-w-4xl text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+        {about.hero.title}
+      </h1>
 
-          <p className="mt-8 max-w-3xl text-xl leading-9 text-zinc-600">
-            {about.hero.description}
-          </p>
-        </div>
-      </section>
+      <p className="mt-8 max-w-3xl text-xl leading-9 text-zinc-600">
+        {about.hero.description}
+      </p>
+    </div>
+
+    {/* Foto Cristina + Kala */}
+    <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:justify-self-end">
+      <div
+        aria-hidden="true"
+        className="absolute -inset-4 rounded-[2.25rem] border border-[#b5a082]/30"
+      />
+
+      <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] border border-zinc-200 bg-zinc-200 shadow-[0_24px_70px_-35px_rgba(0,0,0,0.35)]">
+        <Image
+          src="/images/about/cristina-kala-original.jpg"
+          alt={about.hero.imageAlt}
+          fill
+          priority
+          quality={90}
+          sizes="(max-width: 1024px) 100vw, 420px"
+          className="object-cover object-center"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Historia */}
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-24 sm:px-8 lg:grid-cols-[0.75fr_1.25fr]">

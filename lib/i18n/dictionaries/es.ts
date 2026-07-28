@@ -155,7 +155,8 @@ subcategories: {
       "Finanzas, operaciones y tecnología para resolver problemas reales.",
     description:
       "Soy Cristina García Mijares, profesional de finanzas y operaciones con experiencia en empresas internacionales y un interés constante por la automatización y el desarrollo de soluciones digitales.",
-  },
+    imageAlt: "Cristina García Mijares sonriendo junto a su perra Kala en un parque",
+    },
 
   story: {
     eyebrow: "Mi historia",
