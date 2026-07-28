@@ -59,16 +59,10 @@ export default function SiteHeader({
         <div className="flex items-center justify-between gap-4">
           <Link
             href={`/${locale}`}
-            aria-label={
-              dictionary.navigation.homeAria
-            }
-            className="shrink-0 font-bold tracking-tight text-zinc-900"
+            aria-label={dictionary.navigation.homeAria}
+            className="shrink-0 font-bold tracking-tight text-zinc-900 transition-opacity hover:opacity-70"
           >
-            <span className="text-lg sm:hidden">
-              Everything Must Go
-            </span>
-
-            <span className="hidden text-lg sm:inline">
+            <span className="text-lg">
               {SITE.name}
             </span>
           </Link>

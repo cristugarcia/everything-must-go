@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 160" role="img" aria-labelledby="title desc">
+  <title id="title">EMG wordmark</title>
+  <desc id="desc">EMG letters with Everything Must Go descriptor.</desc>
+  <text x="310" y="88" text-anchor="middle" fill="#1C1C1C" font-family="Inter, Arial, Helvetica, sans-serif" font-size="96" font-weight="200" letter-spacing="26">EMG</text>
+  <text x="310" y="137" text-anchor="middle" fill="#1C1C1C" font-family="Inter, Arial, Helvetica, sans-serif" font-size="21" font-weight="500" letter-spacing="8">EVERYTHING MUST GO</text>
+</svg>
