@@ -1,20 +1,18 @@
 import ProductCard from "@/components/ProductCard";
 
 import type { Locale } from "@/lib/i18n/config";
-import { Product } from "@/lib/types";
+import type { Product } from "@/lib/types";
 
 type RelatedProductsDictionary = {
   eyebrow: string;
   title: string;
-};
-
-type ProductCardDictionary = {
   viewProduct: string;
   soldOverlay: string;
   reservedOverlay: string;
   soldMessage: string;
   reservedMessage: string;
   priceOnRequest: string;
+
   status: {
     available: string;
     reserved: string;
@@ -26,14 +24,14 @@ type RelatedProductsProps = {
   products: Product[];
   locale: Locale;
   dictionary: RelatedProductsDictionary;
-  productCardDictionary: ProductCardDictionary;
+  categories: Record<string, string>;
 };
 
 export default function RelatedProducts({
   products,
   locale,
   dictionary,
-  productCardDictionary,
+  categories,
 }: RelatedProductsProps) {
   if (products.length === 0) {
     return null;
@@ -55,7 +53,16 @@ export default function RelatedProducts({
             key={product.id}
             product={product}
             locale={locale}
-            dictionary={productCardDictionary}
+            dictionary={{
+              viewProduct: dictionary.viewProduct,
+              soldOverlay: dictionary.soldOverlay,
+              reservedOverlay: dictionary.reservedOverlay,
+              soldMessage: dictionary.soldMessage,
+              reservedMessage: dictionary.reservedMessage,
+              priceOnRequest: dictionary.priceOnRequest,
+              status: dictionary.status,
+            }}
+            categories={categories}
           />
         ))}
       </div>

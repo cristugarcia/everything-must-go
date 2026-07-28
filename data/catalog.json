@@ -198,7 +198,7 @@
     "id": "EMG-0010",
     "sku": "ELE-003",
     "publish": true,
-    "status": "Disponible",
+    "status": "Reservado",
     "category": "Electrodomésticos",
     "subcategory": "Cocina",
     "name": "Freidora de aire Maverick 6,5 L",
@@ -210,6 +210,7 @@
     "originalPrice": 139980,
     "condition": "Muy bueno",
     "publicDescription": "Freidora de aire de 6,5 litros, 1500 W, panel de control digital, recipiente antiadherente y 8 programas de cocción.",
+    "privateNotes": "Noe",
     "images": [
       "/products/EMG-0010/1.jpeg",
       "/products/EMG-0010/2.jpeg",
@@ -547,7 +548,7 @@
     "id": "EMG-0026",
     "sku": "ELE-008",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Electrodomésticos",
     "subcategory": "Aspiradoras robot",
     "name": "Aspiradora robot Smart-Tek AVA-Mini roja",
@@ -559,6 +560,7 @@
     "originalPrice": 300000,
     "condition": "Bueno",
     "publicDescription": "Aspiradora robot Smart-Tek AVA-Mini roja",
+    "privateNotes": "Noe",
     "images": [
       "/products/EMG-0026/1.jpeg",
       "/products/EMG-0026/2.jpeg",
