@@ -15,6 +15,7 @@ import {
   type Locale,
 } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/getDictionary";
+import { getProductPriceDisplay } from "@/lib/formatPrice";
 import { SITE } from "@/lib/site";
 import { Product } from "@/lib/types";
 
@@ -88,12 +89,17 @@ const dictionary =
   const isSold = normalizedStatus === "vendido";
   const isReserved = normalizedStatus === "reservado";
 
-  const formattedPrice =
-  product.price > 0
-    ? `$ ${product.price.toLocaleString(
-        locale === "es" ? "es-AR" : "en-US"
-      )}`
-    : dictionary.product.priceOnRequest;
+  const priceDisplay = getProductPriceDisplay(
+  product.price,
+  locale,
+  {
+    free: dictionary.product.free,
+    priceOnRequest:
+      dictionary.product.priceOnRequest,
+  }
+);
+
+  const formattedPrice = priceDisplay.primary;
 
   const productUrl =
   `${SITE.url}/${locale}/item/${product.id}`;
@@ -176,9 +182,17 @@ ${productUrl}`;
               {product.name}
             </h1>
 
-            <p className="mt-7 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">
-              {formattedPrice}
-            </p>
+            <div className="mt-7">
+              <p className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">
+                {priceDisplay.primary}
+              </p>
+
+              {priceDisplay.secondary && (
+                <p className="mt-2 text-base font-medium text-zinc-500 sm:text-lg">
+                  {priceDisplay.secondary}
+                </p>
+              )}
+            </div>
 
             {isReserved && (
               <p className="mt-4 max-w-xl leading-7 text-amber-700">
@@ -356,6 +370,7 @@ ${productUrl}`;
             title: dictionary.relatedProducts.title,
             ...dictionary.productCard,
             priceOnRequest: dictionary.product.priceOnRequest,
+            free: dictionary.product.free,
             status: dictionary.status,
           }}
           categories={dictionary.productCatalog.categories}

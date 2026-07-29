@@ -449,6 +449,8 @@ subcategories: {
   purchaseYear: "Año de compra",
   location: "Ubicación",
   priceOnRequest: "Precio a consultar",
+  free: "Gratis",
+  usdEstimatePrefix: "Aprox.",
 
   messages: {
     reserved:

@@ -12,7 +12,7 @@ type RelatedProductsDictionary = {
   soldMessage: string;
   reservedMessage: string;
   priceOnRequest: string;
-
+  free: string;
   status: {
     available: string;
     reserved: string;
@@ -60,6 +60,7 @@ export default function RelatedProducts({
               soldMessage: dictionary.soldMessage,
               reservedMessage: dictionary.reservedMessage,
               priceOnRequest: dictionary.priceOnRequest,
+              free: dictionary.free,
               status: dictionary.status,
             }}
             categories={categories}

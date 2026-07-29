@@ -446,6 +446,8 @@ projectPreview: {
   purchaseYear: "Year purchased",
   location: "Location",
   priceOnRequest: "Price on request",
+  free: "Free",
+  usdEstimatePrefix: "Approx.",
 
   messages: {
     reserved:
