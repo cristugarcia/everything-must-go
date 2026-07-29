@@ -235,6 +235,8 @@ projectPreview: {
     description:
       "Explore the Everything Must Go case study or visit my professional profile.",
     projectButton: "View the project",
+    cvButton: "Download CV",
+    emailButton: "Send email",
     linkedinButton: "View LinkedIn",
   },
 },
@@ -366,8 +368,23 @@ projectPreview: {
     ],
   },
 
+  showcase: {
+  eyebrow: "05 · THE PRODUCT IN ACTION",
+  title: "From case study to a working product.",
+  description: "An experience designed for buyers and managed through a centralized source of information.",
+  desktopTitle: "Desktop catalog",
+  desktopDescription: "A clear landing experience with metrics, calls to action and direct access to the inventory.",
+  mobileTitle: "Mobile experience",
+  mobileDescription: "Search, sorting and filters adapted for simple touch navigation.",
+  productTitle: "Product detail",
+  productDescription: "Gallery, price, availability, structured information and direct contact.",
+  desktopAlt: "Everything Must Go home page displayed on a desktop computer",
+  mobileAlt: "Everything Must Go catalog filters displayed on a mobile phone",
+  productAlt: "Individual product page in Everything Must Go"
+},
+
   learnings: {
-    eyebrow: "05 · Key learnings",
+    eyebrow: "06 · Key learnings",
     title:
       "Much more than building an interface.",
 
@@ -382,7 +399,7 @@ projectPreview: {
   },
 
   technologies: {
-    eyebrow: "06 · Technologies",
+    eyebrow: "07 · Technologies",
     title: "Tools used.",
 
     items: [

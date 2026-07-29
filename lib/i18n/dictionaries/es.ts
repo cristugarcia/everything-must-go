@@ -238,6 +238,8 @@ subcategories: {
     description:
       "Puedes conocer el caso de estudio de Everything Must Go o visitar mi perfil profesional.",
     projectButton: "Ver el proyecto",
+    cvButton: "Descargar CV",
+    emailButton: "Enviar correo",
     linkedinButton: "Ver LinkedIn",
   },
 },
@@ -368,8 +370,23 @@ subcategories: {
     ],
   },
 
+  showcase: {
+    eyebrow: "05 · PRODUCTO EN FUNCIONAMIENTO",
+    title: "Del caso de estudio al resultado real.",
+    description: "Una experiencia diseñada para compradores y administrada desde una fuente centralizada.",
+    desktopTitle: "Catálogo en desktop",
+    desktopDescription: "Una portada clara con métricas, llamadas a la acción y acceso directo al inventario.",
+    mobileTitle: "Experiencia móvil",
+    mobileDescription: "Búsqueda, ordenamiento y filtros adaptados para una navegación táctil sencilla.",
+    productTitle: "Detalle de producto",
+    productDescription: "Galería, precio, disponibilidad, información estructurada y contacto directo.",
+    desktopAlt: "Página principal de Everything Must Go en una computadora",
+    mobileAlt: "Filtros del catálogo Everything Must Go en un teléfono móvil",
+    productAlt: "Página individual de un producto en Everything Must Go"
+    },
+
   learnings: {
-    eyebrow: "05 · Aprendizajes",
+    eyebrow: "06 · Aprendizajes",
     title:
       "Mucho más que construir una interfaz.",
 
@@ -384,7 +401,7 @@ subcategories: {
   },
 
   technologies: {
-    eyebrow: "06 · Tecnologías",
+    eyebrow: "07 · Tecnologías",
     title: "Herramientas utilizadas.",
 
     items: [
