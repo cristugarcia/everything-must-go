@@ -6,17 +6,53 @@ import {
   useState,
 } from "react";
 
-const SHARE_TITLE = "Everything Must Go";
+import type { Locale } from "@/lib/i18n/config";
 
-const SHARE_TEXT =
-  "¡Mira este catálogo de Everything Must Go! Productos disponibles por mudanza.";
+type ShareCatalogButtonProps = {
+  locale: Locale;
+};
 
-export default function ShareCatalogButton() {
+const COPY = {
+  es: {
+    title: "Everything Must Go",
+    text: "¡Mira este catálogo de Everything Must Go! Productos disponibles por mudanza.",
+    ariaLabel: "Compartir catálogo",
+    menuTitle: "Compartir catálogo",
+    shareImage: "Compartir imagen",
+    shareImageDescription: "Instagram, WhatsApp y otras apps",
+    whatsapp: "Compartir enlace por WhatsApp",
+    copyLink: "Copiar enlace",
+    copied: "Enlace copiado",
+    copyPrompt:
+      "Mantén presionado para copiar el enlace:",
+  },
+
+  en: {
+    title: "Everything Must Go",
+    text: "Take a look at the Everything Must Go catalog! Products available due to relocation.",
+    ariaLabel: "Share catalog",
+    menuTitle: "Share catalog",
+    shareImage: "Share image",
+    shareImageDescription:
+      "Instagram, WhatsApp and other apps",
+    whatsapp: "Share link on WhatsApp",
+    copyLink: "Copy link",
+    copied: "Link copied",
+    copyPrompt:
+      "Press and hold to copy the link:",
+  },
+} as const;
+
+export default function ShareCatalogButton({
+  locale,
+}: ShareCatalogButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const containerRef =
     useRef<HTMLDivElement>(null);
+
+  const copy = COPY[locale];
 
   useEffect(() => {
     function handlePointerDown(
@@ -64,51 +100,119 @@ export default function ShareCatalogButton() {
   }, []);
 
   function getCatalogUrl() {
-    return window.location.origin;
+    return `${window.location.origin}/${locale}`;
+  }
+
+  function getSocialImageUrl() {
+    return `/brand/emg-share-${locale}.png`;
+  }
+
+  async function getSocialImageFile() {
+    const imageUrl = getSocialImageUrl();
+
+    const response = await fetch(imageUrl, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        "Could not load the social sharing image."
+      );
+    }
+
+    const blob = await response.blob();
+
+    return new File(
+      [blob],
+      `everything-must-go-${locale}.png`,
+      {
+        type: blob.type || "image/png",
+      }
+    );
+  }
+
+  async function shareImage() {
+    const imageUrl = getSocialImageUrl();
+
+    try {
+      const file =
+        await getSocialImageFile();
+
+      const shareData: ShareData = {
+        files: [file],
+      };
+
+      const supportsFileSharing =
+        typeof navigator.share ===
+          "function" &&
+        typeof navigator.canShare ===
+          "function" &&
+        navigator.canShare(shareData);
+
+      if (!supportsFileSharing) {
+        window.open(
+          imageUrl,
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+        setIsOpen(false);
+        return;
+      }
+
+      /*
+       * Compartimos solamente el archivo.
+       *
+       * No incluimos `url` para evitar que
+       * Instagram lo interprete nuevamente
+       * como un enlace en lugar de una imagen.
+       */
+      await navigator.share(shareData);
+
+      setIsOpen(false);
+    } catch (error) {
+      if (
+        error instanceof DOMException &&
+        error.name === "AbortError"
+      ) {
+        return;
+      }
+
+      /*
+       * Fallback: abrir la imagen para que
+       * pueda guardarse o compartirse
+       * manualmente.
+       */
+      window.open(
+        imageUrl,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+      setIsOpen(false);
+    }
   }
 
   function shareOnWhatsApp() {
     const url = getCatalogUrl();
-    const message = `${SHARE_TEXT}\n\n${url}`;
 
-    window.location.href = `https://wa.me/?text=${encodeURIComponent(
-      message
-    )}`;
+    const message = `${copy.text}\n\n${url}`;
+
+    window.location.href =
+      `https://wa.me/?text=${encodeURIComponent(
+        message
+      )}`;
 
     setIsOpen(false);
-  }
-
-  async function shareNatively() {
-    const url = getCatalogUrl();
-
-    if (typeof navigator.share === "function") {
-      try {
-        await navigator.share({
-          title: SHARE_TITLE,
-          text: SHARE_TEXT,
-          url,
-        });
-
-        setIsOpen(false);
-        return;
-      } catch (error) {
-        if (
-          error instanceof DOMException &&
-          error.name === "AbortError"
-        ) {
-          return;
-        }
-      }
-    }
-
-    await copyLink();
   }
 
   async function copyLink() {
     const url = getCatalogUrl();
 
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(
+        url
+      );
 
       setCopied(true);
 
@@ -118,7 +222,7 @@ export default function ShareCatalogButton() {
       }, 1400);
     } catch {
       window.prompt(
-        "Mantén presionado para copiar el enlace:",
+        copy.copyPrompt,
         url
       );
     }
@@ -132,11 +236,13 @@ export default function ShareCatalogButton() {
       <button
         type="button"
         onClick={() =>
-          setIsOpen((current) => !current)
+          setIsOpen(
+            (current) => !current
+          )
         }
         aria-expanded={isOpen}
         aria-haspopup="menu"
-        aria-label="Compartir catálogo"
+        aria-label={copy.ariaLabel}
         className="inline-flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition active:scale-95 active:bg-zinc-100 sm:h-10 sm:w-auto sm:gap-2 sm:px-3 sm:hover:border-zinc-300 sm:hover:bg-zinc-100 sm:hover:text-black"
       >
         <svg
@@ -155,58 +261,71 @@ export default function ShareCatalogButton() {
         </svg>
 
         <span className="hidden text-sm font-medium sm:inline">
-          Compartir
+          {locale === "es"
+            ? "Compartir"
+            : "Share"}
         </span>
       </button>
 
       {isOpen && (
         <div
           role="menu"
-          className="absolute right-0 top-full z-[100] mt-2 w-64 rounded-2xl border border-zinc-200 bg-white p-2 shadow-2xl"
+          className="absolute right-0 top-full z-[100] mt-2 w-72 rounded-2xl border border-zinc-200 bg-white p-2 shadow-2xl"
         >
           <p className="px-3 pb-2 pt-1 text-xs font-medium uppercase tracking-wider text-zinc-400">
-            Compartir catálogo
+            {copy.menuTitle}
           </p>
 
+          {/* Imagen para Instagram/Stories */}
+          <button
+            type="button"
+            role="menuitem"
+            onClick={shareImage}
+            className="flex min-h-14 w-full touch-manipulation items-center gap-3 rounded-xl px-3 py-3 text-left text-zinc-700 active:bg-zinc-100 sm:hover:bg-zinc-100 sm:hover:text-black"
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-zinc-950 text-lg text-white">
+              ↗
+            </span>
+
+            <span>
+              <span className="block text-sm font-medium">
+                {copy.shareImage}
+              </span>
+
+              <span className="mt-0.5 block text-xs font-normal text-zinc-400">
+                {copy.shareImageDescription}
+              </span>
+            </span>
+          </button>
+
+          {/* Enlace directo a WhatsApp */}
           <button
             type="button"
             role="menuitem"
             onClick={shareOnWhatsApp}
             className="flex min-h-12 w-full touch-manipulation items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-medium text-zinc-700 active:bg-zinc-100 sm:hover:bg-zinc-100 sm:hover:text-black"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 font-semibold">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-zinc-100 font-semibold">
               W
             </span>
 
-            Compartir por WhatsApp
+            {copy.whatsapp}
           </button>
 
-          <button
-            type="button"
-            role="menuitem"
-            onClick={shareNatively}
-            className="flex min-h-12 w-full touch-manipulation items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-medium text-zinc-700 active:bg-zinc-100 sm:hover:bg-zinc-100 sm:hover:text-black"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-lg">
-              ↗
-            </span>
-
-            Compartir en otra app
-          </button>
-
+          {/* Copiar URL */}
           <button
             type="button"
             role="menuitem"
             onClick={copyLink}
             className="flex min-h-12 w-full touch-manipulation items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-medium text-zinc-700 active:bg-zinc-100 sm:hover:bg-zinc-100 sm:hover:text-black"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-zinc-100 text-lg">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-lg">
               ⧉
             </span>
 
             {copied
-              ? "Enlace copiado"
-              : "Copiar enlace"}
+              ? copy.copied
+              : copy.copyLink}
           </button>
         </div>
       )}

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import products from "@/data/catalog.json";
@@ -24,6 +25,88 @@ type Props = {
     locale: string;
   }>;
 };
+const PUBLIC_SITE_URL =
+  "https://everything-must-go-cyan.vercel.app";
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { locale: localeParam } =
+    await params;
+
+  if (!isLocale(localeParam)) {
+    return {};
+  }
+
+  const locale: Locale = localeParam;
+
+  const dictionary =
+    await getDictionary(locale);
+
+  const title =
+    locale === "es"
+      ? "Venta por mudanza | Everything Must Go"
+      : "Moving Sale | Everything Must Go";
+
+  const description =
+    dictionary.home.introduction;
+
+  const socialImage =
+    locale === "es"
+      ? `${PUBLIC_SITE_URL}/brand/emg-share-es.png`
+      : `${PUBLIC_SITE_URL}/brand/emg-share-en.png`;
+
+  const pageUrl =
+    `${PUBLIC_SITE_URL}/${locale}`;
+
+  return {
+    title,
+    description,
+
+    alternates: {
+      canonical: pageUrl,
+
+      languages: {
+        es: `${PUBLIC_SITE_URL}/es`,
+        en: `${PUBLIC_SITE_URL}/en`,
+      },
+    },
+
+    openGraph: {
+      type: "website",
+      siteName: SITE.name,
+
+      locale:
+        locale === "es"
+          ? "es_AR"
+          : "en_US",
+
+      title,
+      description,
+      url: pageUrl,
+
+      images: [
+        {
+          url: socialImage,
+          width: 1200,
+          height: 630,
+
+          alt:
+            locale === "es"
+              ? "Everything Must Go — catálogo de productos disponibles por mudanza"
+              : "Everything Must Go — catalog of products available due to relocation",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [socialImage],
+    },
+  };
+}
 
 export default async function Home({
   params,
