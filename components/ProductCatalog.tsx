@@ -51,8 +51,9 @@ type ProductCatalogProps = {
     };
 
     product: {
-      priceOnRequest: string;
-    };
+    priceOnRequest: string;
+    free: string;
+  };
 
     status: {
       available: string;
@@ -384,6 +385,7 @@ export default function ProductCatalog({
                 ...dictionary.productCard,
                 priceOnRequest:
               dictionary.product.priceOnRequest,
+              free: dictionary.product.free,
               status: dictionary.status,
              }}
              categories={catalog.categories}

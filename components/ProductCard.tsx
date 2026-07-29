@@ -3,8 +3,9 @@ import Link from "next/link";
 
 import StatusBadge from "@/components/StatusBadge";
 
+import { getProductPriceDisplay } from "@/lib/formatPrice";
 import type { Locale } from "@/lib/i18n/config";
-import { Product } from "@/lib/types";
+import type { Product } from "@/lib/types";
 
 type ProductCardDictionary = {
   viewProduct: string;
@@ -13,6 +14,7 @@ type ProductCardDictionary = {
   soldMessage: string;
   reservedMessage: string;
   priceOnRequest: string;
+  free: string;
   status: {
     available: string;
     reserved: string;
@@ -39,20 +41,26 @@ export default function ProductCard({
     .trim()
     .toLowerCase();
 
-  const isSold = normalizedStatus === "vendido";
+  const isSold =
+    normalizedStatus === "vendido";
+
   const isReserved =
     normalizedStatus === "reservado";
 
-  const formattedPrice =
-    product.price > 0
-      ? `$ ${product.price.toLocaleString(
-          locale === "es" ? "es-AR" : "en-US"
-        )}`
-      : dictionary.priceOnRequest;
+  const priceDisplay =
+    getProductPriceDisplay(
+      product.price,
+      locale,
+      {
+        free: dictionary.free,
+        priceOnRequest:
+          dictionary.priceOnRequest,
+      }
+    );
 
-    const translatedCategory =
-      categories[product.category] ??
-      product.category;
+  const translatedCategory =
+    categories[product.category] ??
+    product.category;
 
   return (
     <Link
@@ -103,10 +111,10 @@ export default function ProductCard({
           )}
 
           <div className="absolute left-4 top-4">
-              <StatusBadge
-  status={product.status}
-  labels={dictionary.status}
-/>
+            <StatusBadge
+              status={product.status}
+              labels={dictionary.status}
+            />
           </div>
 
           {isSold && (
@@ -143,15 +151,28 @@ export default function ProductCard({
                 : "text-zinc-900",
             ].join(" ")}
           >
-            {formattedPrice}
+            {priceDisplay.primary}
           </p>
+
+          {priceDisplay.secondary && (
+            <p
+              className={[
+                "mt-1 text-sm font-medium",
+                isSold
+                  ? "text-zinc-400 line-through"
+                  : "text-zinc-500",
+              ].join(" ")}
+            >
+              {priceDisplay.secondary}
+            </p>
+          )}
 
           {!isSold && !isReserved && (
             <div className="mt-5">
               <StatusBadge
-  status={product.status}
-  labels={dictionary.status}
-/>
+                status={product.status}
+                labels={dictionary.status}
+              />
             </div>
           )}
 
