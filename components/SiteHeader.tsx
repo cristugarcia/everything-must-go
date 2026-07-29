@@ -69,7 +69,9 @@ export default function SiteHeader({
 
           <div className="flex items-center gap-2 sm:hidden">
             <LanguageSwitcher locale={locale} />
-            <ShareCatalogButton />
+            <ShareCatalogButton
+              locale={locale}
+            />
           </div>
         </div>
 
@@ -115,7 +117,9 @@ export default function SiteHeader({
 
           <div className="hidden items-center gap-2 sm:flex">
             <LanguageSwitcher locale={locale} />
-            <ShareCatalogButton />
+            <ShareCatalogButton
+              locale={locale}
+            />
           </div>
         </div>
       </div>
