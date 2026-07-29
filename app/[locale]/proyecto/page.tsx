@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -279,6 +280,99 @@ export default async function ProjectPage({
           </div>
         </div>
       </section>
+      
+      <section className="mx-auto max-w-6xl px-6 py-24 sm:px-8">
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">
+          {project.showcase.eyebrow}
+        </p>
+
+        <h2 className="mt-3 max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl">
+          {project.showcase.title}
+        </h2>
+
+        <p className="mt-5 max-w-3xl text-lg leading-8 text-zinc-500">
+          {project.showcase.description}
+        </p>
+
+        <div className="mt-12 space-y-6">
+          {/* Catálogo desktop */}
+          <figure className="overflow-hidden rounded-[2rem] border border-zinc-200 bg-white shadow-sm">
+            <div className="overflow-hidden border-b border-zinc-200 bg-zinc-100">
+              <Image
+                src="/images/project/catalog-desktop.png"
+                alt={project.showcase.desktopAlt}
+                width={2048}
+                height={1112}
+                quality={90}
+                sizes="(max-width: 768px) 100vw, 1152px"
+                className="h-auto w-full"
+              />
+            </div>
+
+            <figcaption className="p-6 sm:p-8">
+              <h3 className="text-xl font-bold">
+                {project.showcase.desktopTitle}
+              </h3>
+
+              <p className="mt-2 max-w-3xl leading-7 text-zinc-500">
+                {project.showcase.desktopDescription}
+              </p>
+            </figcaption>
+          </figure>
+
+          <div className="grid items-start gap-6 lg:grid-cols-[0.72fr_1.28fr]">
+            {/* Catálogo móvil */}
+            <figure className="overflow-hidden rounded-[2rem] border border-zinc-200 bg-white shadow-sm">
+              <div className="flex items-center justify-center border-b border-zinc-200 bg-zinc-100 p-6 sm:p-10">
+                <Image
+                  src="/images/project/catalog-mobile.png"
+                  alt={project.showcase.mobileAlt}
+                  width={941}
+                  height={2048}
+                  quality={90}
+                  sizes="(max-width: 1024px) 100vw, 360px"
+                  className="h-auto w-full max-w-[300px] rounded-[1.75rem] border border-zinc-200 shadow-xl"
+                />
+              </div>
+
+              <figcaption className="p-6 sm:p-8">
+                <h3 className="text-xl font-bold">
+                  {project.showcase.mobileTitle}
+                </h3>
+
+                <p className="mt-2 leading-7 text-zinc-500">
+                  {project.showcase.mobileDescription}
+                </p>
+              </figcaption>
+            </figure>
+
+            {/* Detalle de producto */}
+            <figure className="overflow-hidden rounded-[2rem] border border-zinc-200 bg-white shadow-sm">
+              <div className="overflow-hidden border-b border-zinc-200 bg-zinc-100">
+                <Image
+                  src="/images/project/product-detail-desktop.png"
+                  alt={project.showcase.productAlt}
+                  width={2048}
+                  height={1315}
+                  quality={90}
+                  sizes="(max-width: 1024px) 100vw, 720px"
+                  className="h-auto w-full"
+                />
+              </div>
+
+              <figcaption className="p-6 sm:p-8">
+                <h3 className="text-xl font-bold">
+                  {project.showcase.productTitle}
+                </h3>
+
+                <p className="mt-2 leading-7 text-zinc-500">
+                  {project.showcase.productDescription}
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
       {/* Aprendizajes */}
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-24 sm:px-8 lg:grid-cols-2">
@@ -337,7 +431,6 @@ export default async function ProjectPage({
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-6 py-24 text-center sm:px-8">
         <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">

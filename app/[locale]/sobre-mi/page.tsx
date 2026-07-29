@@ -92,6 +92,20 @@ export default async function AboutPage({
   const dictionary = await getDictionary(locale);
   const about = dictionary.aboutPage;
 
+  const emailSubject =
+  locale === "es"
+    ? "Contacto desde Everything Must Go"
+    : "Contact from Everything Must Go";
+
+  const emailBody =
+    locale === "es"
+      ? "Hola Cristina,\n\nVi tu portfolio Everything Must Go y quisiera ponerme en contacto contigo."
+      : "Hi Cristina,\n\nI saw your Everything Must Go portfolio and would like to get in touch.";
+
+  const emailUrl = `mailto:cgarcia91@gmail.com?subject=${encodeURIComponent(
+    emailSubject
+  )}&body=${encodeURIComponent(emailBody)}`;
+
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       <SiteHeader
@@ -258,22 +272,37 @@ export default async function AboutPage({
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Link
-            href={`/${locale}/proyecto`}
-            className="rounded-full bg-black px-8 py-4 font-medium text-white transition hover:-translate-y-0.5 hover:bg-zinc-800"
-          >
-            {about.contact.projectButton}
-          </Link>
+        <Link
+          href={`/${locale}/proyecto`}
+          className="rounded-full bg-black px-8 py-4 font-medium text-white transition hover:-translate-y-0.5 hover:bg-zinc-800"
+        >
+          {about.contact.projectButton}
+        </Link>
 
-          <a
-            href="https://www.linkedin.com/in/cristina-garcia-mijares/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-zinc-300 px-8 py-4 font-medium text-zinc-900 transition hover:-translate-y-0.5 hover:border-black"
-          >
-            {about.contact.linkedinButton}
-          </a>
-        </div>
+        <a
+          href={`/documents/cristina-garcia-mijares-cv-${locale}.pdf`}
+          download={`cristina-garcia-mijares-cv-${locale}.pdf`}
+          className="rounded-full border border-zinc-300 px-8 py-4 font-medium text-zinc-900 transition hover:-translate-y-0.5 hover:border-black"
+        >
+          {about.contact.cvButton}
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/cristina-garcia-mijares/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-zinc-300 px-8 py-4 font-medium text-zinc-900 transition hover:-translate-y-0.5 hover:border-black"
+        >
+          {about.contact.linkedinButton}
+        </a>
+  
+        <a
+          href={emailUrl}
+          className="rounded-full border border-zinc-300 px-8 py-4 font-medium text-zinc-900 transition hover:-translate-y-0.5 hover:border-black"
+        >
+          {about.contact.emailButton}
+        </a>
+      </div>
       </section>
 
       <SiteFooter />
