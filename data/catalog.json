@@ -682,20 +682,23 @@
   },
   {
     "id": "EMG-0032",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
-    "brand": "",
+    "sku": "ELE-009",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrodomésticos",
+    "subcategory": "Lavado",
+    "name": "Lavarropas Top House para reparar",
+    "brand": "Top House",
     "model": "",
     "quantity": 1,
     "price": 0,
     "minimumPrice": 0,
     "originalPrice": 0,
-    "condition": "",
-    "images": []
+    "condition": "Para reparar",
+    "publicDescription": "GRATIS — Se regala lavarropas Top House de carga frontal para reparar o utilizar como repuestos. Presenta una fuga de agua durante el funcionamiento y requiere revisión técnica. La causa exacta no está confirmada. No se entrega como equipo listo para usar ni cuenta con garantía. Retiro a cargo del interesado en Buenos Aires. Ideal para técnico, reparación o aprovechamiento de repuestos.",
+    "images": [
+      "/products/EMG-0032/1.jpeg"
+    ]
   },
   {
     "id": "EMG-0033",
