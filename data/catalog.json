@@ -11,8 +11,6 @@
     "model": "Esquinero bilbao",
     "quantity": 1,
     "price": 900000,
-    "minimumPrice": 900000,
-    "originalPrice": 900000,
     "purchaseYear": 2025,
     "condition": "Excelente",
     "images": [
@@ -35,8 +33,6 @@
     "model": "54\"",
     "quantity": 1,
     "price": 675000,
-    "minimumPrice": 450000,
-    "originalPrice": 900000,
     "condition": "Excelente",
     "images": [
       "/products/EMG-0002/1.jpg",
@@ -58,8 +54,6 @@
     "model": "Sidewalk Anana",
     "quantity": 3,
     "price": 210000,
-    "minimumPrice": 180000,
-    "originalPrice": 240000,
     "condition": "Muy bueno",
     "images": [
       "/products/EMG-0003/2.jpeg",
@@ -81,8 +75,6 @@
     "model": "",
     "quantity": 2,
     "price": 60000,
-    "minimumPrice": 40000,
-    "originalPrice": 0,
     "condition": "Muy bueno",
     "images": [
       "/products/EMG-0004/1.jpeg",
@@ -103,10 +95,7 @@
     "model": "",
     "quantity": 1,
     "price": 225000,
-    "minimumPrice": 150000,
-    "originalPrice": 300000,
     "condition": "Bueno",
-    "privateNotes": "Roman",
     "images": [
       "/products/EMG-0005/1.jpg",
       "/products/EMG-0005/2.jpg",
@@ -125,8 +114,6 @@
     "model": "",
     "quantity": 1,
     "price": 200000,
-    "minimumPrice": 100000,
-    "originalPrice": 0,
     "condition": "Bueno",
     "images": [
       "/products/EMG-0006/1.jpeg",
@@ -146,8 +133,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "Excelente",
     "images": []
   },
@@ -163,8 +148,6 @@
     "model": "Hunk 150",
     "quantity": 1,
     "price": 2200000,
-    "minimumPrice": 1800000,
-    "originalPrice": 60000,
     "condition": "Muy bueno",
     "images": [
       "/products/EMG-0008/1.jpg",
@@ -184,10 +167,7 @@
     "model": "Suran",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 17400000,
-    "originalPrice": 19795000,
     "condition": "Muy bueno",
-    "privateNotes": "Roman, Noe",
     "images": [
       "/products/EMG-0009/1.jpg",
       "/products/EMG-0009/2.jpg",
@@ -206,11 +186,8 @@
     "model": "AIRF6",
     "quantity": 1,
     "price": 104985,
-    "minimumPrice": 69990,
-    "originalPrice": 139980,
     "condition": "Muy bueno",
     "publicDescription": "Freidora de aire de 6,5 litros, 1500 W, panel de control digital, recipiente antiadherente y 8 programas de cocción.",
-    "privateNotes": "Noe",
     "images": [
       "/products/EMG-0010/1.jpeg",
       "/products/EMG-0010/2.jpeg",
@@ -231,8 +208,6 @@
     "model": "SL-CM1095",
     "quantity": 1,
     "price": 75000,
-    "minimumPrice": 50000,
-    "originalPrice": 100000,
     "condition": "Muy bueno",
     "publicDescription": "Cafetera digital automática negra y gris para café de filtro.",
     "images": [
@@ -252,8 +227,6 @@
     "model": "",
     "quantity": 1,
     "price": 114000,
-    "minimumPrice": 76000,
-    "originalPrice": 152000,
     "condition": "Muy bueno",
     "publicDescription": "Espejo de 180 x 50 cm con estructura de hierro color blanco, calidad premium.",
     "images": [
@@ -272,8 +245,6 @@
     "model": "",
     "quantity": 1,
     "price": 83250,
-    "minimumPrice": 55500,
-    "originalPrice": 111000,
     "condition": "Muy bueno",
     "publicDescription": "Grifería monocomando para cocina, acabado negro mate, pico extensible y giratorio.",
     "images": [
@@ -293,8 +264,6 @@
     "model": "",
     "quantity": 1,
     "price": 37500,
-    "minimumPrice": 25000,
-    "originalPrice": 50000,
     "condition": "Muy bueno",
     "publicDescription": "Jarra purificadora de agua Humma.",
     "images": [
@@ -314,8 +283,6 @@
     "model": "Línea Star",
     "quantity": 2,
     "price": 165000,
-    "minimumPrice": 110000,
-    "originalPrice": 220000,
     "condition": "Muy bueno",
     "publicDescription": "Juego de dos mesas de luz modernas de la línea Star.",
     "images": [
@@ -336,8 +303,6 @@
     "model": "",
     "quantity": 1,
     "price": 97500,
-    "minimumPrice": 65000,
-    "originalPrice": 130000,
     "condition": "Muy bueno",
     "publicDescription": "Mesa plegable blanca de 180 cm, ideal para jardín, camping y reuniones familiares.",
     "images": [
@@ -359,8 +324,6 @@
     "model": "",
     "quantity": 1,
     "price": 159900,
-    "minimumPrice": 106600,
-    "originalPrice": 213200,
     "condition": "Muy bueno",
     "publicDescription": "Mesa ratona elevable de melamina, 90 cm de largo.",
     "images": [
@@ -383,8 +346,6 @@
     "model": "WMS20AS",
     "quantity": 1,
     "price": 185250,
-    "minimumPrice": 123500,
-    "originalPrice": 247000,
     "condition": "Muy bueno",
     "publicDescription": "Microondas Whirlpool de 20 litros, color silver.",
     "images": [
@@ -405,8 +366,6 @@
     "model": "HR2626/80",
     "quantity": 1,
     "price": 153750,
-    "minimumPrice": 102500,
-    "originalPrice": 205000,
     "condition": "Muy bueno",
     "publicDescription": "Mixer Minipimer de 600 W con tecnología ProMix y vaso portátil.",
     "images": [
@@ -426,8 +385,6 @@
     "model": "Olmo Everest",
     "quantity": 1,
     "price": 117000,
-    "minimumPrice": 78000,
-    "originalPrice": 156000,
     "condition": "Muy bueno",
     "publicDescription": "Rack moderno y minimalista de melamina para TV de hasta 50 pulgadas, con 3 puertas y 2 estantes.",
     "images": [
@@ -448,8 +405,6 @@
     "model": "",
     "quantity": 1,
     "price": 46500,
-    "minimumPrice": 31000,
-    "originalPrice": 62000,
     "condition": "Muy bueno",
     "publicDescription": "Pava eléctrica blanca con corte automático, ideal para mate.",
     "images": [
@@ -468,11 +423,8 @@
     "model": "EP08",
     "quantity": 1,
     "price": 37500,
-    "minimumPrice": 25000,
-    "originalPrice": 50000,
     "condition": "Muy bueno",
     "publicDescription": "Escurridor secaplatos tipo rack para bacha, de acero, 65 cm, color negro.",
-    "privateNotes": "Johan",
     "images": [
       "/products/EMG-0022/1.jpeg",
       "/products/EMG-0022/2.jpeg",
@@ -483,7 +435,7 @@
     "id": "EMG-0023",
     "sku": "EXT-004",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Exterior",
     "subcategory": "Reposeras",
     "name": "Reposeras plegables gravedad cero x2 con mesa auxiliar",
@@ -491,8 +443,6 @@
     "model": "",
     "quantity": 2,
     "price": 110250,
-    "minimumPrice": 73500,
-    "originalPrice": 147000,
     "condition": "Muy bueno",
     "publicDescription": "Juego de dos reposeras plegables gravedad cero con mesa auxiliar.",
     "images": [
@@ -515,8 +465,6 @@
     "model": "",
     "quantity": 1,
     "price": 99000,
-    "minimumPrice": 66000,
-    "originalPrice": 132000,
     "condition": "Muy bueno",
     "publicDescription": "Máquina para hacer soda Terra, incluye un cilindro extra.",
     "images": [
@@ -536,8 +484,6 @@
     "model": "",
     "quantity": 1,
     "price": 22500,
-    "minimumPrice": 15000,
-    "originalPrice": 30000,
     "condition": "Muy bueno",
     "publicDescription": "Prensa francesa de 350 ml, ideal para preparar café o infusiones. Capacidad aproximada para 2 tazas.",
     "images": [
@@ -556,11 +502,8 @@
     "model": "AVA-Mini",
     "quantity": 1,
     "price": 140000,
-    "minimumPrice": 70000,
-    "originalPrice": 300000,
     "condition": "Bueno",
     "publicDescription": "Aspiradora robot Smart-Tek AVA-Mini roja",
-    "privateNotes": "Noe",
     "images": [
       "/products/EMG-0026/1.jpeg",
       "/products/EMG-0026/2.jpeg",
@@ -579,8 +522,6 @@
     "model": "HS720",
     "quantity": 1,
     "price": 250000,
-    "minimumPrice": 200000,
-    "originalPrice": 400000,
     "condition": "Bueno",
     "publicDescription": "Drone Holy Stone Hs720s Negro Cámara 4k",
     "images": [
@@ -601,8 +542,6 @@
     "model": "Camping",
     "quantity": 1,
     "price": 80000,
-    "minimumPrice": 30000,
-    "originalPrice": 189000,
     "condition": "Muy bueno",
     "images": [
       "/products/EMG-0028/1.jpeg",
@@ -624,8 +563,6 @@
     "model": "Clotheshorse",
     "quantity": 1,
     "price": 83250,
-    "minimumPrice": 55500,
-    "originalPrice": 111000,
     "condition": "Muy bueno",
     "publicDescription": "Tender Ropa Reforzado Plegable Grande Con Alas 160 Cm Y Base Color Blanco",
     "images": [
@@ -647,8 +584,6 @@
     "model": "Ultra",
     "quantity": 1,
     "price": 75000,
-    "minimumPrice": 50000,
-    "originalPrice": 100000,
     "condition": "Muy bueno",
     "images": [
       "/products/EMG-0030/1.jpeg",
@@ -670,8 +605,6 @@
     "model": "Camping Wagon",
     "quantity": 1,
     "price": 84000,
-    "minimumPrice": 56000,
-    "originalPrice": 112000,
     "condition": "Muy bueno",
     "publicDescription": "Carro De Playa Camping Compras Resistencia 80 Kg",
     "images": [
@@ -692,8 +625,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "Para reparar",
     "publicDescription": "GRATIS — Se regala lavarropas Top House de carga frontal para reparar o utilizar como repuestos. Presenta una fuga de agua durante el funcionamiento y requiere revisión técnica. La causa exacta no está confirmada. No se entrega como equipo listo para usar ni cuenta con garantía. Retiro a cargo del interesado en Buenos Aires. Ideal para técnico, reparación o aprovechamiento de repuestos.",
     "images": [
@@ -702,20 +633,26 @@
   },
   {
     "id": "EMG-0033",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
+    "sku": "EXT-008",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Exterior",
+    "subcategory": "Terraza",
+    "name": "Sillón de terraza con mesa redonda",
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
-    "condition": "",
-    "images": []
+    "price": 130000,
+    "condition": "Muy bueno",
+    "location": "Buenos Aires",
+    "publicDescription": "Conjunto para balcón o terraza compuesto por un sillón individual de estructura metálica negra, asiento amplio con almohadón gris y mesa auxiliar redonda con tapa de vidrio. Incluye el sillón, el almohadón gris y la mesa. No incluye plantas, macetas ni almohadones decorativos azul o blanco.",
+    "images": [
+      "/products/EMG-0033/1.jpeg",
+      "/products/EMG-0033/2.jpeg",
+      "/products/EMG-0033/3.jpeg",
+      "/products/EMG-0033/4.jpeg"
+    ],
+    "publishedAt": "30/07/2026"
   },
   {
     "id": "EMG-0034",
@@ -729,8 +666,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -746,8 +681,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -763,8 +696,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -780,8 +711,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -797,8 +726,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -814,8 +741,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -831,8 +756,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -848,8 +771,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -865,8 +786,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   },
@@ -882,8 +801,6 @@
     "model": "",
     "quantity": 1,
     "price": 0,
-    "minimumPrice": 0,
-    "originalPrice": 0,
     "condition": "",
     "images": []
   }
