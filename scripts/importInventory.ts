@@ -154,14 +154,6 @@ async function run() {
         row["Precio publicado"]
       ),
 
-      minimumPrice: parsePrice(
-        row["Precio mínimo (privado)"]
-      ),
-
-      originalPrice: parsePrice(
-        row["Costo original (privado)"]
-      ),
-
       purchaseYear: parseOptionalNumber(
         row["Año compra"]
       ),
@@ -174,9 +166,6 @@ async function run() {
       publicDescription:
         row["Descripción pública"] ||
         undefined,
-
-      privateNotes:
-        row["Notas privadas"] || undefined,
 
       images,
 

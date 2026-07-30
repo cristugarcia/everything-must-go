@@ -15,9 +15,6 @@ export interface Product {
   quantity: number;
 
   price: number;
-  minimumPrice: number;
-  originalPrice: number;
-
   purchaseYear?: number;
 
   condition: string;
@@ -25,8 +22,6 @@ export interface Product {
   location?: string;
 
   publicDescription?: string;
-  privateNotes?: string;
-
   images: string[];
 
   publishedAt?: string;
