@@ -656,18 +656,26 @@
   },
   {
     "id": "EMG-0034",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
+    "sku": "MUE-006",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Dormitorio",
+    "name": "Par de mesas de luz blancas",
     "brand": "",
     "model": "",
-    "quantity": 1,
-    "price": 0,
-    "condition": "",
-    "images": []
+    "quantity": 2,
+    "price": 100000,
+    "condition": "Muy bueno",
+    "location": "Buenos Aires",
+    "publicDescription": "Par de mesas de luz blancas de estilo moderno, con patas de madera, nicho abierto superior y compartimiento inferior con puerta. El precio publicado corresponde al par completo.",
+    "images": [
+      "/products/EMG-0034/1.jpeg",
+      "/products/EMG-0034/2.jpeg",
+      "/products/EMG-0034/3.jpeg",
+      "/products/EMG-0034/4.jpeg"
+    ],
+    "publishedAt": "30/07/2026"
   },
   {
     "id": "EMG-0035",
