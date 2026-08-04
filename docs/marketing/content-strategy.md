@@ -1,6 +1,6 @@
 # Estrategia de contenido comercial — EMG-710
 
-Período: 5 al 20 de agosto de 2026.
+Período: 4 al 20 de agosto de 2026.
 
 Objetivo principal: generar consultas calificadas por WhatsApp para productos disponibles antes del cierre de la venta por mudanza.
 
@@ -98,17 +98,25 @@ Debe comunicarse de forma aislada y transparente: es gratis porque necesita repa
 
 ### Ola 1 — Lanzamiento y alcance
 
-#### Miércoles 5 de agosto
+#### Martes 4 de agosto
 
 - Instagram feed: publicación principal de lanzamiento.
 - Instagram Stories: secuencia de tres historias con enlace al catálogo.
 - WhatsApp personal: mensaje de lanzamiento a contactos seleccionados.
 - Estados de WhatsApp: portada, categorías, confianza y enlace.
+- TikTok: video vertical de lanzamiento con música instrumental original.
+- LinkedIn: publicación profesional del proyecto, separada del mensaje comercial.
 - Enlace: catálogo con UTM específico para cada canal.
+
+#### Miércoles 5 de agosto
+
+- Revisar las primeras visitas, respuestas y consultas.
+- Actualizar estados en el Sheet.
+- No hacer otro envío general.
 
 #### Jueves 6 de agosto
 
-- TikTok: video de 15–25 segundos recorriendo el catálogo y mostrando tres productos ancla.
+- TikTok: segundo video breve centrado en tres productos ancla, solo si el lanzamiento inicial genera señales de interés.
 - CTA en pantalla: “Catálogo completo en el perfil”. Verificar antes que el enlace esté visible y accesible desde el perfil.
 - Revisar consultas y actualizar estados en el Sheet.
 - No hacer otro envío general por WhatsApp.

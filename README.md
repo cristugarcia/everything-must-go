@@ -1,93 +1,140 @@
 # Everything Must Go
 
-Catálogo web para gestionar y publicar una venta por mudanza en Buenos Aires.
+A bilingual, production-ready catalog built to manage a real moving sale in Buenos Aires.
 
-El proyecto permite mostrar productos, precios, fotografías, estados de venta y páginas individuales. El inventario se administra desde Google Sheets y se transforma en un catálogo compatible con Next.js mediante un script de importación.
+[Live catalog](https://everything-must-go-cyan.vercel.app/es) · [Case study](https://everything-must-go-cyan.vercel.app/en/proyecto) · [Spanish case study](https://everything-must-go-cyan.vercel.app/es/proyecto)
 
-## Estado del proyecto
+![Everything Must Go catalog on desktop](public/images/project/catalog-desktop.png)
 
-### Sprint 1 — Base del proyecto
+## The problem
 
-- Next.js con App Router
-- TypeScript
-- Tailwind CSS
-- Deploy en Vercel
-- Integración con Google Sheets
-- Importador CSV
-- Generación de catálogo JSON
-- Catálogo dinámico
-- Imágenes locales por producto
+Managing dozens of products through messages and isolated posts makes availability, prices, photos, and buyer conversations difficult to keep consistent. Everything Must Go turns a Google Sheet into a searchable public catalog with direct, product-specific WhatsApp contact.
 
-### Sprint 2 — Experiencia de catálogo
+The project is used with real inventory. Products can be marked as available, reserved, or sold without editing application code.
 
-- Tarjetas de producto
-- Página individual por producto
-- Galería de imágenes
-- Contacto por WhatsApp
-- Buscador en tiempo real
-- Filtros por categoría
-- Ordenamiento por precio y nombre
-- Estados Disponible, Reservado y Vendido
-- Productos relacionados
-- Hero principal
-- Footer
-- Configuración global
-- Utilidades reutilizables
+## Product highlights
 
-### Próximo sprint
+- Search, category filters, sorting, and related products.
+- Individual product pages with image galleries and keyboard navigation.
+- Direct WhatsApp inquiries with the product and tracked URL prefilled.
+- Available, reserved, sold, free, and price-on-request states.
+- Spanish and English routes with localized content and pricing references.
+- Shareable catalog and product Story assets.
+- Campaign links for WhatsApp, Instagram, TikTok, Marketplace, LinkedIn, and referrals.
+- Responsive layout and keyboard-accessible interactions.
 
-- SEO dinámico
-- Vista previa al compartir productos
-- Lightbox de imágenes
-- Favoritos
-- Botón para compartir
-- Mejoras responsive
-- Automatización de la sincronización con Google Sheets
-
-## Tecnologías
-
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Google Sheets
-- Axios
-- csv-parse
-- tsx
-- Vercel
-
-## Estructura principal
+## Architecture
 
 ```text
-app/
-├── item/
-│   └── [id]/
-│       └── page.tsx
-├── globals.css
-├── layout.tsx
-└── page.tsx
+Google Sheets
+      ↓
+CSV import and validation
+      ↓
+Generated catalog JSON
+      ↓
+Next.js App Router
+      ↓
+Vercel deployment
+```
 
-components/
-├── ProductCard.tsx
-├── ProductCatalog.tsx
-├── ProductGallery.tsx
-├── RelatedProducts.tsx
-└── StatusBadge.tsx
+Google Sheets is the operational source of truth. The import script reads only the public inventory fields needed by the application and generates `data/catalog.json`. Secrets and private Sheet values are excluded from the repository and build logs.
 
-data/
-├── catalog.json
-└── products.json
+## Stack
 
-lib/
-├── config.ts
-├── types.ts
-└── utils.ts
+- Next.js 16 and React 19
+- TypeScript
+- Tailwind CSS 4
+- Google Sheets as inventory source
+- Vercel Web Analytics and Speed Insights
+- Vercel deployment
 
-public/
-└── products/
-    ├── EMG-0001/
-    ├── EMG-0002/
-    └── ...
+## SEO, analytics, and quality
 
-scripts/
-└── importInventory.ts
+- Localized titles and descriptions.
+- Canonical URLs and ES/EN `hreflang` alternates.
+- Dynamic product metadata.
+- Open Graph and Twitter Card previews.
+- `Product`, `BreadcrumbList`, and `Person` structured data.
+- Generated sitemap and robots rules.
+- Privacy-conscious page analytics and campaign UTMs.
+- Lighthouse validation reached 100 for accessibility and SEO; recorded performance scores were 95 on mobile and 99 on desktop during Sprint 7 QA.
+- Production build, TypeScript, ESLint, responsive, keyboard, and critical-flow checks.
+
+## Local development
+
+Requirements:
+
+- Node.js 20 or newer
+- npm
+- A readable Google Sheet exposing the inventory CSV used by the importer
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create `.env.local` without committing it:
+
+```text
+GOOGLE_SHEET_ID=your_sheet_id
+GOOGLE_SHEET_GID=your_sheet_tab_gid
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Available scripts
+
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Start the local development server |
+| `npm run import` | Import the current inventory from Google Sheets |
+| `npm run build` | Synchronize inventory and create a production build |
+| `npm run lint` | Run ESLint |
+| `npm run check` | Run lint and the Next.js build |
+| `npm run campaign:links` | Generate tracked campaign links |
+
+Generate channel-specific links for one product:
+
+```bash
+npm run campaign:links -- --product EMG-0002
+```
+
+## Project structure
+
+```text
+app/                  Routes, metadata, sitemap, robots, and API handlers
+components/           Catalog, gallery, sharing, navigation, and UI components
+data/catalog.json     Generated public inventory
+docs/marketing/       Campaign system, launch kit, and content strategy
+lib/                  Configuration, localization, pricing, SEO, and UTM helpers
+public/               Brand, product, project, and CV assets
+scripts/              Inventory import and campaign-link generation
+```
+
+## Product decisions
+
+- Google Sheets remains the source of truth because it lets the owner update inventory without a custom admin panel.
+- WhatsApp is the primary conversion because buyers need to coordinate condition and handoff directly.
+- Sold products remain visible to communicate real inventory status while guiding visitors to available alternatives.
+- Analytics avoids collecting names, phone numbers, message contents, or other unnecessary personal data.
+- Urgency is tied to the real moving date and is not manufactured.
+
+## Roadmap
+
+- Per-product seller ownership and WhatsApp routing.
+- Baseline reporting after the launch campaign.
+- Conversion experiments based on observed traffic and inquiries.
+- Reusable catalog offering for other sellers and small businesses.
+
+## Author
+
+Designed and developed by [Cristina García Mijares](https://www.linkedin.com/in/cristina-garcia-mijares/).
+
+## Usage
+
+This repository is currently shared as a portfolio case study. No license granting reuse or redistribution has been added.
