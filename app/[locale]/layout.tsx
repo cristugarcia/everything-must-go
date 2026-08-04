@@ -1,4 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import {
+  Geist,
+  Geist_Mono,
+} from "next/font/google";
 import { notFound } from "next/navigation";
 
 import {
@@ -7,6 +13,8 @@ import {
 } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/getDictionary";
 import { SITE } from "@/lib/site";
+
+import "../globals.css";
 
 type Props = {
   children: React.ReactNode;
@@ -23,6 +31,24 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false;
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
+};
 
 export async function generateMetadata({
   params,
@@ -108,5 +134,15 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  return children;
+  return (
+    <html lang={locale}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-white font-sans text-zinc-900 antialiased`}
+      >
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
+  );
 }
