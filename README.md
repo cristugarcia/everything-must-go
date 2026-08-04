@@ -117,6 +117,12 @@ Generate channel-specific links for one product:
 npm run campaign:links -- --product EMG-0002
 ```
 
+Generate links for a measured campaign variant:
+
+```bash
+npm run campaign:links -- --experiment destination --variant catalog
+```
+
 ## Project structure
 
 ```text
