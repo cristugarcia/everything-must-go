@@ -3,6 +3,7 @@ import {
   Geist,
   Geist_Mono,
 } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 import type { Metadata } from "next";
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-white font-sans text-zinc-900 antialiased`}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
