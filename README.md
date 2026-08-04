@@ -6,6 +6,10 @@ A bilingual, production-ready catalog built to manage a real moving sale in Buen
 
 ![Everything Must Go catalog on desktop](public/images/project/catalog-desktop.png)
 
+| Mobile catalog | Product detail |
+|---|---|
+| ![Everything Must Go catalog on mobile](public/images/project/catalog-mobile.png) | ![Everything Must Go product detail](public/images/project/product-detail-desktop.png) |
+
 ## The problem
 
 Managing dozens of products through messages and isolated posts makes availability, prices, photos, and buyer conversations difficult to keep consistent. Everything Must Go turns a Google Sheet into a searchable public catalog with direct, product-specific WhatsApp contact.
@@ -74,12 +78,20 @@ Install dependencies:
 npm install
 ```
 
-Create `.env.local` without committing it:
+Create the local environment file from the safe example:
+
+```bash
+cp .env.example .env.local
+```
+
+Then replace the placeholders in `.env.local`:
 
 ```text
 GOOGLE_SHEET_ID=your_sheet_id
 GOOGLE_SHEET_GID=your_sheet_tab_gid
 ```
+
+The Sheet used for imports should expose only the inventory required by the catalog. Keep credentials, private notes, internal costs, and personal data out of any publicly readable source.
 
 Start the development server:
 
@@ -127,7 +139,7 @@ scripts/              Inventory import and campaign-link generation
 ## Roadmap
 
 - Per-product seller ownership and WhatsApp routing.
-- Baseline reporting after the launch campaign.
+- A privacy-safe launch dashboard with aggregated inventory, traffic, campaign, and conversion results.
 - Conversion experiments based on observed traffic and inquiries.
 - Reusable catalog offering for other sellers and small businesses.
 
