@@ -9,6 +9,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import StatusBadge from "@/components/StatusBadge";
 import Button from "@/components/ui/Button";
+import { buildTrackedUrl } from "@/lib/utm";
 
 import {
   isLocale,
@@ -104,6 +105,13 @@ const dictionary =
   const productUrl =
   `${SITE.url}/${locale}/item/${product.id}`;
 
+const productWhatsappUrl =
+  buildTrackedUrl({
+    url: productUrl,
+    channel: "whatsapp",
+    content: `product_${product.id}`,
+  });
+
   const whatsappMessage = isReserved
     ? `Hola Cristina 👋
 
@@ -122,7 +130,7 @@ Precio: ${formattedPrice}
 
 ¿Sigue disponible?
 
-${productUrl}`;
+${productWhatsappUrl}${productUrl}`;
 
   const whatsappUrl = `https://wa.me/${
     SITE.whatsapp.number

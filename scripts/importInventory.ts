@@ -87,14 +87,9 @@ function parseBoolean(
 
 async function run() {
   console.log("📥 Descargando inventario...");
-  console.log(url);
-
+  
   const response = await axios.get<string>(url);
   const csv = response.data;
-
-  console.log("========== CSV ==========");
-  console.log(csv.substring(0, 800));
-  console.log("=========================");
 
   const rows = parse<SheetRow>(csv, {
     columns: true,
@@ -102,20 +97,10 @@ async function run() {
   });
 
   console.log(
-    `✅ ${rows.length} productos encontrados`
-  );
+  `✅ ${rows.length} productos encontrados`
+);
 
-  console.log("----- PRECIOS -----");
-
-  rows.forEach((row) => {
-    console.log(
-      row["Producto"],
-      "=>",
-      JSON.stringify(row["Precio publicado"])
-    );
-  });
-
-  const catalog: Product[] = rows.map((row) => {
+const catalog: Product[] = rows.map((row) => {
     const id = row["ID"];
 
     const images = [

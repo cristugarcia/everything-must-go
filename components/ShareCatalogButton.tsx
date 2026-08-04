@@ -7,6 +7,7 @@ import {
 } from "react";
 
 import type { Locale } from "@/lib/i18n/config";
+import { buildTrackedUrl } from "@/lib/utm";
 
 type ShareCatalogButtonProps = {
   locale: Locale;
@@ -99,9 +100,18 @@ export default function ShareCatalogButton({
     };
   }, []);
 
-  function getCatalogUrl() {
-    return `${window.location.origin}/${locale}`;
-  }
+  function getCatalogUrl(
+  channel:
+    | "whatsapp"
+    | "referral"
+    | "instagram"
+) {
+  return buildTrackedUrl({
+    url: `${window.location.origin}/${locale}`,
+    channel,
+    content: "catalog",
+  });
+}
 
   function getSocialImageUrl() {
     return `/brand/emg-share-${locale}.png`;
@@ -194,7 +204,7 @@ export default function ShareCatalogButton({
   }
 
   function shareOnWhatsApp() {
-    const url = getCatalogUrl();
+    const url = getCatalogUrl("whatsapp");
 
     const message = `${copy.text}\n\n${url}`;
 
@@ -207,7 +217,7 @@ export default function ShareCatalogButton({
   }
 
   async function copyLink() {
-    const url = getCatalogUrl();
+    const url = getCatalogUrl("referral");
 
     try {
       await navigator.clipboard.writeText(
