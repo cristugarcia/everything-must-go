@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react";
 
-import Stagger from "@/components/animations/Stagger";
 import ProductCard from "@/components/ProductCard";
 
 import type { Locale } from "@/lib/i18n/config";
@@ -214,10 +213,6 @@ export default function ProductCatalog({
     selectedStatus !== "all" ||
     sortBy !== "default";
 
-  const staggerKey = filteredProducts
-    .map((product) => product.id)
-    .join("-");
-
   return (
     <div>
       <div className="mb-10 rounded-3xl border border-zinc-200 bg-zinc-50 p-5 sm:p-6">
@@ -375,27 +370,24 @@ export default function ProductCatalog({
       </div>
 
       {filteredProducts.length > 0 ? (
-        <Stagger
-          key={staggerKey}
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-          staggerDelay={0.04}
-        >
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              locale={locale}
-              dictionary={{
-                ...dictionary.productCard,
-                priceOnRequest:
-              dictionary.product.priceOnRequest,
-              free: dictionary.product.free,
-              status: dictionary.status,
-             }}
-             categories={catalog.categories}
-            />
+            <div key={product.id}>
+              <ProductCard
+                product={product}
+                locale={locale}
+                dictionary={{
+                  ...dictionary.productCard,
+                  priceOnRequest:
+                    dictionary.product.priceOnRequest,
+                  free: dictionary.product.free,
+                  status: dictionary.status,
+                }}
+                categories={catalog.categories}
+              />
+            </div>
           ))}
-        </Stagger>
+        </div>
       ) : (
         <div className="rounded-3xl border border-dashed border-zinc-300 px-6 py-20 text-center">
           <div className="text-5xl">🔎</div>

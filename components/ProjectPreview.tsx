@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import FadeIn from "@/components/animations/FadeIn";
 
 const technologies = [
   "Next.js",
@@ -28,10 +27,9 @@ export default function ProjectPreview({
   return (
     <section className="border-t border-zinc-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-20 sm:px-8 sm:py-24 lg:py-28">
-        <FadeIn>
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-600">
                 {dictionary.eyebrow}
               </p>
 
@@ -88,8 +86,7 @@ export default function ProjectPreview({
                 </Link>
               </div>
             </div>
-          </div>
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

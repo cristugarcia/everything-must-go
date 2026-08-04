@@ -40,7 +40,7 @@ const variantClasses: Record<ButtonVariant, string> = {
     "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950",
 
   whatsapp:
-    "bg-green-500 text-white shadow-sm hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-md",
+    "bg-green-700 text-white shadow-sm hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-md",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

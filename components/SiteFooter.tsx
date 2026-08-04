@@ -40,7 +40,7 @@ export default function SiteFooter({
                   : "A real project combining technology, organization, and practical problem-solving."}
             </p>
 
-            <p className="mt-5 text-sm text-zinc-500">
+            <p className="mt-5 text-sm text-zinc-400">
               © 2026 {SITE.author.name}
             </p>
           </div>

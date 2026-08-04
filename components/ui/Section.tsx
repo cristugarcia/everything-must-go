@@ -21,9 +21,9 @@ const toneClasses: Record<SectionTone, string> = {
 };
 
 const eyebrowClasses: Record<SectionTone, string> = {
-  light: "text-zinc-400",
-  muted: "text-zinc-400",
-  dark: "text-zinc-500",
+  light: "text-zinc-600",
+  muted: "text-zinc-600",
+  dark: "text-zinc-400",
 };
 
 const descriptionClasses: Record<SectionTone, string> = {

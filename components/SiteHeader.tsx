@@ -59,7 +59,7 @@ export default function SiteHeader({
         <div className="flex items-center justify-between gap-4">
           <Link
             href={`/${locale}`}
-            aria-label={dictionary.navigation.homeAria}
+            aria-label={`${SITE.name}: ${dictionary.navigation.homeAria}`}
             className="flex min-h-11 shrink-0 items-center font-bold tracking-tight text-zinc-900 transition-opacity hover:opacity-70 sm:min-h-0"
           >
             <span className="text-lg">

@@ -66,13 +66,12 @@ export default function ProductCard({
     <Link
       href={`/${locale}/item/${product.id}`}
       className="group block h-full"
-      aria-label={`${dictionary.viewProduct} ${product.name}`}
     >
       <article
         className={[
           "h-full overflow-hidden rounded-3xl border bg-white shadow-sm transition duration-300",
           isSold
-            ? "border-zinc-200 opacity-70"
+            ? "border-zinc-200"
             : "border-zinc-200 group-hover:-translate-y-1 group-hover:shadow-xl",
           isReserved
             ? "ring-2 ring-amber-200"
@@ -135,7 +134,7 @@ export default function ProductCard({
         </div>
 
         <div className="p-6">
-          <p className="text-sm font-medium uppercase tracking-[0.15em] text-zinc-400">
+          <p className="text-sm font-medium uppercase tracking-[0.15em] text-zinc-600">
             {translatedCategory}
           </p>
 
@@ -159,7 +158,7 @@ export default function ProductCard({
               className={[
                 "mt-1 text-sm font-medium",
                 isSold
-                  ? "text-zinc-400 line-through"
+                  ? "text-zinc-600 line-through"
                   : "text-zinc-500",
               ].join(" ")}
             >

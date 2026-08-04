@@ -168,7 +168,7 @@ export default async function Home({
 
         {/* Contenido del hero */}
         <div className="relative z-10 mx-auto flex min-h-[calc(100vh-65px)] max-w-6xl flex-col items-center justify-center px-6 py-16 text-center sm:px-8 sm:py-24">
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-zinc-400 sm:text-sm sm:tracking-[0.3em]">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-zinc-600 sm:text-sm sm:tracking-[0.3em]">
             {dictionary.home.eyebrow} ·{" "}
             {dictionary.site.city}
           </p>

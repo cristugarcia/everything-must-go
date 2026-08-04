@@ -12,7 +12,7 @@ export default function FloatingWhatsApp() {
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
       title="Contactar por WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-full bg-green-500 px-4 py-4 font-medium text-white shadow-xl transition hover:-translate-y-1 hover:bg-green-600"
+      className="fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-full bg-green-700 px-4 py-4 font-medium text-white shadow-xl transition hover:-translate-y-1 hover:bg-green-800"
     >
       <svg
         viewBox="0 0 32 32"
