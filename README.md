@@ -50,6 +50,7 @@ Google Sheets is the operational source of truth. The import script reads only t
 - Tailwind CSS 4
 - Google Sheets as inventory source
 - Vercel Web Analytics and Speed Insights
+- Native inventory results dashboard
 - Vercel deployment
 
 ## SEO, analytics, and quality
@@ -139,7 +140,7 @@ scripts/              Inventory import and campaign-link generation
 ## Roadmap
 
 - Per-product seller ownership and WhatsApp routing.
-- A privacy-safe launch dashboard with aggregated inventory, traffic, campaign, and conversion results.
+- Add privacy-safe traffic and campaign metrics to the inventory results dashboard once a reliable baseline is available.
 - Conversion experiments based on observed traffic and inquiries.
 - Reusable catalog offering for other sellers and small businesses.
 

@@ -7,6 +7,7 @@ import products from "@/data/catalog.json";
 
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ProjectResultsDashboard from "@/components/ProjectResultsDashboard";
 
 import {
   isLocale,
@@ -21,6 +22,17 @@ type Props = {
   params: Promise<{
     locale: string;
   }>;
+};
+
+const CATEGORY_NAMES_EN: Record<string, string> = {
+  Decoración: "Decor",
+  Deportes: "Sports",
+  Electrodomésticos: "Appliances",
+  Electrónica: "Electronics",
+  Exterior: "Outdoor",
+  Hogar: "Home",
+  Muebles: "Furniture",
+  Vehículos: "Vehicles",
 };
 
 export async function generateMetadata({
@@ -99,6 +111,44 @@ export default async function ProjectPage({
       .map((product) => product.category)
       .filter(Boolean)
   ).size;
+
+  const normalizeStatus = (status: string) =>
+    status.trim().toLowerCase();
+
+  const availableProducts = publishedProducts.filter(
+    (product) => normalizeStatus(product.status) === "disponible"
+  ).length;
+
+  const reservedProducts = publishedProducts.filter(
+    (product) => normalizeStatus(product.status) === "reservado"
+  ).length;
+
+  const soldProducts = publishedProducts.filter(
+    (product) => normalizeStatus(product.status) === "vendido"
+  ).length;
+
+  const productsByCategory = Array.from(
+    publishedProducts.reduce((totals, product) => {
+      const category = product.category.trim();
+
+      if (category) {
+        totals.set(
+          category,
+          (totals.get(category) ?? 0) + 1
+        );
+      }
+
+      return totals;
+    }, new Map<string, number>())
+  )
+    .map(([name, count]) => ({
+      name:
+        locale === "en"
+          ? CATEGORY_NAMES_EN[name] ?? name
+          : name,
+      count,
+    }))
+    .sort((a, b) => b.count - a.count);
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
@@ -393,6 +443,15 @@ export default async function ProjectPage({
           </div>
         </div>
       </section>
+
+      <ProjectResultsDashboard
+        copy={project.results}
+        published={publishedProducts.length}
+        available={availableProducts}
+        reserved={reservedProducts}
+        sold={soldProducts}
+        categories={productsByCategory}
+      />
 
       {/* Aprendizajes */}
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-24 sm:px-8 lg:grid-cols-2">

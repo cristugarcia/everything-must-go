@@ -383,8 +383,37 @@ projectPreview: {
   productAlt: "Individual product page in Everything Must Go"
 },
 
+  results: {
+    eyebrow: "06 · Results",
+    title: "A dashboard connected to the real inventory.",
+    description:
+      "This view updates with the catalog and tracks the project's commercial status without exposing private buyer or seller information.",
+    metrics: {
+      published: "Published products",
+      available: "Available",
+      sold: "Sold",
+      sellThrough: "Sell-through rate",
+    },
+    statusTitle: "Inventory status",
+    categoryTitle: "Products by category",
+    statuses: {
+      available: "Available",
+      reserved: "Reserved",
+      sold: "Sold",
+    },
+    dataTitle: "Data sources",
+    inventorySource: "Google Sheets · active",
+    inventoryDescription:
+      "Products, categories, and statuses synchronized from the catalog's operational source.",
+    analyticsSource: "Vercel Analytics · baseline",
+    analyticsDescription:
+      "Visits, pages, and campaigns are being collected. Custom conversions are not yet part of this report.",
+    note:
+      "Published indicators are aggregated. Names, phone numbers, messages, internal costs, and personal information are never displayed.",
+  },
+
   learnings: {
-    eyebrow: "06 · Key learnings",
+    eyebrow: "07 · Key learnings",
     title:
       "Much more than building an interface.",
 
@@ -399,7 +428,7 @@ projectPreview: {
   },
 
   technologies: {
-    eyebrow: "07 · Technologies",
+    eyebrow: "08 · Technologies",
     title: "Tools used.",
 
     items: [

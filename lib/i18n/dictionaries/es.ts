@@ -385,8 +385,37 @@ subcategories: {
     productAlt: "Página individual de un producto en Everything Must Go"
     },
 
+  results: {
+    eyebrow: "06 · Resultados",
+    title: "Un dashboard conectado al inventario real.",
+    description:
+      "Esta vista se actualiza con el catálogo y permite seguir el estado comercial del proyecto sin exponer información privada de compradores o vendedores.",
+    metrics: {
+      published: "Productos publicados",
+      available: "Disponibles",
+      sold: "Vendidos",
+      sellThrough: "Tasa de venta",
+    },
+    statusTitle: "Estado del inventario",
+    categoryTitle: "Productos por categoría",
+    statuses: {
+      available: "Disponibles",
+      reserved: "Reservados",
+      sold: "Vendidos",
+    },
+    dataTitle: "Fuentes de datos",
+    inventorySource: "Google Sheets · activo",
+    inventoryDescription:
+      "Productos, categorías y estados sincronizados desde la fuente operativa del catálogo.",
+    analyticsSource: "Vercel Analytics · línea base",
+    analyticsDescription:
+      "Visitas, páginas y campañas en recopilación. Las conversiones personalizadas aún no forman parte de este reporte.",
+    note:
+      "Los indicadores publicados son agregados. No se muestran nombres, teléfonos, mensajes, costos internos ni información personal.",
+  },
+
   learnings: {
-    eyebrow: "06 · Aprendizajes",
+    eyebrow: "07 · Aprendizajes",
     title:
       "Mucho más que construir una interfaz.",
 
@@ -401,7 +430,7 @@ subcategories: {
   },
 
   technologies: {
-    eyebrow: "07 · Tecnologías",
+    eyebrow: "08 · Tecnologías",
     title: "Herramientas utilizadas.",
 
     items: [
