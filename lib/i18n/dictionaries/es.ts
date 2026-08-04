@@ -432,8 +432,9 @@ subcategories: {
   },
 
   actions: {
-    whatsapp: "Consultar por WhatsApp",
-    reserved: "Consultar por disponibilidad",
+    whatsapp: "Quiero consultar por este producto",
+    reserved: "Avisarme si vuelve a estar disponible",
+    viewAlternatives: "Ver alternativas disponibles",
     instagram: "Crear Story para Instagram",
     backToCatalog: "Volver al catálogo",
   },
@@ -461,7 +462,7 @@ subcategories: {
 
   infoCards: {
     contactTitle: "Consulta directa",
-    contactDescription: "Escríbeme por WhatsApp.",
+    contactDescription: "Contacto directo, sin formularios.",
 
     availabilityTitle: "Estado actualizado",
     availabilityDescription:
@@ -469,7 +470,7 @@ subcategories: {
 
     locationTitle: "Buenos Aires",
     locationDescription:
-      "Coordinamos retiro o entrega.",
+      "Coordinamos la modalidad por WhatsApp.",
   },
 },
 

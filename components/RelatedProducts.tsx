@@ -39,7 +39,7 @@ export default function RelatedProducts({
 
   return (
     <section className="mt-20 border-t border-zinc-200 pt-14">
-      <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">
+      <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-600">
         {dictionary.eyebrow}
       </p>
 

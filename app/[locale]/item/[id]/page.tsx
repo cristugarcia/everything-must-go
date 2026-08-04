@@ -29,12 +29,6 @@ type Props = {
   }>;
 };
 
-const statusPriority: Record<string, number> = {
-  disponible: 0,
-  reservado: 1,
-  vendido: 2,
-};
-
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
@@ -135,22 +129,16 @@ const dictionary =
     .filter(
       (item) =>
         item.id !== product.id &&
-        item.category === product.category &&
-        item.publish
+        item.publish &&
+        item.status.trim().toLowerCase() === "disponible"
     )
     .sort((a, b) => {
-      const aStatus = a.status
-        .trim()
-        .toLowerCase();
+      const aCategoryPriority =
+        a.category === product.category ? 0 : 1;
+      const bCategoryPriority =
+        b.category === product.category ? 0 : 1;
 
-      const bStatus = b.status
-        .trim()
-        .toLowerCase();
-
-      return (
-        (statusPriority[aStatus] ?? 3) -
-        (statusPriority[bStatus] ?? 3)
-      );
+      return aCategoryPriority - bCategoryPriority;
     })
     .slice(0, 3);
 
@@ -251,8 +239,10 @@ const productWhatsappUrl =
     ],
   };
 
-  const whatsappMessage = isReserved
-    ? `Hola Cristina 👋
+  const whatsappMessage =
+    locale === "es"
+      ? isReserved
+        ? `Hola Cristina 👋
 
 Vi que el producto "${product.name}" está reservado.
 
@@ -261,13 +251,32 @@ Vi que el producto "${product.name}" está reservado.
 Precio publicado: ${formattedPrice}
 
 ${productWhatsappUrl}`
-    : `Hola Cristina 👋
+        : `Hola Cristina 👋
 
 Me interesa el producto "${product.name}" publicado en ${SITE.name}.
 
 Precio: ${formattedPrice}
 
-¿Sigue disponible?
+¿Sigue disponible? ¿Cómo coordinamos el retiro?
+
+${productWhatsappUrl}`
+      : isReserved
+        ? `Hi Cristina 👋
+
+I saw that "${product.name}" is currently reserved.
+
+Could you let me know if it becomes available again?
+
+Listed price: ${formattedPrice}
+
+${productWhatsappUrl}`
+        : `Hi Cristina 👋
+
+I'm interested in "${product.name}" listed on ${SITE.name}.
+
+Price: ${formattedPrice}
+
+Is it still available? How can we arrange pickup?
 
 ${productWhatsappUrl}`;
 
@@ -362,8 +371,17 @@ ${productWhatsappUrl}`;
             {/* CTA */}
             <div className="mt-8">
             {isSold ? (
-                <div className="rounded-3xl border border-red-200 bg-red-50 px-6 py-5 text-center font-medium text-red-700">
-                  {dictionary.product.messages.sold}
+                <div className="space-y-4 rounded-3xl border border-red-200 bg-red-50 px-6 py-5 text-center">
+                  <p className="font-medium text-red-700">
+                    {dictionary.product.messages.sold}
+                  </p>
+                  <Button
+                    href="#alternativas"
+                    variant="secondary"
+                    size="md"
+                  >
+                    {dictionary.actions.viewAlternatives}
+                  </Button>
                 </div>
               ) : (
                 <Button
@@ -520,7 +538,10 @@ ${productWhatsappUrl}`;
           </section>
         </div>
 
-        <div className="mt-24 border-t border-zinc-200 pt-16">
+        <div
+          id="alternativas"
+          className="scroll-mt-24"
+        >
           <RelatedProducts
           products={relatedProducts}
           locale={locale}

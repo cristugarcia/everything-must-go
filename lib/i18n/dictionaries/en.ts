@@ -429,8 +429,9 @@ projectPreview: {
   },
 
   actions: {
-    whatsapp: "Contact via WhatsApp",
-    reserved: "Ask about availability",
+    whatsapp: "Ask about this product",
+    reserved: "Let me know if it becomes available",
+    viewAlternatives: "View available alternatives",
     instagram: "Create an Instagram Story",
     backToCatalog: "Back to catalog",
   },
@@ -459,7 +460,7 @@ projectPreview: {
   infoCards: {
     contactTitle: "Direct contact",
     contactDescription:
-      "Send me a message on WhatsApp.",
+      "Direct contact, with no forms.",
 
     availabilityTitle: "Live availability",
     availabilityDescription:
@@ -467,7 +468,7 @@ projectPreview: {
 
     locationTitle: "Buenos Aires",
     locationDescription:
-      "Pickup or delivery available.",
+      "We coordinate the handoff via WhatsApp.",
   },
 },
 
