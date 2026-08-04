@@ -137,7 +137,33 @@ Historia 3:
 >
 > Consulta directa por WhatsApp desde la ficha.
 
-## 4. Facebook Marketplace
+## 4. TikTok
+
+### Video de lanzamiento
+
+Duración recomendada: 15–25 segundos.
+
+1. Texto inicial: “Me mudo y estoy vendiendo muchas cosas”.
+2. Mostrar rápidamente tres productos visuales.
+3. Mostrar una captura navegando el catálogo.
+4. Cierre: “Fotos, precios y disponibilidad en el catálogo”.
+5. CTA: “Enlace en el perfil”, únicamente después de comprobar que sea visible y accesible.
+
+Texto de publicación:
+
+> Venta por mudanza en Buenos Aires 📦 Armé un catálogo con fotos reales, precios y disponibilidad actualizada. Mira todo desde el enlace del perfil y consulta por WhatsApp desde cada producto.
+
+### Video por colección
+
+> [NOMBRE DE LA COLECCIÓN]
+> [PRODUCTO 1 + PRECIO]
+> [PRODUCTO 2 + PRECIO]
+> [PRODUCTO 3 + PRECIO]
+> Catálogo completo en el perfil.
+
+No usar tendencias o audios que oculten la información esencial. El nombre, precio y condición deben poder entenderse sin sonido.
+
+## 5. Facebook Marketplace — opcional
 
 ### Título
 
@@ -159,7 +185,7 @@ Historia 3:
 
 No publicar varios productos como uno solo. Cada anuncio debe enlazar a la ficha exacta del producto.
 
-## 5. Respuestas rápidas
+## 6. Respuestas rápidas
 
 ### Primera respuesta
 
@@ -187,7 +213,7 @@ Antes de enviarla, comprobar el estado en el catálogo.
 
 > El lavarropas es gratis porque necesita reparación y se entrega en su estado actual. Las fotos y la descripción muestran la condición publicada. Si te sirve así, coordinamos por WhatsApp.
 
-## 6. Últimos disponibles
+## 7. Últimos disponibles
 
 Usar solamente cerca de la fecha real de cierre y después de revisar el inventario.
 
@@ -199,7 +225,7 @@ Versión por categoría:
 
 > Estos son algunos de los productos de [CATEGORÍA] que todavía siguen disponibles. Puedes ver fotos, precios y detalles aquí: [ENLACE]
 
-## 7. Uso de enlaces
+## 8. Uso de enlaces
 
 Generar los enlaces antes de cada publicación:
 
@@ -215,7 +241,7 @@ npm run campaign:links -- --product EMG-0002
 
 Elegir el enlace que coincida exactamente con el canal. La convención completa está documentada en `docs/marketing/utm-guide.md`.
 
-## 8. Checklist antes de publicar
+## 9. Checklist antes de publicar
 
 - Confirmar que el producto continúa disponible.
 - Confirmar precio, descripción y fotos.

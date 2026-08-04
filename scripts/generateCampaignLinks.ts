@@ -9,6 +9,7 @@ const CHANNELS: MarketingChannel[] = [
   "whatsapp",
   "whatsapp_status",
   "instagram",
+  "tiktok",
   "facebook_marketplace",
   "linkedin",
   "referral",

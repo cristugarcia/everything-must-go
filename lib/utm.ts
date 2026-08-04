@@ -2,6 +2,7 @@ export type MarketingChannel =
   | "whatsapp"
   | "whatsapp_status"
   | "instagram"
+  | "tiktok"
   | "facebook_marketplace"
   | "linkedin"
   | "referral";
@@ -30,6 +31,12 @@ export const CHANNEL_CONFIG: Record<
 
   instagram: {
     source: "instagram",
+    medium: "social",
+    campaign: "emg_launch",
+  },
+
+  tiktok: {
+    source: "tiktok",
     medium: "social",
     campaign: "emg_launch",
   },

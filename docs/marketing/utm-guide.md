@@ -26,7 +26,7 @@ También se puede elegir el idioma:
 npm run campaign:links -- --locale en --product EMG-0002
 ```
 
-El comando genera enlaces para WhatsApp personal, estados de WhatsApp, Instagram, Facebook Marketplace, LinkedIn y referidos.
+El comando genera enlaces para WhatsApp personal, estados de WhatsApp, Instagram, TikTok, Facebook Marketplace, LinkedIn y referidos.
 
 Usa el enlace del canal exacto donde publicarás. No reutilices un enlace de Instagram en WhatsApp porque la visita quedaría atribuida al canal incorrecto.
 
