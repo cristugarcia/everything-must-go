@@ -652,6 +652,10 @@
       "/products/EMG-0033/3.jpeg",
       "/products/EMG-0033/4.jpeg"
     ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
     "publishedAt": "30/07/2026"
   },
   {
@@ -675,6 +679,10 @@
       "/products/EMG-0034/3.jpeg",
       "/products/EMG-0034/4.jpeg"
     ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
     "publishedAt": "30/07/2026"
   },
   {

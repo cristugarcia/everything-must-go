@@ -1,7 +1,6 @@
 export interface Seller {
   id: string;
   name: string;
-  whatsapp: string;
 }
 
 export interface Product {

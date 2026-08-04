@@ -19,6 +19,7 @@ import {
 import { getDictionary } from "@/lib/i18n/getDictionary";
 import { getProductPriceDisplay } from "@/lib/formatPrice";
 import { SITE } from "@/lib/site";
+import { getSellerWhatsApp } from "@/lib/sellers";
 import { serializeStructuredData } from "@/lib/structuredData";
 import { Product } from "@/lib/types";
 
@@ -164,8 +165,11 @@ const dictionary =
   const seller = product.seller ?? {
     id: "cristina",
     name: SITE.author.name,
-    whatsapp: SITE.whatsapp.number,
   };
+
+  const sellerWhatsapp = product.seller
+    ? getSellerWhatsApp(product.seller.id)
+    : SITE.whatsapp.number;
 
   const sellerFirstName =
     seller.name.split(/\s+/)[0] || seller.name;
@@ -296,7 +300,7 @@ Is it still available? How can we arrange pickup?
 ${productWhatsappUrl}`;
 
   const whatsappUrl = `https://wa.me/${
-    seller.whatsapp
+    sellerWhatsapp
   }?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (

@@ -91,6 +91,7 @@ Then replace the placeholders in `.env.local`:
 ```text
 GOOGLE_SHEET_ID=your_sheet_id
 GOOGLE_SHEET_GID=your_sheet_tab_gid
+SELLER_WHATSAPP_AMIGO_MIGUE=country_code_and_number
 ```
 
 The Sheet used for imports should expose only the inventory required by the catalog. Keep credentials, private notes, internal costs, and personal data out of any publicly readable source.

@@ -3,6 +3,7 @@ import axios from "axios";
 import { parse } from "csv-parse/sync";
 import fs from "fs-extra";
 import { Product, Seller } from "../lib/types";
+import { getSellerWhatsApp } from "../lib/sellers";
 
 dotenv.config({
   path: ".env.local",
@@ -91,34 +92,34 @@ function parseSeller(
 ): Seller | undefined {
   const id = row["Vendedor ID"]?.trim();
   const name = row["Nombre vendedor"]?.trim();
-  const whatsapp = row["WhatsApp vendedor"]
-    ?.replace(/\D/g, "")
-    .trim();
+  const publicWhatsapp =
+    row["WhatsApp vendedor"]?.trim();
 
   const hasSellerData = Boolean(
-    id || name || whatsapp
+    id || name || publicWhatsapp
   );
 
   if (!hasSellerData) {
     return undefined;
   }
 
-  if (!id || !name || !whatsapp) {
+  if (!id || !name) {
     throw new Error(
       `El producto ${productId} tiene datos incompletos de vendedor.`
     );
   }
 
-  if (whatsapp.length < 8 || whatsapp.length > 15) {
+  if (publicWhatsapp) {
     throw new Error(
-      `El producto ${productId} tiene un WhatsApp de vendedor inválido.`
+      `El producto ${productId} expone un WhatsApp en Google Sheets. Vacía esa celda y usa la variable privada del vendedor.`
     );
   }
+
+  getSellerWhatsApp(id);
 
   return {
     id,
     name,
-    whatsapp,
   };
 }
 
