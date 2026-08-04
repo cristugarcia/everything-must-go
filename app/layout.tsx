@@ -1,11 +1,12 @@
-import type { Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Geist,
   Geist_Mono,
 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -42,6 +43,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-white font-sans text-zinc-900 antialiased`}
       >
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
