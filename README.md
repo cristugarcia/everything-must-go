@@ -21,6 +21,7 @@ The project is used with real inventory. Products can be marked as available, re
 - Search, category filters, sorting, and related products.
 - Individual product pages with image galleries and keyboard navigation.
 - Direct WhatsApp inquiries with the product and tracked URL prefilled.
+- Per-product seller ownership and WhatsApp routing with a safe default contact.
 - Available, reserved, sold, free, and price-on-request states.
 - Spanish and English routes with localized content and pricing references.
 - Shareable catalog and product Story assets.
@@ -145,7 +146,7 @@ scripts/              Inventory import and campaign-link generation
 
 ## Roadmap
 
-- Per-product seller ownership and WhatsApp routing.
+- Validate the multi-seller flow with the first external seller.
 - Add privacy-safe traffic and campaign metrics to the inventory results dashboard once a reliable baseline is available.
 - Conversion experiments based on observed traffic and inquiries.
 - Reusable catalog offering for other sellers and small businesses.

@@ -478,6 +478,8 @@ projectPreview: {
   priceOnRequest: "Price on request",
   free: "Free",
   usdEstimatePrefix: "Approx.",
+  sellerContact:
+    "Your inquiry will be sent directly to {seller}.",
 
   messages: {
     reserved:

@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import axios from "axios";
 import { parse } from "csv-parse/sync";
 import fs from "fs-extra";
-import { Product } from "../lib/types";
+import { Product, Seller } from "../lib/types";
 
 dotenv.config({
   path: ".env.local",
@@ -85,6 +85,43 @@ function parseBoolean(
   );
 }
 
+function parseSeller(
+  row: SheetRow,
+  productId: string
+): Seller | undefined {
+  const id = row["Vendedor ID"]?.trim();
+  const name = row["Nombre vendedor"]?.trim();
+  const whatsapp = row["WhatsApp vendedor"]
+    ?.replace(/\D/g, "")
+    .trim();
+
+  const hasSellerData = Boolean(
+    id || name || whatsapp
+  );
+
+  if (!hasSellerData) {
+    return undefined;
+  }
+
+  if (!id || !name || !whatsapp) {
+    throw new Error(
+      `El producto ${productId} tiene datos incompletos de vendedor.`
+    );
+  }
+
+  if (whatsapp.length < 8 || whatsapp.length > 15) {
+    throw new Error(
+      `El producto ${productId} tiene un WhatsApp de vendedor inválido.`
+    );
+  }
+
+  return {
+    id,
+    name,
+    whatsapp,
+  };
+}
+
 async function run() {
   console.log("📥 Descargando inventario...");
   
@@ -102,6 +139,7 @@ async function run() {
 
 const catalog: Product[] = rows.map((row) => {
     const id = row["ID"];
+    const seller = parseSeller(row, id);
 
     const images = [
       row["Foto 1"],
@@ -153,6 +191,8 @@ const catalog: Product[] = rows.map((row) => {
         undefined,
 
       images,
+
+      seller,
 
       publishedAt:
         row["Fecha publicación"] ||

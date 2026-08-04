@@ -1,3 +1,9 @@
+export interface Seller {
+  id: string;
+  name: string;
+  whatsapp: string;
+}
+
 export interface Product {
   id: string;
   sku: string;
@@ -23,6 +29,8 @@ export interface Product {
 
   publicDescription?: string;
   images: string[];
+
+  seller?: Seller;
 
   publishedAt?: string;
   soldAt?: string;

@@ -161,6 +161,21 @@ const dictionary =
 
   const formattedPrice = priceDisplay.primary;
 
+  const seller = product.seller ?? {
+    id: "cristina",
+    name: SITE.author.name,
+    whatsapp: SITE.whatsapp.number,
+  };
+
+  const sellerFirstName =
+    seller.name.split(/\s+/)[0] || seller.name;
+
+  const sellerStructuredDataId = product.seller
+    ? `${SITE.url}/#seller-${encodeURIComponent(
+        seller.id
+      )}`
+    : `${SITE.url}/#person`;
+
   const productUrl =
   `${SITE.url}/${locale}/item/${product.id}`;
 
@@ -213,8 +228,8 @@ const productWhatsappUrl =
             availability,
             seller: {
               "@type": "Person",
-              "@id": `${SITE.url}/#person`,
-              name: SITE.author.name,
+              "@id": sellerStructuredDataId,
+              name: seller.name,
             },
           }
         : undefined,
@@ -242,7 +257,7 @@ const productWhatsappUrl =
   const whatsappMessage =
     locale === "es"
       ? isReserved
-        ? `Hola Cristina 👋
+        ? `Hola ${sellerFirstName} 👋
 
 Vi que el producto "${product.name}" está reservado.
 
@@ -251,7 +266,7 @@ Vi que el producto "${product.name}" está reservado.
 Precio publicado: ${formattedPrice}
 
 ${productWhatsappUrl}`
-        : `Hola Cristina 👋
+        : `Hola ${sellerFirstName} 👋
 
 Me interesa el producto "${product.name}" publicado en ${SITE.name}.
 
@@ -261,7 +276,7 @@ Precio: ${formattedPrice}
 
 ${productWhatsappUrl}`
       : isReserved
-        ? `Hi Cristina 👋
+        ? `Hi ${sellerFirstName} 👋
 
 I saw that "${product.name}" is currently reserved.
 
@@ -270,7 +285,7 @@ Could you let me know if it becomes available again?
 Listed price: ${formattedPrice}
 
 ${productWhatsappUrl}`
-        : `Hi Cristina 👋
+        : `Hi ${sellerFirstName} 👋
 
 I'm interested in "${product.name}" listed on ${SITE.name}.
 
@@ -281,7 +296,7 @@ Is it still available? How can we arrange pickup?
 ${productWhatsappUrl}`;
 
   const whatsappUrl = `https://wa.me/${
-    SITE.whatsapp.number
+    seller.whatsapp
   }?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
@@ -395,6 +410,15 @@ ${productWhatsappUrl}`;
                     ? dictionary.actions.reserved
                     : dictionary.actions.whatsapp}
                 </Button>
+              )}
+
+              {!isSold && (
+                <p className="mt-3 text-center text-sm text-zinc-500">
+                  {dictionary.product.sellerContact.replace(
+                    "{seller}",
+                    seller.name
+                  )}
+                </p>
               )}
 
   <ShareProductStoryButton

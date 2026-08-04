@@ -481,6 +481,8 @@ subcategories: {
   priceOnRequest: "Precio a consultar",
   free: "Gratis",
   usdEstimatePrefix: "Aprox.",
+  sellerContact:
+    "La consulta se enviará directamente a {seller}.",
 
   messages: {
     reserved:
