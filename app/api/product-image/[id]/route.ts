@@ -16,7 +16,7 @@ export async function GET(
   const productList = products as Product[];
 
   const product = productList.find(
-    (item) => item.id === id
+    (item) => item.id === id && item.publish
   );
 
   const imageUrl =

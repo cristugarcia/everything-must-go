@@ -50,6 +50,7 @@ export async function generateMetadata({
       languages: {
         es: "/es/sobre-mi",
         en: "/en/sobre-mi",
+        "x-default": "/es/sobre-mi",
       },
     },
 
@@ -305,7 +306,7 @@ export default async function AboutPage({
       </div>
       </section>
 
-      <SiteFooter />
+      <SiteFooter locale={locale} />
     </main>
   );
 }

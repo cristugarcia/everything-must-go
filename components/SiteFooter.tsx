@@ -1,16 +1,21 @@
 import Link from "next/link";
 
+import type { Locale } from "@/lib/i18n/config";
 import { SITE } from "@/lib/site";
 
 type SiteFooterProps = {
+  locale: Locale;
   variant?: "catalogo" | "portfolio";
 };
 
 export default function SiteFooter({
+  locale,
   variant = "portfolio",
 }: SiteFooterProps) {
   const whatsappMessage =
-    "Hola Cristina 👋 Vi tu catálogo de Everything Must Go y quería hacerte una consulta.";
+    locale === "es"
+      ? "Hola Cristina 👋 Vi tu catálogo de Everything Must Go y quería hacerte una consulta."
+      : "Hi Cristina 👋 I saw your Everything Must Go catalog and would like to ask you a question.";
 
   const whatsappUrl = `https://wa.me/${
     SITE.whatsapp.number
@@ -27,8 +32,12 @@ export default function SiteFooter({
 
             <p className="mt-3 max-w-md leading-7 text-zinc-400">
               {variant === "catalogo"
-                ? "Artículos en excelente estado buscando un nuevo hogar en Buenos Aires."
-                : "Un proyecto real que combina tecnología, organización y resolución práctica de problemas."}
+                ? locale === "es"
+                  ? "Artículos en excelente estado buscando un nuevo hogar en Buenos Aires."
+                  : "Items in excellent condition looking for a new home in Buenos Aires."
+                : locale === "es"
+                  ? "Un proyecto real que combina tecnología, organización y resolución práctica de problemas."
+                  : "A real project combining technology, organization, and practical problem-solving."}
             </p>
 
             <p className="mt-5 text-sm text-zinc-500">
@@ -38,28 +47,32 @@ export default function SiteFooter({
 
           <div className="flex flex-col gap-6 md:items-end">
             <nav
-              aria-label="Navegación del pie de página"
+              aria-label={
+                locale === "es"
+                  ? "Navegación del pie de página"
+                  : "Footer navigation"
+              }
               className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-zinc-400"
             >
               <Link
-                href="/"
+                href={`/${locale}`}
                 className="transition hover:text-white"
               >
-                Catálogo
+                {locale === "es" ? "Catálogo" : "Catalog"}
               </Link>
 
               <Link
-                href="/proyecto"
+                href={`/${locale}/proyecto`}
                 className="transition hover:text-white"
               >
-                El proyecto
+                {locale === "es" ? "El proyecto" : "The project"}
               </Link>
 
               <Link
-                href="/sobre-mi"
+                href={`/${locale}/sobre-mi`}
                 className="transition hover:text-white"
               >
-                Sobre mí
+                {locale === "es" ? "Sobre mí" : "About me"}
               </Link>
             </nav>
 
@@ -70,7 +83,9 @@ export default function SiteFooter({
                 rel="noopener noreferrer"
                 className="inline-flex w-fit items-center justify-center rounded-full bg-white px-6 py-3 font-medium text-black transition hover:bg-zinc-200"
               >
-                Escribir por WhatsApp
+                {locale === "es"
+                  ? "Escribir por WhatsApp"
+                  : "Message on WhatsApp"}
               </a>
             )}
           </div>

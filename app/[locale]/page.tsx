@@ -25,9 +25,6 @@ type Props = {
     locale: string;
   }>;
 };
-const PUBLIC_SITE_URL =
-  "https://everything-must-go-cyan.vercel.app";
-
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
@@ -53,11 +50,11 @@ export async function generateMetadata({
 
   const socialImage =
     locale === "es"
-      ? `${PUBLIC_SITE_URL}/brand/emg-share-es.png`
-      : `${PUBLIC_SITE_URL}/brand/emg-share-en.png`;
+      ? `${SITE.url}/brand/emg-share-es.png`
+      : `${SITE.url}/brand/emg-share-en.png`;
 
   const pageUrl =
-    `${PUBLIC_SITE_URL}/${locale}`;
+    `${SITE.url}/${locale}`;
 
   return {
     title,
@@ -67,8 +64,9 @@ export async function generateMetadata({
       canonical: pageUrl,
 
       languages: {
-        es: `${PUBLIC_SITE_URL}/es`,
-        en: `${PUBLIC_SITE_URL}/en`,
+        es: `${SITE.url}/es`,
+        en: `${SITE.url}/en`,
+        "x-default": `${SITE.url}/es`,
       },
     },
 
@@ -278,7 +276,7 @@ export default async function Home({
         />
 
       {/* Footer */}
-      <SiteFooter variant="catalogo" />
+      <SiteFooter locale={locale} variant="catalogo" />
 
       <FloatingWhatsApp />
     </main>

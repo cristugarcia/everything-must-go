@@ -473,6 +473,9 @@ export default function ShareProductStoryButton({
         setIsPreparing(false);
       }
     }, [
+      dictionary.footerText,
+      dictionary.movingSale,
+      dictionary.prepareFailed,
       formattedPrice,
       name,
       productId,

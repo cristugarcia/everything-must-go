@@ -44,6 +44,7 @@ export async function generateMetadata({
       languages: {
         es: "/es/proyecto",
         en: "/en/proyecto",
+        "x-default": "/es/proyecto",
       },
     },
 
@@ -458,7 +459,7 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      <SiteFooter />
+      <SiteFooter locale={locale} />
     </main>
   );
 }

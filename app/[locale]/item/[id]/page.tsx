@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import products from "@/data/catalog.json";
@@ -33,6 +34,72 @@ const statusPriority: Record<string, number> = {
   vendido: 2,
 };
 
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { locale: localeParam, id } = await params;
+
+  if (!isLocale(localeParam)) {
+    return {};
+  }
+
+  const productList = products as Product[];
+  const product = productList.find(
+    (item) => item.id === id && item.publish
+  );
+
+  if (!product) {
+    return {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const canonicalPath = `/${localeParam}/item/${product.id}`;
+  const description =
+    product.publicDescription ||
+    `${product.name} — ${product.condition}. ${SITE.name}, ${SITE.city}.`;
+  const image = product.images?.[0];
+
+  return {
+    title: product.name,
+    description,
+    alternates: {
+      canonical: canonicalPath,
+      languages: {
+        es: `/es/item/${product.id}`,
+        en: `/en/item/${product.id}`,
+        "x-default": `/es/item/${product.id}`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale:
+        localeParam === "es" ? "es_AR" : "en_US",
+      siteName: SITE.name,
+      title: product.name,
+      description,
+      url: canonicalPath,
+      images: image
+        ? [
+            {
+              url: image,
+              alt: product.name,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.name,
+      description,
+      images: image ? [image] : undefined,
+    },
+  };
+}
+
 export default async function ProductPage({
   params,
 }: Props) {
@@ -53,7 +120,7 @@ const dictionary =
   const productList = products as Product[];
 
   const product = productList.find(
-    (item) => item.id === id
+    (item) => item.id === id && item.publish
   );
 
   if (!product) {
@@ -121,7 +188,7 @@ Vi que el producto "${product.name}" está reservado.
 
 Precio publicado: ${formattedPrice}
 
-${productUrl}`
+${productWhatsappUrl}`
     : `Hola Cristina 👋
 
 Me interesa el producto "${product.name}" publicado en ${SITE.name}.
@@ -130,7 +197,7 @@ Precio: ${formattedPrice}
 
 ¿Sigue disponible?
 
-${productWhatsappUrl}${productUrl}`;
+${productWhatsappUrl}`;
 
   const whatsappUrl = `https://wa.me/${
     SITE.whatsapp.number
@@ -386,7 +453,7 @@ ${productWhatsappUrl}${productUrl}`;
         </div>
       </div>
 
-      <SiteFooter variant="catalogo" />
+      <SiteFooter locale={locale} variant="catalogo" />
     </main>
   );
 }
