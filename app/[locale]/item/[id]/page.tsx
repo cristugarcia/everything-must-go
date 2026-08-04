@@ -19,6 +19,7 @@ import {
 import { getDictionary } from "@/lib/i18n/getDictionary";
 import { getProductPriceDisplay } from "@/lib/formatPrice";
 import { SITE } from "@/lib/site";
+import { serializeStructuredData } from "@/lib/structuredData";
 import { Product } from "@/lib/types";
 
 type Props = {
@@ -59,8 +60,11 @@ export async function generateMetadata({
 
   const canonicalPath = `/${localeParam}/item/${product.id}`;
   const description =
-    product.publicDescription ||
-    `${product.name} — ${product.condition}. ${SITE.name}, ${SITE.city}.`;
+    localeParam === "es" && product.publicDescription
+      ? product.publicDescription
+      : localeParam === "es"
+        ? `${product.name} en ${product.condition.toLowerCase()} estado. Consulta disponibilidad en ${SITE.name}, ${SITE.city}.`
+        : `${product.name} for sale in ${SITE.city}. Check price, condition, and availability on ${SITE.name}.`;
   const image = product.images?.[0];
 
   return {
@@ -179,6 +183,74 @@ const productWhatsappUrl =
     content: `product_${product.id}`,
   });
 
+  const productDescription =
+    locale === "es" && product.publicDescription
+      ? product.publicDescription
+      : locale === "es"
+        ? `${product.name} en ${product.condition.toLowerCase()} estado. Consulta disponibilidad en ${SITE.city}.`
+        : `${product.name} for sale in ${SITE.city}. Check condition and availability.`;
+
+  const availability = isSold
+    ? "https://schema.org/SoldOut"
+    : isReserved
+      ? "https://schema.org/LimitedAvailability"
+      : "https://schema.org/InStock";
+
+  const productStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${productUrl}#product`,
+    name: product.name,
+    description: productDescription,
+    image: product.images.map((image) =>
+      new URL(image, SITE.url).toString()
+    ),
+    sku: product.sku || product.id,
+    category: product.category,
+    brand: product.brand
+      ? {
+          "@type": "Brand",
+          name: product.brand,
+        }
+      : undefined,
+    model: product.model || undefined,
+    itemCondition: "https://schema.org/UsedCondition",
+    offers:
+      Number.isFinite(product.price) && product.price >= 0
+        ? {
+            "@type": "Offer",
+            url: productUrl,
+            priceCurrency: "ARS",
+            price: product.price,
+            availability,
+            seller: {
+              "@type": "Person",
+              "@id": `${SITE.url}/#person`,
+              name: SITE.author.name,
+            },
+          }
+        : undefined,
+  };
+
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: locale === "es" ? "Catálogo" : "Catalog",
+        item: `${SITE.url}/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: product.name,
+        item: productUrl,
+      },
+    ],
+  };
+
   const whatsappMessage = isReserved
     ? `Hola Cristina 👋
 
@@ -205,6 +277,18 @@ ${productWhatsappUrl}`;
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(productStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(breadcrumbStructuredData),
+        }}
+      />
       <SiteHeader
         locale={locale}
         dictionary={dictionary}

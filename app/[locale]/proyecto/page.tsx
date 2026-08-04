@@ -13,6 +13,7 @@ import {
   type Locale,
 } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/getDictionary";
+import { SITE } from "@/lib/site";
 
 import type { Product } from "@/lib/types";
 
@@ -34,6 +35,7 @@ export async function generateMetadata({
   const locale: Locale = localeParam;
   const dictionary = await getDictionary(locale);
   const metadata = dictionary.projectPage.metadata;
+  const socialImage = `/brand/emg-share-${locale}.png`;
 
   return {
     title: metadata.title,
@@ -49,9 +51,26 @@ export async function generateMetadata({
     },
 
     openGraph: {
+      type: "website",
+      siteName: SITE.name,
+      locale: locale === "es" ? "es_AR" : "en_US",
       title: metadata.openGraphTitle,
       description: metadata.openGraphDescription,
       url: `/${locale}/proyecto`,
+      images: [
+        {
+          url: socialImage,
+          width: 1280,
+          height: 1520,
+          alt: metadata.openGraphTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metadata.openGraphTitle,
+      description: metadata.openGraphDescription,
+      images: [socialImage],
     },
   };
 }

@@ -86,8 +86,8 @@ export async function generateMetadata({
       images: [
         {
           url: socialImage,
-          width: 1200,
-          height: 630,
+          width: 1280,
+          height: 1520,
 
           alt:
             locale === "es"

@@ -11,6 +11,8 @@ import {
   type Locale,
 } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/getDictionary";
+import { SITE } from "@/lib/site";
+import { serializeStructuredData } from "@/lib/structuredData";
 
 type Props = {
   params: Promise<{
@@ -64,8 +66,8 @@ export async function generateMetadata({
       images: [
         {
           url: socialImage,
-          width: 1200,
-          height: 630,
+          width: 1280,
+          height: 1520,
           alt: socialImageAlt,
         },
       ],
@@ -92,6 +94,22 @@ export default async function AboutPage({
   const locale: Locale = localeParam;
   const dictionary = await getDictionary(locale);
   const about = dictionary.aboutPage;
+  const pageUrl = `${SITE.url}/${locale}/sobre-mi`;
+  const personStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE.url}/#person`,
+    name: SITE.author.name,
+    url: pageUrl,
+    image: `${SITE.url}/images/about/cristina-kala-original.jpg`,
+    sameAs: [SITE.author.linkedin],
+    knowsAbout: [
+      "Product development",
+      "Full-stack web development",
+      "UX/UI",
+      "Digital marketing",
+    ],
+  };
 
   const emailSubject =
   locale === "es"
@@ -109,6 +127,12 @@ export default async function AboutPage({
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(personStructuredData),
+        }}
+      />
       <SiteHeader
         locale={locale}
         dictionary={dictionary}
