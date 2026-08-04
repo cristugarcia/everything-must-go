@@ -14,7 +14,7 @@ export interface Product {
 
   quantity: number;
 
-  price: number;
+  price: number | null;
   purchaseYear?: number;
 
   condition: string;

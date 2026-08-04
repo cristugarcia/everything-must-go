@@ -60,7 +60,7 @@ export default function SiteHeader({
           <Link
             href={`/${locale}`}
             aria-label={dictionary.navigation.homeAria}
-            className="shrink-0 font-bold tracking-tight text-zinc-900 transition-opacity hover:opacity-70"
+            className="flex min-h-11 shrink-0 items-center font-bold tracking-tight text-zinc-900 transition-opacity hover:opacity-70 sm:min-h-0"
           >
             <span className="text-lg">
               {SITE.name}
@@ -97,7 +97,7 @@ export default function SiteHeader({
                       ? "page"
                       : undefined
                   }
-                  className={`whitespace-nowrap rounded-full px-2 py-2.5 text-center text-xs font-medium transition sm:px-4 sm:py-2 sm:text-sm ${
+                  className={`flex min-h-11 items-center justify-center whitespace-nowrap rounded-full px-2 py-2.5 text-center text-xs font-medium transition sm:min-h-0 sm:px-4 sm:py-2 sm:text-sm ${
                     isActive
                       ? "bg-zinc-900 text-white"
                       : "text-zinc-600 hover:bg-zinc-100 hover:text-black"

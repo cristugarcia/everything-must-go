@@ -156,12 +156,16 @@ export default function ProductCatalog({
     switch (sortBy) {
       case "price-asc":
         return [...filtered].sort(
-          (a, b) => a.price - b.price
+          (a, b) =>
+            (a.price ?? Number.POSITIVE_INFINITY) -
+            (b.price ?? Number.POSITIVE_INFINITY)
         );
 
       case "price-desc":
         return [...filtered].sort(
-          (a, b) => b.price - a.price
+          (a, b) =>
+            (b.price ?? Number.NEGATIVE_INFINITY) -
+            (a.price ?? Number.NEGATIVE_INFINITY)
         );
 
       case "name":
@@ -292,7 +296,7 @@ export default function ProductCatalog({
                   onClick={() =>
                     setSelectedStatus(status.value)
                   }
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                  className={`min-h-11 rounded-full px-4 py-2 text-sm font-medium transition ${
                     isSelected
                       ? "bg-black text-white"
                       : "border border-zinc-300 bg-white text-zinc-700 hover:border-black hover:text-black"
@@ -316,7 +320,7 @@ export default function ProductCatalog({
               onClick={() =>
                 setSelectedCategory("all")
               }
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+              className={`min-h-11 rounded-full px-4 py-2 text-sm font-medium transition ${
                 selectedCategory === "all"
                   ? "bg-black text-white"
                   : "border border-zinc-300 bg-white text-zinc-700 hover:border-black hover:text-black"
@@ -336,7 +340,7 @@ export default function ProductCatalog({
                   onClick={() =>
                     setSelectedCategory(category)
                   }
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                  className={`min-h-11 rounded-full px-4 py-2 text-sm font-medium transition ${
                     isSelected
                       ? "bg-black text-white"
                       : "border border-zinc-300 bg-white text-zinc-700 hover:border-black hover:text-black"

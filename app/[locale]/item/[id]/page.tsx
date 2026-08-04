@@ -216,7 +216,7 @@ const productWhatsappUrl =
     model: product.model || undefined,
     itemCondition: "https://schema.org/UsedCondition",
     offers:
-      Number.isFinite(product.price) && product.price >= 0
+      typeof product.price === "number" && product.price >= 0
         ? {
             "@type": "Offer",
             url: productUrl,

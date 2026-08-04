@@ -73,7 +73,7 @@ export default function LanguageSwitcher({
             onClick={() =>
               rememberLanguage(language.locale)
             }
-            className={`flex items-center gap-1 rounded-full px-2.5 py-1.5 text-xs font-semibold transition sm:px-3 ${
+            className={`flex min-h-11 items-center gap-1 rounded-full px-2.5 py-1.5 text-xs font-semibold transition sm:min-h-0 sm:px-3 ${
               isActive
                 ? "bg-zinc-900 text-white shadow-sm"
                 : "text-zinc-500 hover:bg-white hover:text-zinc-900"

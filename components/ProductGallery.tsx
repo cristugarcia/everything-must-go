@@ -112,7 +112,7 @@ export default function ProductGallery({
             selectedIndex + 1
           } de ${validImages.length}`}
           fill
-          priority
+          loading="eager"
           sizes="(max-width: 1024px) 100vw, 50vw"
           className="object-cover"
         />
@@ -179,6 +179,7 @@ export default function ProductGallery({
                     index + 1
                   }`}
                   fill
+                  loading={index === 0 ? "eager" : "lazy"}
                   sizes="120px"
                   className="object-cover"
                 />

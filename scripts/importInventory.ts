@@ -23,9 +23,9 @@ type SheetRow = Record<string, string>;
 
 function parsePrice(
   value: string | undefined | null
-): number {
+): number | null {
   if (!value) {
-    return 0;
+    return null;
   }
 
   let clean = String(value).trim();
@@ -50,7 +50,7 @@ function parsePrice(
       value
     );
 
-    return 0;
+    return null;
   }
 
   return Math.round(number);
