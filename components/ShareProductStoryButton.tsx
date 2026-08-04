@@ -6,6 +6,8 @@ import {
   useState,
 } from "react";
 
+import { buildTrackedUrl } from "@/lib/utm";
+
 type ShareProductStoryButtonProps = {
   productId: string;
   name: string;
@@ -519,6 +521,12 @@ export default function ShareProductStoryButton({
     setMessage("");
 
     try {
+      const instagramUrl = buildTrackedUrl({
+        url: productUrl,
+        channel: "instagram",
+        content: `product_${productId}`,
+      });
+
       // Intentamos dejar el enlace listo para
       // pegarlo en el sticker de Instagram.
       if (
@@ -526,7 +534,7 @@ export default function ShareProductStoryButton({
         window.isSecureContext
       ) {
         void navigator.clipboard.writeText(
-          productUrl
+          instagramUrl
         );
       }
 

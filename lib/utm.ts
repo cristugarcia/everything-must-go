@@ -6,13 +6,13 @@ export type MarketingChannel =
   | "linkedin"
   | "referral";
 
-type UtmConfig = {
+export type UtmConfig = {
   source: string;
   medium: string;
   campaign: string;
 };
 
-const CHANNEL_CONFIG: Record<
+export const CHANNEL_CONFIG: Record<
   MarketingChannel,
   UtmConfig
 > = {

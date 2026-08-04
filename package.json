@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "import": "tsx scripts/importInventory.ts",
+    "campaign:links": "tsx scripts/generateCampaignLinks.ts",
     "sync": "npm run import",
     "check": "npm run lint && next build",
     "deploy": "npm run lint && npm run build"
