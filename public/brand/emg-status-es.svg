@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+  <title id="title">Everything Must Go — venta por mudanza</title>
+  <desc id="desc">Pieza para compartir el catálogo en estados y stories.</desc>
+  <rect width="1080" height="1920" fill="#F5F1EA"/>
+  <circle cx="936" cy="152" r="190" fill="#E8DFD2"/>
+  <circle cx="118" cy="1730" r="245" fill="#E8DFD2"/>
+  <text x="90" y="140" fill="#18181B" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="8">BUENOS AIRES</text>
+  <text x="90" y="202" fill="#7A6A56" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="600" letter-spacing="5">CATÁLOGO ACTUALIZADO</text>
+  <g transform="translate(220 240)">
+    <image href="emg-logo-full.svg" width="640" height="760"/>
+  </g>
+  <text x="540" y="1105" text-anchor="middle" fill="#18181B" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="800">VENTA POR MUDANZA</text>
+  <text x="540" y="1198" text-anchor="middle" fill="#4B453D" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="500">Muebles · electrónica · hogar y más</text>
+  <line x1="180" y1="1285" x2="900" y2="1285" stroke="#B5A082" stroke-width="4"/>
+  <text x="540" y="1395" text-anchor="middle" fill="#18181B" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">Productos reales. Precios claros.</text>
+  <text x="540" y="1460" text-anchor="middle" fill="#18181B" font-family="Inter, Arial, sans-serif" font-size="46" font-weight="700">Contacto directo.</text>
+  <rect x="245" y="1575" width="590" height="112" rx="56" fill="#18181B"/>
+  <text x="540" y="1647" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="37" font-weight="700">MIRÁ EL CATÁLOGO</text>
+  <text x="540" y="1810" text-anchor="middle" fill="#7A6A56" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="600" letter-spacing="3">EVERYTHING MUST GO</text>
+</svg>

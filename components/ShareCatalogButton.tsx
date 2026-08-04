@@ -114,7 +114,7 @@ export default function ShareCatalogButton({
 }
 
   function getSocialImageUrl() {
-    return `/brand/emg-share-${locale}.png`;
+    return `/brand/emg-status-${locale}.png`;
   }
 
   async function getSocialImageFile() {
@@ -134,7 +134,7 @@ export default function ShareCatalogButton({
 
     return new File(
       [blob],
-      `everything-must-go-${locale}.png`,
+      `everything-must-go-catalog-${locale}.png`,
       {
         type: blob.type || "image/png",
       }
