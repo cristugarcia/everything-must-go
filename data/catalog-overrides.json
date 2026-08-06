@@ -21,6 +21,14 @@
     "price": 50000,
     "originalPrice": 75000
   },
+  "EMG-0019": {
+    "price": 100000,
+    "originalPrice": 153750
+  },
+  "EMG-0020": {
+    "price": 90000,
+    "originalPrice": 117000
+  },
   "EMG-0033": {
     "price": 150000,
     "location": "Caballito, CABA"
@@ -65,9 +73,8 @@
     "price": 60000,
     "condition": "Muy bueno",
     "location": "Caballito, CABA",
-    "publicDescription": "Vaporizador de ropa en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "publicDescription": "Vaporizador de ropa de 1,35 kW, con depósito extraíble de 260 ml y hasta 12 minutos de uso. Permite planchado vertical sin salpicar, calienta en aproximadamente 35 segundos y es apto para tejidos delicados y resistentes. Retiro en Caballito o entrega a coordinar.",
     "images": [
-      "/products/EMG-0036/1.png",
       "/products/EMG-0036/2.png",
       "/products/EMG-0036/3.png",
       "/products/EMG-0036/4.png",
