@@ -24,7 +24,7 @@ Vercel Hobby permite analizar páginas y UTMs, pero no registra los clics person
 
 **Canal recomendado:** Instagram Stories. No mezclar resultados con TikTok o Estados de WhatsApp.
 
-**Producto recomendado:** EMG-0002 — TV Noblex 54 pulgadas, siempre que continúe disponible al comenzar la prueba.
+**Producto recomendado:** EMG-0002 — TV Noblex 50 pulgadas, modelo DK50X6500, siempre que continúe disponible al comenzar la prueba.
 
 ### Variantes
 

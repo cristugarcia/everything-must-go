@@ -63,7 +63,7 @@ Artículos de entrada, productos gratuitos con condición explícita y productos
 ### Productos ancla
 
 - EMG-0001 — Esquinero Bilbao.
-- EMG-0002 — TV Noblex 54 pulgadas.
+- EMG-0002 — TV Noblex 50 pulgadas, modelo DK50X6500.
 - EMG-0008 — Hero Hunk 150.
 - EMG-0027 — Drone Holy Stone HS720S 4K.
 
