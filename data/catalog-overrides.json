@@ -2,7 +2,6 @@
   "EMG-0002": {
     "name": "TV Noblex 50 pulgadas",
     "model": "DK50X6500",
-    "price": 420000,
     "originalPrice": 675000,
     "images": [
       "/products/EMG-0002/1.jpg",
@@ -14,19 +13,15 @@
     ]
   },
   "EMG-0018": {
-    "price": 130000,
     "originalPrice": 185250
   },
   "EMG-0011": {
-    "price": 50000,
     "originalPrice": 75000
   },
   "EMG-0019": {
-    "price": 100000,
     "originalPrice": 153750
   },
   "EMG-0020": {
-    "price": 90000,
     "originalPrice": 117000
   },
   "EMG-0033": {
