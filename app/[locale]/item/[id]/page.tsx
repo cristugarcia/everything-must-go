@@ -30,6 +30,62 @@ type Props = {
   }>;
 };
 
+const RELATED_NAME_STOP_WORDS = new Set([
+  "de",
+  "del",
+  "la",
+  "las",
+  "el",
+  "los",
+  "para",
+  "con",
+  "y",
+]);
+
+function normalizeRelatedText(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function getNameTokens(name: string): Set<string> {
+  return new Set(
+    normalizeRelatedText(name)
+      .split(/[^a-z0-9]+/)
+      .filter(
+        (token) =>
+          token.length > 2 &&
+          !RELATED_NAME_STOP_WORDS.has(token)
+      )
+  );
+}
+
+function getRelatedPriority(
+  candidate: Product,
+  product: Product
+): [number, number, number] {
+  const sameSubcategory =
+    normalizeRelatedText(candidate.subcategory) ===
+    normalizeRelatedText(product.subcategory);
+
+  const productNameTokens = getNameTokens(product.name);
+  const sharedNameTokens = [...getNameTokens(candidate.name)]
+    .filter((token) => productNameTokens.has(token))
+    .length;
+
+  const sameCategory =
+    normalizeRelatedText(candidate.category) ===
+    normalizeRelatedText(product.category);
+
+  return [
+    sameSubcategory ? 1 : 0,
+    sharedNameTokens,
+    sameCategory ? 1 : 0,
+  ];
+}
+
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
@@ -134,12 +190,18 @@ const dictionary =
         item.status.trim().toLowerCase() === "disponible"
     )
     .sort((a, b) => {
-      const aCategoryPriority =
-        a.category === product.category ? 0 : 1;
-      const bCategoryPriority =
-        b.category === product.category ? 0 : 1;
+      const aPriority = getRelatedPriority(a, product);
+      const bPriority = getRelatedPriority(b, product);
 
-      return aCategoryPriority - bCategoryPriority;
+      for (let index = 0; index < aPriority.length; index += 1) {
+        const difference = bPriority[index] - aPriority[index];
+
+        if (difference !== 0) {
+          return difference;
+        }
+      }
+
+      return a.id.localeCompare(b.id);
     })
     .slice(0, 3);
 
