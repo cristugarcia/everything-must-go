@@ -148,7 +148,7 @@ async function run() {
       ? await fs.readJson(PRODUCT_OVERRIDES_PATH)
       : {};
 
-const catalog: Product[] = rows.map((row) => {
+const sheetCatalog: Product[] = rows.map((row) => {
     const id = row["ID"];
     const seller = parseSeller(row, id);
 
@@ -213,11 +213,53 @@ const catalog: Product[] = rows.map((row) => {
         row["Fecha venta"] || undefined,
     };
 
-    return {
+    const mergedProduct = {
       ...product,
       ...overrides[id],
     };
+
+    if (mergedProduct.seller) {
+      getSellerWhatsApp(mergedProduct.seller.id);
+    }
+
+    return mergedProduct;
   });
+
+  const sheetIds = new Set(
+    sheetCatalog.map((product) => product.id)
+  );
+
+  const additionalProducts = Object.entries(overrides)
+    .filter(([id]) => !sheetIds.has(id))
+    .map(([id, override]) => {
+      const product = {
+        id,
+        sku: "",
+        publish: false,
+        status: "",
+        category: "",
+        subcategory: "",
+        name: "",
+        brand: "",
+        model: "",
+        quantity: 1,
+        price: null,
+        condition: "",
+        images: [],
+        ...override,
+      } satisfies Product;
+
+      if (product.seller) {
+        getSellerWhatsApp(product.seller.id);
+      }
+
+      return product;
+    });
+
+  const catalog = [
+    ...sheetCatalog,
+    ...additionalProducts,
+  ];
 
   await fs.ensureDir("data");
 

@@ -13,6 +13,7 @@
     "price": 900000,
     "purchaseYear": 2025,
     "condition": "Excelente",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0001/1.jpeg",
       "/products/EMG-0001/2.png",
@@ -33,8 +34,8 @@
     "model": "DK50X6500",
     "quantity": 1,
     "price": 420000,
-    "originalPrice": 675000,
     "condition": "Excelente",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0002/1.jpg",
       "/products/EMG-0002/2.jpg",
@@ -42,7 +43,8 @@
       "/products/EMG-0002/4.jpg",
       "/products/EMG-0002/5.jpeg",
       "/products/EMG-0002/6.jpg"
-    ]
+    ],
+    "originalPrice": 675000
   },
   {
     "id": "EMG-0003",
@@ -57,6 +59,7 @@
     "quantity": 3,
     "price": 210000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0003/2.jpeg",
       "/products/EMG-0003/1.jpg",
@@ -78,6 +81,7 @@
     "quantity": 2,
     "price": 60000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0004/1.jpeg",
       "/products/EMG-0004/2.jpeg",
@@ -98,6 +102,7 @@
     "quantity": 1,
     "price": 225000,
     "condition": "Bueno",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0005/1.jpg",
       "/products/EMG-0005/2.jpg",
@@ -117,6 +122,7 @@
     "quantity": 1,
     "price": 200000,
     "condition": "Bueno",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0006/1.jpeg",
       "/products/EMG-0006/2.jpeg",
@@ -136,6 +142,7 @@
     "quantity": 1,
     "price": 0,
     "condition": "Excelente",
+    "location": "Colegiales, CABA",
     "images": []
   },
   {
@@ -151,6 +158,7 @@
     "quantity": 1,
     "price": 2200000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0008/1.jpg",
       "/products/EMG-0008/2.jpg",
@@ -170,6 +178,7 @@
     "quantity": 1,
     "price": null,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0009/1.jpg",
       "/products/EMG-0009/2.jpg",
@@ -189,6 +198,7 @@
     "quantity": 1,
     "price": 104985,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Freidora de aire de 6,5 litros, 1500 W, panel de control digital, recipiente antiadherente y 8 programas de cocción.",
     "images": [
       "/products/EMG-0010/1.jpeg",
@@ -210,13 +220,14 @@
     "model": "SL-CM1095",
     "quantity": 1,
     "price": 50000,
-    "originalPrice": 75000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Cafetera digital automática negra y gris para café de filtro.",
     "images": [
       "/products/EMG-0011/1.jpeg",
       "/products/EMG-0011/2.jpeg"
-    ]
+    ],
+    "originalPrice": 75000
   },
   {
     "id": "EMG-0012",
@@ -231,6 +242,7 @@
     "quantity": 1,
     "price": 114000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Espejo de 180 x 50 cm con estructura de hierro color blanco, calidad premium.",
     "images": [
       "/products/EMG-0012/1.jpeg"
@@ -249,6 +261,7 @@
     "quantity": 1,
     "price": 83250,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Grifería monocomando para cocina, acabado negro mate, pico extensible y giratorio.",
     "images": [
       "/products/EMG-0013/1.jpeg",
@@ -268,6 +281,7 @@
     "quantity": 1,
     "price": 37500,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Jarra purificadora de agua Humma.",
     "images": [
       "/products/EMG-0014/1.jpeg",
@@ -287,6 +301,7 @@
     "quantity": 2,
     "price": 165000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Juego de dos mesas de luz modernas de la línea Star.",
     "images": [
       "/products/EMG-0015/1.jpeg",
@@ -307,6 +322,7 @@
     "quantity": 1,
     "price": 97500,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Mesa plegable blanca de 180 cm, ideal para jardín, camping y reuniones familiares.",
     "images": [
       "/products/EMG-0016/1.jpeg",
@@ -328,6 +344,7 @@
     "quantity": 1,
     "price": 159900,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Mesa ratona elevable de melamina, 90 cm de largo.",
     "images": [
       "/products/EMG-0017/1.jpeg",
@@ -349,14 +366,15 @@
     "model": "WMS20AS",
     "quantity": 1,
     "price": 130000,
-    "originalPrice": 185250,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Microondas Whirlpool de 20 litros, color silver.",
     "images": [
       "/products/EMG-0018/1.jpeg",
       "/products/EMG-0018/2.jpeg",
       "/products/EMG-0018/3.jpeg"
-    ]
+    ],
+    "originalPrice": 185250
   },
   {
     "id": "EMG-0019",
@@ -371,6 +389,7 @@
     "quantity": 1,
     "price": 153750,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Mixer Minipimer de 600 W con tecnología ProMix y vaso portátil.",
     "images": [
       "/products/EMG-0019/1.jpeg",
@@ -390,6 +409,7 @@
     "quantity": 1,
     "price": 117000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Rack moderno y minimalista de melamina para TV de hasta 50 pulgadas, con 3 puertas y 2 estantes.",
     "images": [
       "/products/EMG-0020/1.jpeg",
@@ -410,6 +430,7 @@
     "quantity": 1,
     "price": 46500,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Pava eléctrica blanca con corte automático, ideal para mate.",
     "images": [
       "/products/EMG-0021/1.jpeg"
@@ -428,6 +449,7 @@
     "quantity": 1,
     "price": 37500,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Escurridor secaplatos tipo rack para bacha, de acero, 65 cm, color negro.",
     "images": [
       "/products/EMG-0022/1.jpeg",
@@ -448,6 +470,7 @@
     "quantity": 2,
     "price": 110250,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Juego de dos reposeras plegables gravedad cero con mesa auxiliar.",
     "images": [
       "/products/EMG-0023/1.jpeg",
@@ -470,6 +493,7 @@
     "quantity": 1,
     "price": 99000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Máquina para hacer soda Terra, incluye un cilindro extra.",
     "images": [
       "/products/EMG-0024/1.jpeg",
@@ -489,6 +513,7 @@
     "quantity": 1,
     "price": 22500,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Prensa francesa de 350 ml, ideal para preparar café o infusiones. Capacidad aproximada para 2 tazas.",
     "images": [
       "/products/EMG-0025/1.jpeg"
@@ -507,6 +532,7 @@
     "quantity": 1,
     "price": 140000,
     "condition": "Bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Aspiradora robot Smart-Tek AVA-Mini roja",
     "images": [
       "/products/EMG-0026/1.jpeg",
@@ -527,6 +553,7 @@
     "quantity": 1,
     "price": 250000,
     "condition": "Bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Drone Holy Stone Hs720s Negro Cámara 4k",
     "images": [
       "/products/EMG-0027/1.jpeg",
@@ -547,6 +574,7 @@
     "quantity": 1,
     "price": 80000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0028/1.jpeg",
       "/products/EMG-0028/2.jpeg",
@@ -568,6 +596,7 @@
     "quantity": 1,
     "price": 83250,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Tender Ropa Reforzado Plegable Grande Con Alas 160 Cm Y Base Color Blanco",
     "images": [
       "/products/EMG-0029/1.jpeg",
@@ -589,6 +618,7 @@
     "quantity": 1,
     "price": 75000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "images": [
       "/products/EMG-0030/1.jpeg",
       "/products/EMG-0030/2.jpeg",
@@ -610,6 +640,7 @@
     "quantity": 1,
     "price": 84000,
     "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
     "publicDescription": "Carro De Playa Camping Compras Resistencia 80 Kg",
     "images": [
       "/products/EMG-0031/1.jpeg",
@@ -630,6 +661,7 @@
     "quantity": 1,
     "price": 0,
     "condition": "Para reparar",
+    "location": "Retiro, CABA",
     "publicDescription": "GRATIS — Se regala lavarropas Top House de carga frontal para reparar o utilizar como repuestos. Presenta una fuga de agua durante el funcionamiento y requiere revisión técnica. La causa exacta no está confirmada. No se entrega como equipo listo para usar ni cuenta con garantía. Retiro a cargo del interesado en Buenos Aires. Ideal para técnico, reparación o aprovechamiento de repuestos.",
     "images": [
       "/products/EMG-0032/1.jpeg"
@@ -646,9 +678,9 @@
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": 130000,
+    "price": 150000,
     "condition": "Muy bueno",
-    "location": "Buenos Aires",
+    "location": "Caballito, CABA",
     "publicDescription": "Conjunto para balcón o terraza compuesto por un sillón individual de estructura metálica negra, asiento amplio con almohadón gris y mesa auxiliar redonda con tapa de vidrio. Incluye el sillón, el almohadón gris y la mesa. No incluye plantas, macetas ni almohadones decorativos azul o blanco.",
     "images": [
       "/products/EMG-0033/1.jpeg",
@@ -675,7 +707,7 @@
     "quantity": 2,
     "price": 100000,
     "condition": "Muy bueno",
-    "location": "Buenos Aires",
+    "location": "Caballito, CABA",
     "publicDescription": "Par de mesas de luz blancas de estilo moderno, con patas de madera, nicho abierto superior y compartimiento inferior con puerta. El precio publicado corresponde al par completo.",
     "images": [
       "/products/EMG-0034/1.jpeg",
@@ -691,33 +723,59 @@
   },
   {
     "id": "EMG-0035",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
+    "sku": "MUS-001",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Instrumentos musicales",
+    "subcategory": "Baterías",
+    "name": "Batería completa",
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 1100000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Batería completa en muy buen estado. Retiro en Caballito o entrega a coordinar con el vendedor.",
+    "images": [
+      "/products/EMG-0035/1.png",
+      "/products/EMG-0035/2.png",
+      "/products/EMG-0035/3.png",
+      "/products/EMG-0035/4.png",
+      "/products/EMG-0035/5.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
   },
   {
     "id": "EMG-0036",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
+    "sku": "ELE-021",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrodomésticos",
+    "subcategory": "Cuidado de la ropa",
+    "name": "Vaporizador de ropa",
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 60000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Vaporizador de ropa en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0036/1.png",
+      "/products/EMG-0036/2.png",
+      "/products/EMG-0036/3.png",
+      "/products/EMG-0036/4.png",
+      "/products/EMG-0036/5.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
   },
   {
     "id": "EMG-0037",
@@ -736,92 +794,240 @@
   },
   {
     "id": "EMG-0038",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
-    "brand": "",
+    "sku": "ELE-023",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrodomésticos",
+    "subcategory": "Cocina",
+    "name": "Mixer Peabody",
+    "brand": "Peabody",
     "model": "",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 60000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Mixer Peabody en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0038/1.png",
+      "/products/EMG-0038/2.png",
+      "/products/EMG-0038/3.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
   },
   {
     "id": "EMG-0039",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
+    "sku": "ELE-024",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrodomésticos",
+    "subcategory": "Climatización",
+    "name": "Ventilador",
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 50000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Ventilador en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0039/1.png",
+      "/products/EMG-0039/2.png",
+      "/products/EMG-0039/3.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
   },
   {
     "id": "EMG-0040",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
+    "sku": "DEC-009",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Decoración",
+    "subcategory": "Iluminación",
+    "name": "Lámpara",
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 10000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Lámpara en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0040/1.png",
+      "/products/EMG-0040/2.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
   },
   {
     "id": "EMG-0041",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
+    "sku": "MUE-007",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Comedor",
+    "name": "Juego de comedor",
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 250000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Juego de comedor en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0041/1.png",
+      "/products/EMG-0041/2.png",
+      "/products/EMG-0041/3.png",
+      "/products/EMG-0041/4.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
   },
   {
     "id": "EMG-0042",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
-    "brand": "",
+    "sku": "TEC-005",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Tecnología",
+    "subcategory": "Monitores",
+    "name": "Monitor Samsung",
+    "brand": "Samsung",
     "model": "",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 120000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Monitor Samsung en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0042/1.png",
+      "/products/EMG-0042/2.png",
+      "/products/EMG-0042/3.png",
+      "/products/EMG-0042/4.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
   },
   {
     "id": "EMG-0043",
-    "sku": "",
-    "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
+    "sku": "MUE-008",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Living",
+    "name": "Rack para TV",
     "brand": "",
     "model": "",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 45000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Rack para TV en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0043/1.png",
+      "/products/EMG-0043/2.png",
+      "/products/EMG-0043/3.png",
+      "/products/EMG-0043/4.png",
+      "/products/EMG-0043/5.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
+  },
+  {
+    "id": "EMG-0044",
+    "sku": "VEH-003",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Vehículos",
+    "subcategory": "Moto",
+    "name": "Bajaj Rouser NS160",
+    "brand": "Bajaj",
+    "model": "Rouser NS160",
+    "quantity": 1,
+    "price": 3000000,
+    "condition": "Muy bueno",
+    "images": [
+      "/products/EMG-0044/1.png",
+      "/products/EMG-0044/2.png",
+      "/products/EMG-0044/3.png",
+      "/products/EMG-0044/4.png",
+      "/products/EMG-0044/5.png"
+    ],
+    "location": "Caballito, CABA",
+    "publicDescription": "Bajaj Rouser NS160 en muy buen estado. Retiro y condiciones de entrega a coordinar con el vendedor.",
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
+  },
+  {
+    "id": "EMG-0046",
+    "sku": "ELE-026",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrónica",
+    "subcategory": "Televisores",
+    "name": "Smart TV Samsung 43 pulgadas 4K",
+    "brand": "Samsung",
+    "model": "AU7000",
+    "quantity": 1,
+    "price": 320000,
+    "condition": "Muy bueno",
+    "images": [
+      "/products/EMG-0046/1.png",
+      "/products/EMG-0046/2.png"
+    ],
+    "location": "Caballito, CABA",
+    "publicDescription": "Smart TV Samsung AU7000 de 43 pulgadas con resolución 4K. Retiro en Caballito o entrega a coordinar.",
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
+  },
+  {
+    "id": "EMG-0047",
+    "sku": "MUE-009",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Organización",
+    "name": "Perchero",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 20000,
+    "condition": "Muy bueno",
+    "images": [
+      "/products/EMG-0047/1.png",
+      "/products/EMG-0047/2.png",
+      "/products/EMG-0047/3.png"
+    ],
+    "location": "Caballito, CABA",
+    "publicDescription": "Perchero en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    },
+    "publishedAt": "06/08/2026"
   }
 ]

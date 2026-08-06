@@ -20,5 +20,262 @@
   "EMG-0011": {
     "price": 50000,
     "originalPrice": 75000
+  },
+  "EMG-0033": {
+    "price": 150000,
+    "location": "Caballito, CABA"
+  },
+  "EMG-0034": {
+    "location": "Caballito, CABA"
+  },
+  "EMG-0035": {
+    "sku": "MUS-001",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Instrumentos musicales",
+    "subcategory": "Baterías",
+    "name": "Batería completa",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 1100000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Batería completa en muy buen estado. Retiro en Caballito o entrega a coordinar con el vendedor.",
+    "images": [
+      "/products/EMG-0035/1.png",
+      "/products/EMG-0035/2.png",
+      "/products/EMG-0035/3.png",
+      "/products/EMG-0035/4.png",
+      "/products/EMG-0035/5.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0036": {
+    "sku": "ELE-021",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrodomésticos",
+    "subcategory": "Cuidado de la ropa",
+    "name": "Vaporizador de ropa",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 60000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Vaporizador de ropa en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0036/1.png",
+      "/products/EMG-0036/2.png",
+      "/products/EMG-0036/3.png",
+      "/products/EMG-0036/4.png",
+      "/products/EMG-0036/5.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0038": {
+    "sku": "ELE-023",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrodomésticos",
+    "subcategory": "Cocina",
+    "name": "Mixer Peabody",
+    "brand": "Peabody",
+    "model": "",
+    "quantity": 1,
+    "price": 60000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Mixer Peabody en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0038/1.png",
+      "/products/EMG-0038/2.png",
+      "/products/EMG-0038/3.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0039": {
+    "sku": "ELE-024",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrodomésticos",
+    "subcategory": "Climatización",
+    "name": "Ventilador",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 50000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Ventilador en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0039/1.png",
+      "/products/EMG-0039/2.png",
+      "/products/EMG-0039/3.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0040": {
+    "sku": "DEC-009",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Decoración",
+    "subcategory": "Iluminación",
+    "name": "Lámpara",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 10000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Lámpara en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0040/1.png",
+      "/products/EMG-0040/2.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0041": {
+    "sku": "MUE-007",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Comedor",
+    "name": "Juego de comedor",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 250000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Juego de comedor en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0041/1.png",
+      "/products/EMG-0041/2.png",
+      "/products/EMG-0041/3.png",
+      "/products/EMG-0041/4.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0042": {
+    "sku": "TEC-005",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Tecnología",
+    "subcategory": "Monitores",
+    "name": "Monitor Samsung",
+    "brand": "Samsung",
+    "model": "",
+    "quantity": 1,
+    "price": 120000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Monitor Samsung en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0042/1.png",
+      "/products/EMG-0042/2.png",
+      "/products/EMG-0042/3.png",
+      "/products/EMG-0042/4.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0043": {
+    "sku": "MUE-008",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Living",
+    "name": "Rack para TV",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 45000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Rack para TV en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0043/1.png",
+      "/products/EMG-0043/2.png",
+      "/products/EMG-0043/3.png",
+      "/products/EMG-0043/4.png",
+      "/products/EMG-0043/5.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0044": {
+    "sku": "VEH-003",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Vehículos",
+    "subcategory": "Moto",
+    "name": "Bajaj Rouser NS160",
+    "brand": "Bajaj",
+    "model": "Rouser NS160",
+    "quantity": 1,
+    "price": 3000000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Bajaj Rouser NS160 en muy buen estado. Retiro y condiciones de entrega a coordinar con el vendedor.",
+    "images": [
+      "/products/EMG-0044/1.png",
+      "/products/EMG-0044/2.png",
+      "/products/EMG-0044/3.png",
+      "/products/EMG-0044/4.png",
+      "/products/EMG-0044/5.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0046": {
+    "sku": "ELE-026",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrónica",
+    "subcategory": "Televisores",
+    "name": "Smart TV Samsung 43 pulgadas 4K",
+    "brand": "Samsung",
+    "model": "AU7000",
+    "quantity": 1,
+    "price": 320000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Smart TV Samsung AU7000 de 43 pulgadas con resolución 4K. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0046/1.png",
+      "/products/EMG-0046/2.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
+  },
+  "EMG-0047": {
+    "sku": "MUE-009",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Organización",
+    "name": "Perchero",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 20000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Perchero en muy buen estado. Retiro en Caballito o entrega a coordinar.",
+    "images": [
+      "/products/EMG-0047/1.png",
+      "/products/EMG-0047/2.png",
+      "/products/EMG-0047/3.png"
+    ],
+    "seller": { "id": "amigo-migue", "name": "Migue" },
+    "publishedAt": "06/08/2026"
   }
 }
