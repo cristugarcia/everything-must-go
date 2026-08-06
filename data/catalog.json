@@ -209,7 +209,8 @@
     "brand": "Smartlife",
     "model": "SL-CM1095",
     "quantity": 1,
-    "price": 75000,
+    "price": 50000,
+    "originalPrice": 75000,
     "condition": "Muy bueno",
     "publicDescription": "Cafetera digital automática negra y gris para café de filtro.",
     "images": [

@@ -16,5 +16,9 @@
   "EMG-0018": {
     "price": 130000,
     "originalPrice": 185250
+  },
+  "EMG-0011": {
+    "price": 50000,
+    "originalPrice": 75000
   }
 }
