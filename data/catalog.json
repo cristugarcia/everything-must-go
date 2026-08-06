@@ -34,6 +34,7 @@
     "model": "DK50X6500",
     "quantity": 1,
     "price": 420000,
+    "originalPrice": 675000,
     "condition": "Excelente",
     "location": "Colegiales, CABA",
     "images": [
@@ -43,8 +44,7 @@
       "/products/EMG-0002/4.jpg",
       "/products/EMG-0002/5.jpeg",
       "/products/EMG-0002/6.jpg"
-    ],
-    "originalPrice": 675000
+    ]
   },
   {
     "id": "EMG-0003",
@@ -220,14 +220,14 @@
     "model": "SL-CM1095",
     "quantity": 1,
     "price": 50000,
+    "originalPrice": 75000,
     "condition": "Muy bueno",
     "location": "Colegiales, CABA",
     "publicDescription": "Cafetera digital automática negra y gris para café de filtro.",
     "images": [
       "/products/EMG-0011/1.jpeg",
       "/products/EMG-0011/2.jpeg"
-    ],
-    "originalPrice": 75000
+    ]
   },
   {
     "id": "EMG-0012",
@@ -366,6 +366,7 @@
     "model": "WMS20AS",
     "quantity": 1,
     "price": 130000,
+    "originalPrice": 185250,
     "condition": "Muy bueno",
     "location": "Colegiales, CABA",
     "publicDescription": "Microondas Whirlpool de 20 litros, color silver.",
@@ -373,8 +374,7 @@
       "/products/EMG-0018/1.jpeg",
       "/products/EMG-0018/2.jpeg",
       "/products/EMG-0018/3.jpeg"
-    ],
-    "originalPrice": 185250
+    ]
   },
   {
     "id": "EMG-0019",
@@ -388,14 +388,14 @@
     "model": "HR2626/80",
     "quantity": 1,
     "price": 100000,
+    "originalPrice": 153750,
     "condition": "Muy bueno",
     "location": "Colegiales, CABA",
     "publicDescription": "Mixer Minipimer de 600 W con tecnología ProMix y vaso portátil.",
     "images": [
       "/products/EMG-0019/1.jpeg",
       "/products/EMG-0019/2.jpeg"
-    ],
-    "originalPrice": 153750
+    ]
   },
   {
     "id": "EMG-0020",
@@ -409,6 +409,7 @@
     "model": "Olmo Everest",
     "quantity": 1,
     "price": 90000,
+    "originalPrice": 117000,
     "condition": "Muy bueno",
     "location": "Colegiales, CABA",
     "publicDescription": "Rack moderno y minimalista de melamina para TV de hasta 50 pulgadas, con 3 puertas y 2 estantes.",
@@ -416,8 +417,7 @@
       "/products/EMG-0020/1.jpeg",
       "/products/EMG-0020/2.jpeg",
       "/products/EMG-0020/3.jpeg"
-    ],
-    "originalPrice": 117000
+    ]
   },
   {
     "id": "EMG-0021",
@@ -780,18 +780,28 @@
   },
   {
     "id": "EMG-0037",
-    "sku": "",
+    "sku": "ELE-022",
     "publish": false,
-    "status": "",
-    "category": "",
-    "subcategory": "",
-    "name": "",
-    "brand": "",
-    "model": "",
+    "status": "Disponible",
+    "category": "Electrodomésticos",
+    "subcategory": "Cafeteras",
+    "name": "Cafetera automática de filtro Smartlife",
+    "brand": "Smartlife",
+    "model": "SL-CM1095",
     "quantity": 1,
-    "price": null,
-    "condition": "",
-    "images": []
+    "price": 50000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Cafetera digital automática para café de filtro.",
+    "images": [
+      "/products/EMG-0037/1.png",
+      "/products/EMG-0037/2.png",
+      "/products/EMG-0037/3.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    }
   },
   {
     "id": "EMG-0038",
@@ -965,6 +975,8 @@
     "quantity": 1,
     "price": 3000000,
     "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Bajaj Rouser NS160 en muy buen estado. Retiro y condiciones de entrega a coordinar con el vendedor.",
     "images": [
       "/products/EMG-0044/1.png",
       "/products/EMG-0044/2.png",
@@ -972,13 +984,38 @@
       "/products/EMG-0044/4.png",
       "/products/EMG-0044/5.png"
     ],
-    "location": "Caballito, CABA",
-    "publicDescription": "Bajaj Rouser NS160 en muy buen estado. Retiro y condiciones de entrega a coordinar con el vendedor.",
     "seller": {
       "id": "amigo-migue",
       "name": "Migue"
     },
     "publishedAt": "06/08/2026"
+  },
+  {
+    "id": "EMG-0045",
+    "sku": "ELE-025",
+    "publish": false,
+    "status": "Disponible",
+    "category": "Electrónica",
+    "subcategory": "Televisores",
+    "name": "Smart TV Noblex 50 pulgadas 4K",
+    "brand": "Noblex",
+    "model": "",
+    "quantity": 1,
+    "price": 300000,
+    "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Smart TV Noblex de 50 pulgadas con resolución 4K.",
+    "images": [
+      "/products/EMG-0045/1.png",
+      "/products/EMG-0045/2.png",
+      "/products/EMG-0045/3.png",
+      "/products/EMG-0045/4.png",
+      "/products/EMG-0045/5.png"
+    ],
+    "seller": {
+      "id": "amigo-migue",
+      "name": "Migue"
+    }
   },
   {
     "id": "EMG-0046",
@@ -993,12 +1030,12 @@
     "quantity": 1,
     "price": 320000,
     "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Smart TV Samsung AU7000 de 43 pulgadas con resolución 4K. Retiro en Caballito o entrega a coordinar.",
     "images": [
       "/products/EMG-0046/1.png",
       "/products/EMG-0046/2.png"
     ],
-    "location": "Caballito, CABA",
-    "publicDescription": "Smart TV Samsung AU7000 de 43 pulgadas con resolución 4K. Retiro en Caballito o entrega a coordinar.",
     "seller": {
       "id": "amigo-migue",
       "name": "Migue"
@@ -1018,13 +1055,13 @@
     "quantity": 1,
     "price": 20000,
     "condition": "Muy bueno",
+    "location": "Caballito, CABA",
+    "publicDescription": "Perchero en muy buen estado. Retiro en Caballito o entrega a coordinar.",
     "images": [
       "/products/EMG-0047/1.png",
       "/products/EMG-0047/2.png",
       "/products/EMG-0047/3.png"
     ],
-    "location": "Caballito, CABA",
-    "publicDescription": "Perchero en muy buen estado. Retiro en Caballito o entrega a coordinar.",
     "seller": {
       "id": "amigo-migue",
       "name": "Migue"

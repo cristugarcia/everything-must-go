@@ -188,6 +188,11 @@ const sheetCatalog: Product[] = rows.map((row) => {
         row["Precio publicado"]
       ),
 
+      originalPrice:
+        parsePrice(
+          row["Precio anterior público"]
+        ) ?? undefined,
+
       purchaseYear: parseOptionalNumber(
         row["Año compra"]
       ),
