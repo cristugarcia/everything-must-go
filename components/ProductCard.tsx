@@ -62,6 +62,15 @@ export default function ProductCard({
     categories[product.category] ??
     product.category;
 
+  const discountPercentage =
+    product.originalPrice &&
+    product.price !== null &&
+    product.originalPrice > product.price
+      ? Math.round(
+          (1 - product.price / product.originalPrice) * 100
+        )
+      : null;
+
   return (
     <Link
       href={`/${locale}/item/${product.id}`}
@@ -142,9 +151,27 @@ export default function ProductCard({
             {product.name}
           </h3>
 
+          {discountPercentage && !isSold && (
+            <div className="mt-4 flex items-center gap-2 text-sm font-semibold">
+              <span className="text-zinc-500 line-through">
+                {new Intl.NumberFormat(
+                  locale === "es" ? "es-AR" : "en-US",
+                  {
+                    style: "currency",
+                    currency: "ARS",
+                    maximumFractionDigits: 0,
+                  }
+                ).format(product.originalPrice!)}
+              </span>
+              <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-emerald-700">
+                {discountPercentage}% OFF
+              </span>
+            </div>
+          )}
+
           <p
             className={[
-              "mt-4 text-2xl font-bold",
+              discountPercentage ? "mt-2 text-2xl font-bold" : "mt-4 text-2xl font-bold",
               isSold
                 ? "text-zinc-500 line-through"
                 : "text-zinc-900",

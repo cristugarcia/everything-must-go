@@ -370,6 +370,27 @@ ${productWhatsappUrl}`;
             </h1>
 
             <div className="mt-7">
+              {product.originalPrice &&
+                product.price !== null &&
+                product.originalPrice > product.price && (
+                  <div className="mb-2 flex flex-wrap items-center gap-3">
+                    <span className="text-lg font-semibold text-zinc-500 line-through">
+                      {new Intl.NumberFormat(
+                        locale === "es" ? "es-AR" : "en-US",
+                        {
+                          style: "currency",
+                          currency: "ARS",
+                          maximumFractionDigits: 0,
+                        }
+                      ).format(product.originalPrice)}
+                    </span>
+                    <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-bold text-emerald-700">
+                      {Math.round(
+                        (1 - product.price / product.originalPrice) * 100
+                      )}% OFF
+                    </span>
+                  </div>
+                )}
               <p className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl">
                 {priceDisplay.primary}
               </p>

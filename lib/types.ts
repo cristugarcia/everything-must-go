@@ -20,6 +20,7 @@ export interface Product {
   quantity: number;
 
   price: number | null;
+  originalPrice?: number;
   purchaseYear?: number;
 
   condition: string;

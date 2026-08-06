@@ -22,6 +22,11 @@ const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=cs
 
 type SheetRow = Record<string, string>;
 
+type ProductOverride = Partial<Product>;
+
+const PRODUCT_OVERRIDES_PATH =
+  "data/catalog-overrides.json";
+
 function parsePrice(
   value: string | undefined | null
 ): number | null {
@@ -138,6 +143,11 @@ async function run() {
   `✅ ${rows.length} productos encontrados`
 );
 
+  const overrides: Record<string, ProductOverride> =
+    (await fs.pathExists(PRODUCT_OVERRIDES_PATH))
+      ? await fs.readJson(PRODUCT_OVERRIDES_PATH)
+      : {};
+
 const catalog: Product[] = rows.map((row) => {
     const id = row["ID"];
     const seller = parseSeller(row, id);
@@ -158,7 +168,7 @@ const catalog: Product[] = rows.map((row) => {
           `/products/${id}/${file.trim()}`
       );
 
-    return {
+    const product: Product = {
       id,
       sku: row["SKU"],
 
@@ -201,6 +211,11 @@ const catalog: Product[] = rows.map((row) => {
 
       soldAt:
         row["Fecha venta"] || undefined,
+    };
+
+    return {
+      ...product,
+      ...overrides[id],
     };
   });
 

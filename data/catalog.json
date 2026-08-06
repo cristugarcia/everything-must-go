@@ -32,7 +32,8 @@
     "brand": "Noblex",
     "model": "DK50X6500",
     "quantity": 1,
-    "price": 675000,
+    "price": 420000,
+    "originalPrice": 675000,
     "condition": "Excelente",
     "images": [
       "/products/EMG-0002/1.jpg",
@@ -346,7 +347,8 @@
     "brand": "Whirlpool",
     "model": "WMS20AS",
     "quantity": 1,
-    "price": 185250,
+    "price": 130000,
+    "originalPrice": 185250,
     "condition": "Muy bueno",
     "publicDescription": "Microondas Whirlpool de 20 litros, color silver.",
     "images": [
