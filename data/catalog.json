@@ -130,7 +130,8 @@
       "/products/EMG-0006/1.jpeg",
       "/products/EMG-0006/2.jpeg",
       "/products/EMG-0006/3.jpg"
-    ]
+    ],
+    "publishedAt": "06/08/2026"
   },
   {
     "id": "EMG-0007",
@@ -250,7 +251,8 @@
     "publicDescription": "Espejo de 180 x 50 cm con estructura de hierro color blanco, calidad premium.",
     "images": [
       "/products/EMG-0012/1.jpeg"
-    ]
+    ],
+    "publishedAt": "07/08/2026"
   },
   {
     "id": "EMG-0013",
@@ -313,7 +315,8 @@
       "/products/EMG-0015/1.jpeg",
       "/products/EMG-0015/2.jpeg",
       "/products/EMG-0015/3.jpeg"
-    ]
+    ],
+    "publishedAt": "07/08/2026"
   },
   {
     "id": "EMG-0016",
@@ -342,7 +345,7 @@
     "id": "EMG-0017",
     "sku": "MUE-004",
     "publish": true,
-    "status": "Disponible",
+    "status": "Reservado",
     "category": "Muebles",
     "subcategory": "Living",
     "name": "Mesa ratona elevable 90 cm",
@@ -669,7 +672,7 @@
     "id": "EMG-0032",
     "sku": "ELE-009",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Electrodomésticos",
     "subcategory": "Lavado",
     "name": "Lavarropas Top House para reparar",
