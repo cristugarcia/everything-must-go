@@ -160,19 +160,23 @@
     "brand": "Hero",
     "model": "Hunk 150",
     "quantity": 1,
-    "price": 2200000,
+    "price": 2000000,
+    "originalPrice": 2200000,
     "condition": "Muy bueno",
     "location": "Colegiales, CABA",
+    "publicDescription": "Hero Hunk 150, año 2019, con 23.946 km. Mantenimiento al día realizado en concesionario y libreta de servicios sellada. Incluye casco, candado, baúl y alarma.",
     "images": [
       "/products/EMG-0008/1.jpg",
       "/products/EMG-0008/2.jpg",
-      "/products/EMG-0008/3.jpg"
+      "/products/EMG-0008/3.jpg",
+      "/products/EMG-0008/4.jpg",
+      "/products/EMG-0008/5.jpg"
     ]
   },
   {
     "id": "EMG-0009",
     "sku": "VEH-002",
-    "publish": true,
+    "publish": false,
     "status": "Reservado",
     "category": "Vehículos",
     "subcategory": "Auto",
