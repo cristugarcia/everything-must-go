@@ -409,16 +409,18 @@ export default function ShareProductStoryButton({
             nameLineHeight +
           28;
 
-        // Precio
-        context.fillStyle = "#18181B";
-        context.font =
-          "700 68px Arial, sans-serif";
+        // El precio deja de ser público cuando el producto está vendido.
+        if (normalizedStatus !== "vendido") {
+          context.fillStyle = "#18181B";
+          context.font =
+            "700 68px Arial, sans-serif";
 
-        context.fillText(
-          formattedPrice,
-          72,
-          priceY
-        );
+          context.fillText(
+            formattedPrice,
+            72,
+            priceY
+          );
+        }
 
         // Pie
         context.fillStyle = "#71717A";

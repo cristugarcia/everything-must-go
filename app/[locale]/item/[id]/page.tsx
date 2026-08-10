@@ -285,6 +285,7 @@ const productWhatsappUrl =
     model: product.model || undefined,
     itemCondition: "https://schema.org/UsedCondition",
     offers:
+      !isSold &&
       typeof product.price === "number" && product.price >= 0
         ? {
             "@type": "Offer",
@@ -431,7 +432,7 @@ ${productWhatsappUrl}`;
               {product.name}
             </h1>
 
-            <div className="mt-7">
+            {!isSold && <div className="mt-7">
               {product.originalPrice &&
                 product.price !== null &&
                 product.originalPrice > product.price && (
@@ -462,7 +463,7 @@ ${productWhatsappUrl}`;
                   {priceDisplay.secondary}
                 </p>
               )}
-            </div>
+            </div>}
 
             {isReserved && (
               <p className="mt-4 max-w-xl leading-7 text-amber-700">

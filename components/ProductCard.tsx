@@ -169,28 +169,23 @@ export default function ProductCard({
             </div>
           )}
 
-          <p
-            className={[
-              discountPercentage ? "mt-2 text-2xl font-bold" : "mt-4 text-2xl font-bold",
-              isSold
-                ? "text-zinc-500 line-through"
-                : "text-zinc-900",
-            ].join(" ")}
-          >
-            {priceDisplay.primary}
-          </p>
+          {!isSold && (
+            <>
+              <p
+                className={[
+                  discountPercentage ? "mt-2 text-2xl font-bold" : "mt-4 text-2xl font-bold",
+                  "text-zinc-900",
+                ].join(" ")}
+              >
+                {priceDisplay.primary}
+              </p>
 
-          {priceDisplay.secondary && (
-            <p
-              className={[
-                "mt-1 text-sm font-medium",
-                isSold
-                  ? "text-zinc-600 line-through"
-                  : "text-zinc-500",
-              ].join(" ")}
-            >
-              {priceDisplay.secondary}
-            </p>
+              {priceDisplay.secondary && (
+                <p className="mt-1 text-sm font-medium text-zinc-500">
+                  {priceDisplay.secondary}
+                </p>
+              )}
+            </>
           )}
 
           {!isSold && !isReserved && (
