@@ -136,18 +136,24 @@
   {
     "id": "EMG-0007",
     "sku": "ELE-002",
-    "publish": false,
+    "publish": true,
     "status": "Disponible",
     "category": "Electrónica",
     "subcategory": "Telefonía",
-    "name": "Motorola",
-    "brand": "",
-    "model": "",
+    "name": "Motorola Moto e22",
+    "brand": "Motorola",
+    "model": "Moto e22",
     "quantity": 1,
-    "price": 0,
+    "price": 110000,
     "condition": "Excelente",
     "location": "Colegiales, CABA",
-    "images": []
+    "publicDescription": "Motorola Moto e22 en excelente estado. Incluye caja original, cable USB-C y funda protectora negra. Pantalla de 6,5 pulgadas, cámara trasera doble y conectividad 4G. Equipo listo para usar.",
+    "images": [
+      "/products/EMG-0007/1.jpg",
+      "/products/EMG-0007/2.jpg",
+      "/products/EMG-0007/3.jpg"
+    ],
+    "publishedAt": "11/08/2026"
   },
   {
     "id": "EMG-0008",
@@ -695,7 +701,7 @@
     "id": "EMG-0033",
     "sku": "EXT-008",
     "publish": true,
-    "status": "Vendido",
+    "status": "Disponible",
     "category": "Exterior",
     "subcategory": "Terraza",
     "name": "Sillón de terraza con mesa redonda",
@@ -1110,6 +1116,90 @@
       "/products/EMG-0048/1.jpg",
       "/products/EMG-0048/2.jpg",
       "/products/EMG-0048/3.jpg"
+    ],
+    "publishedAt": "11/08/2026"
+  },
+  {
+    "id": "EMG-0049",
+    "sku": "HOG-007",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Hogar",
+    "subcategory": "Escaleras",
+    "name": "Escalera plegable de aluminio de 4 escalones",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 65000,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Escalera plegable de aluminio con 4 escalones, plataforma superior amplia, peldaños antideslizantes y baranda alta de apoyo. Liviana y práctica para tareas del hogar.",
+    "images": [
+      "/products/EMG-0049/1.jpg",
+      "/products/EMG-0049/2.jpg",
+      "/products/EMG-0049/3.jpg"
+    ],
+    "publishedAt": "11/08/2026"
+  },
+  {
+    "id": "EMG-0050",
+    "sku": "DEP-002",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Deportes",
+    "subcategory": "Pádel",
+    "name": "Paleta de pádel PR-9200 Soft EVA",
+    "brand": "",
+    "model": "PR-9200",
+    "quantity": 1,
+    "price": 70000,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Paleta de pádel modelo PR-9200, de 455 mm de largo y núcleo Soft EVA. Diseño negro y rojo, en muy buen estado, ideal para jugar y entrenar.",
+    "images": [
+      "/products/EMG-0050/1.jpg",
+      "/products/EMG-0050/2.jpg"
+    ],
+    "publishedAt": "11/08/2026"
+  },
+  {
+    "id": "EMG-0051",
+    "sku": "VEH-004",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Vehículos",
+    "subcategory": "Accesorios",
+    "name": "Arrancador e inflador SmartBit MaxCharge 4 en 1",
+    "brand": "SmartBit",
+    "model": "MaxCharge",
+    "quantity": 1,
+    "price": 140000,
+    "condition": "Excelente",
+    "location": "Colegiales, CABA",
+    "publicDescription": "SmartBit MaxCharge 4 en 1: arrancador de batería de 12 V, inflador de neumáticos hasta 150 PSI, power bank de 10.000 mAh y linterna LED. Corriente pico de 1.500 A. Incluye pinzas, manguera, accesorios y estuche rígido.",
+    "images": [
+      "/products/EMG-0051/1.jpg"
+    ],
+    "publishedAt": "11/08/2026"
+  },
+  {
+    "id": "EMG-0052",
+    "sku": "HOG-008",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Hogar",
+    "subcategory": "Termos",
+    "name": "Termo Montagne negro",
+    "brand": "Montagne",
+    "model": "",
+    "quantity": 1,
+    "price": 30000,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Termo Montagne negro de acero inoxidable, con tapa que funciona como vaso y tapón vertedor. Apto para agua caliente, mate y otras bebidas.",
+    "images": [
+      "/products/EMG-0052/1.jpg",
+      "/products/EMG-0052/2.jpg"
     ],
     "publishedAt": "11/08/2026"
   }
