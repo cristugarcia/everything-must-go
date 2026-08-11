@@ -41,8 +41,6 @@ const es = {
     slogan:
       "Todo debe encontrar un nuevo hogar antes de mi mudanza.",
     city: "Buenos Aires",
-    deadlineLabel: "Disponible hasta el",
-    deadline: "20 de agosto de 2026",
   },
 
   conditions: {

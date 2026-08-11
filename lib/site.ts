@@ -6,10 +6,6 @@ export const SITE = {
 
   city: "Buenos Aires",
 
-  deadline: {
-    date: "2026-08-20",
-  },
-
   whatsapp: {
     number: "5491123897526",
 

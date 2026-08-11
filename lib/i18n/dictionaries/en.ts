@@ -48,8 +48,6 @@ const en = {
     slogan:
       "Everything must find a new home before I move.",
     city: "Buenos Aires",
-    deadlineLabel: "Available until",
-    deadline: "August 20, 2026",
   },
 
   home: {

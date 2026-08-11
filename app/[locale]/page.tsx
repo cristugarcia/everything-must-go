@@ -207,15 +207,6 @@ export default async function Home({
             </Button>
           </div>
 
-          <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/80 px-4 py-2 text-sm font-medium text-zinc-600 shadow-sm backdrop-blur">
-            <span aria-hidden="true">⏳</span>
-
-            <span>
-              {dictionary.site.deadlineLabel}{" "}
-              {dictionary.site.deadline}
-            </span>
-          </div>
-
           <div className="mt-10 grid w-full max-w-3xl grid-cols-3 gap-2 sm:mt-12 sm:gap-4">
             <div className="rounded-2xl border border-zinc-200/80 bg-white/80 px-2 py-5 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-md sm:rounded-3xl sm:p-6">
               <p className="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">
