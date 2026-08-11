@@ -1089,5 +1089,28 @@
       "name": "Migue"
     },
     "publishedAt": "06/08/2026"
+  },
+  {
+    "id": "EMG-0048",
+    "sku": "DEP-001",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Deportes",
+    "subcategory": "Boxeo",
+    "name": "Guantes de boxeo DRB Clásico 10 oz",
+    "brand": "DRB",
+    "model": "Clásico PU",
+    "quantity": 1,
+    "price": 50000,
+    "originalPrice": 69400,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Guantes de boxeo DRB Clásico de 10 oz, color negro y amarillo, confeccionados en PU, con cierre de velcro y estuche original. Muy buen estado, ideales para entrenamiento.",
+    "images": [
+      "/products/EMG-0048/1.jpg",
+      "/products/EMG-0048/2.jpg",
+      "/products/EMG-0048/3.jpg"
+    ],
+    "publishedAt": "11/08/2026"
   }
 ]
