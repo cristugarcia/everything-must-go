@@ -183,7 +183,7 @@
   {
     "id": "EMG-0009",
     "sku": "VEH-002",
-    "publish": true,
+    "publish": false,
     "status": "Reservado",
     "category": "Vehículos",
     "subcategory": "Auto",
@@ -816,7 +816,7 @@
     "subcategory": "Cafeteras",
     "name": "Cafetera automática de filtro Smartlife",
     "brand": "Smartlife",
-    "model": "SL-CM1095",
+    "model": "SL-CMD1095",
     "quantity": 1,
     "price": 50000,
     "condition": "Muy bueno",
