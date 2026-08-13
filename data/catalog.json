@@ -810,7 +810,7 @@
   {
     "id": "EMG-0037",
     "sku": "ELE-022",
-    "publish": false,
+    "publish": true,
     "status": "Disponible",
     "category": "Electrodomésticos",
     "subcategory": "Cafeteras",
@@ -1022,7 +1022,7 @@
   {
     "id": "EMG-0045",
     "sku": "ELE-025",
-    "publish": false,
+    "publish": true,
     "status": "Disponible",
     "category": "Electrónica",
     "subcategory": "Televisores",
@@ -1030,7 +1030,7 @@
     "brand": "Noblex",
     "model": "",
     "quantity": 1,
-    "price": 300000,
+    "price": 420000,
     "condition": "Muy bueno",
     "location": "Caballito, CABA",
     "publicDescription": "Smart TV Noblex de 50 pulgadas con resolución 4K.",
