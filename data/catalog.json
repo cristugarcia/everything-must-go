@@ -1225,5 +1225,94 @@
       "/products/EMG-0053/3.jpg"
     ],
     "publishedAt": "18/08/2026"
+  },
+  {
+    "id": "EMG-0054",
+    "sku": "MUE-010",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Escritorios",
+    "name": "Escritorio de melamina con dos cajones",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 140000,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Escritorio de melamina con dos cajones y buen espacio de trabajo. Medidas aproximadas: 120 cm de ancho, 60 cm de profundidad y 76 cm de alto. Ideal para home office, estudio o dormitorio.",
+    "images": [
+      "/products/EMG-0054/1.jpg",
+      "/products/EMG-0054/2.jpg"
+    ],
+    "publishedAt": "18/08/2026"
+  },
+  {
+    "id": "EMG-0055",
+    "sku": "MUE-011",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Sillas de escritorio",
+    "name": "Silla ergonómica de escritorio negra",
+    "brand": "",
+    "model": "",
+    "quantity": 1,
+    "price": 150000,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Silla de escritorio negra con respaldo alto, apoyabrazos, base con ruedas y regulación de altura. Todos sus mecanismos funcionan correctamente. Se entrega limpia y lista para usar.",
+    "images": [
+      "/products/EMG-0055/1.jpg",
+      "/products/EMG-0055/2.jpg",
+      "/products/EMG-0055/3.jpg",
+      "/products/EMG-0055/4.jpg",
+      "/products/EMG-0055/5.jpg"
+    ],
+    "publishedAt": "18/08/2026"
+  },
+  {
+    "id": "EMG-0056",
+    "sku": "MUE-012",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Camas",
+    "name": "Cama de 2 plazas con colchón Piero y baulera",
+    "brand": "Piero",
+    "model": "Colchónbox",
+    "quantity": 1,
+    "price": 320000,
+    "condition": "Bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Cama de 2 plazas con colchón Piero Colchónbox de espuma de 140 × 190 × 21 cm y base baulera rebatible con amplio espacio de guardado. El mecanismo funciona correctamente. La base tiene un detalle estético en una esquina, visible en las fotos, que no afecta su uso.",
+    "images": [
+      "/products/EMG-0056/1.jpg",
+      "/products/EMG-0056/2.jpg",
+      "/products/EMG-0056/3.jpg"
+    ],
+    "publishedAt": "18/08/2026"
+  },
+  {
+    "id": "EMG-0057",
+    "sku": "MAS-001",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Mascotas",
+    "subcategory": "Comederos automáticos",
+    "name": "Dispenser automático de alimento Suono con cámara",
+    "brand": "Suono",
+    "model": "",
+    "quantity": 1,
+    "price": 100000,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Dispenser automático de alimento para perros y gatos Suono, con cámara y control desde la app por Wi‑Fi. Permite programar horarios y porciones de comida. Funciona perfectamente y tiene aproximadamente un año de uso.",
+    "images": [
+      "/products/EMG-0057/1.jpg",
+      "/products/EMG-0057/2.jpg",
+      "/products/EMG-0057/3.jpg"
+    ],
+    "publishedAt": "18/08/2026"
   }
 ]
