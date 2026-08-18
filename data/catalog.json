@@ -1203,5 +1203,27 @@
       "/products/EMG-0052/2.jpg"
     ],
     "publishedAt": "11/08/2026"
+  },
+  {
+    "id": "EMG-0053",
+    "sku": "TEC-006",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Tecnología",
+    "subcategory": "Monitores",
+    "name": "Monitor Dell P2419H 24″ IPS Full HD",
+    "brand": "Dell",
+    "model": "P2419H",
+    "quantity": 1,
+    "price": 230000,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Monitor Dell P2419H de 23,8 pulgadas con panel IPS Full HD 1920 × 1080 y base ergonómica regulable en altura, inclinación, giro y orientación vertical. Incluye conexiones HDMI, DisplayPort, VGA y hub USB. Ideal para trabajo, estudio u oficina.",
+    "images": [
+      "/products/EMG-0053/1.jpg",
+      "/products/EMG-0053/2.jpg",
+      "/products/EMG-0053/3.jpg"
+    ],
+    "publishedAt": "18/08/2026"
   }
 ]
