@@ -108,6 +108,12 @@ function parseSeller(
     return undefined;
   }
 
+  // "cris" is the catalog owner and uses the default contact configured
+  // by the application, so her products do not need a public seller name.
+  if (id === "cris" && !name && !publicWhatsapp) {
+    return undefined;
+  }
+
   if (!id || !name) {
     throw new Error(
       `El producto ${productId} tiene datos incompletos de vendedor.`
@@ -134,10 +140,16 @@ async function run() {
   const response = await axios.get<string>(url);
   const csv = response.data;
 
-  const rows = parse<SheetRow>(csv, {
+  const parsedRows = parse<SheetRow>(csv, {
     columns: true,
     skip_empty_lines: true,
   });
+
+  // Auxiliary formulas may extend to empty spreadsheet rows. Only rows with
+  // a real product ID belong in the public catalog.
+  const rows = parsedRows.filter((row) =>
+    /^EMG-\d+$/.test(row["ID"]?.trim() ?? "")
+  );
 
   console.log(
   `✅ ${rows.length} productos encontrados`
