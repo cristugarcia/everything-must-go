@@ -313,7 +313,7 @@
     "id": "EMG-0015",
     "sku": "MUE-003",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Muebles",
     "subcategory": "Dormitorio",
     "name": "Mesas de luz modernas x2",
@@ -1130,7 +1130,7 @@
     "id": "EMG-0049",
     "sku": "HOG-007",
     "publish": true,
-    "status": "Disponible",
+    "status": "Reservado",
     "category": "Hogar",
     "subcategory": "Escaleras",
     "name": "Escalera plegable de aluminio de 4 escalones",
@@ -1368,5 +1368,29 @@
     "condition": "Muy bueno",
     "location": "Colegiales, CABA",
     "images": []
+  },
+  {
+    "id": "EMG-0061",
+    "sku": "MUE-014",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Muebles",
+    "subcategory": "Cocina",
+    "name": "Despensero de cocina Olmo Everest",
+    "brand": "Home Collection",
+    "model": "Olmo Everest",
+    "quantity": 1,
+    "price": 95000,
+    "originalPrice": 150999,
+    "condition": "Muy bueno",
+    "location": "Colegiales, CABA",
+    "publicDescription": "Despensero de cocina Home Collection en combinación blanco y Olmo Everest, con dos puertas y cinco espacios internos de guardado. Está en muy buen estado y se entrega armado. Ideal para organizar alimentos, productos de limpieza, vajilla o artículos de baño. Retiro en Colegiales, CABA.",
+    "images": [
+      "/products/EMG-0061/1.png",
+      "/products/EMG-0061/2.png",
+      "/products/EMG-0061/3.png",
+      "/products/EMG-0061/4.png"
+    ],
+    "publishedAt": "26/08/2026"
   }
 ]
