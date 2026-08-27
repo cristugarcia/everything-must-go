@@ -18,7 +18,8 @@ if (!SHEET_ID || !GID) {
   );
 }
 
-const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}`;
+// Avoid receiving a stale CSV after operational status/price updates.
+const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}&cacheBust=${Date.now()}`;
 
 type SheetRow = Record<string, string>;
 
