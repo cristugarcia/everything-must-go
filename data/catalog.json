@@ -162,7 +162,7 @@
     "id": "EMG-0008",
     "sku": "VEH-001",
     "publish": true,
-    "status": "Reservado",
+    "status": "Vendido",
     "category": "Vehículos",
     "subcategory": "Moto",
     "name": "Hero Hunk 150",
@@ -405,7 +405,7 @@
     "id": "EMG-0019",
     "sku": "ELE-006",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Electrodomésticos",
     "subcategory": "Mixers",
     "name": "Mixer Philips Minipimer 600 W",
@@ -1107,7 +1107,7 @@
     "id": "EMG-0048",
     "sku": "DEP-001",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Deportes",
     "subcategory": "Boxeo",
     "name": "Guantes de boxeo DRB Clásico 10 oz",
@@ -1236,7 +1236,7 @@
     "id": "EMG-0054",
     "sku": "MUE-010",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Muebles",
     "subcategory": "Escritorios",
     "name": "Escritorio de melamina con dos cajones",
@@ -1392,5 +1392,33 @@
       "/products/EMG-0061/4.png"
     ],
     "publishedAt": "26/08/2026"
+  },
+  {
+    "id": "EMG-0062",
+    "sku": "ELE-027",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Electrónica",
+    "subcategory": "Fotografía",
+    "name": "Kit cámara Canon EOS Rebel T7 + accesorios",
+    "brand": "Canon",
+    "model": "EOS Rebel T7",
+    "quantity": 1,
+    "price": 1300000,
+    "condition": "Excelente",
+    "location": "San Fernando, Zona Norte",
+    "publicDescription": "Kit completo Canon EOS Rebel T7, ideal para iniciarse, fotografía avanzada y viajes. Incluye cuerpo Canon EOS Rebel T7 con Wi‑Fi, lente Canon EF-S 18-55 mm, teleobjetivo Canon EF 75-300 mm f/4-5.6 III, accesorio Altura Photo gran angular + macro 0.43x de 58 mm con funda, batería, cargador, mochila fotográfica acolchada con divisores ajustables, correa original Canon y tapas protectoras. Todo funciona al 100%, está muy cuidado y sin detalles de funcionamiento. Se puede coordinar para verlo y probarlo sin compromiso en San Fernando, Zona Norte.",
+    "images": [
+      "/products/EMG-0062/1.jpeg",
+      "/products/EMG-0062/2.jpeg",
+      "/products/EMG-0062/3.jpeg",
+      "/products/EMG-0062/4.jpeg",
+      "/products/EMG-0062/5.jpeg"
+    ],
+    "seller": {
+      "id": "fernanda",
+      "name": "Fernanda"
+    },
+    "publishedAt": "09/09/2026"
   }
 ]
