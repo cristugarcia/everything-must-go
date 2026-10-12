@@ -8,5 +8,12 @@
       "/products/EMG-0002/5.jpeg",
       "/products/EMG-0002/6.jpg"
     ]
+  },
+  "EMG-0009": {
+    "images": [
+      "/products/EMG-0009/frente-sin-patente.png",
+      "/products/EMG-0009/2.jpg",
+      "/products/EMG-0009/trasera-sin-patente.png"
+    ]
   }
 }

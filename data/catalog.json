@@ -185,8 +185,8 @@
   {
     "id": "EMG-0009",
     "sku": "VEH-002",
-    "publish": false,
-    "status": "Reservado",
+    "publish": true,
+    "status": "Disponible",
     "category": "Vehículos",
     "subcategory": "Auto",
     "name": "Volkswagen Suran",
@@ -196,11 +196,11 @@
     "price": null,
     "originalPrice": 18000000,
     "condition": "Muy bueno",
-    "location": "Colegiales, CABA",
+    "location": "CABA",
     "images": [
-      "/products/EMG-0009/1.jpg",
+      "/products/EMG-0009/frente-sin-patente.png",
       "/products/EMG-0009/2.jpg",
-      "/products/EMG-0009/3.jpg"
+      "/products/EMG-0009/trasera-sin-patente.png"
     ]
   },
   {
