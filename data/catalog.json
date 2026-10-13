@@ -75,7 +75,7 @@
     "id": "EMG-0004",
     "sku": "EXT-001",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Exterior",
     "subcategory": "Terraza",
     "name": "Sillas rojas terraza",
@@ -514,7 +514,7 @@
     "id": "EMG-0024",
     "sku": "HOG-004",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Hogar",
     "subcategory": "Soda",
     "name": "Máquina para hacer soda Terra con cilindro extra",
@@ -1151,7 +1151,7 @@
   {
     "id": "EMG-0050",
     "sku": "DEP-002",
-    "publish": true,
+    "publish": false,
     "status": "Disponible",
     "category": "Deportes",
     "subcategory": "Pádel",
@@ -1214,7 +1214,7 @@
     "id": "EMG-0053",
     "sku": "TEC-006",
     "publish": true,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Tecnología",
     "subcategory": "Monitores",
     "name": "Monitor Dell P2419H 24″ IPS Full HD",
@@ -1357,7 +1357,7 @@
     "id": "EMG-0060",
     "sku": "ELE-028",
     "publish": false,
-    "status": "Disponible",
+    "status": "Vendido",
     "category": "Electrodomésticos",
     "subcategory": "Cocina",
     "name": "Filtro de agua",
@@ -1420,5 +1420,32 @@
       "name": "Fernanda"
     },
     "publishedAt": "09/09/2026"
+  },
+  {
+    "id": "EMG-0063",
+    "sku": "VEH-005",
+    "publish": true,
+    "status": "Disponible",
+    "category": "Vehículos",
+    "subcategory": "Auto",
+    "name": "Peugeot 207 Compact 5 puertas — 2013",
+    "brand": "Peugeot",
+    "model": "207 Compact 5 puertas",
+    "quantity": 1,
+    "price": null,
+    "condition": "",
+    "location": "CABA",
+    "publicDescription": "Peugeot 207 Compact de cinco puertas, año 2013, con 123.000 km y caja manual. Todos los servicios al día, según información del vendedor. Ubicado en CABA. Precio a consultar. Contactanos por el WhatsApp de EMG para más información y coordinar una visita.",
+    "images": [
+      "/products/EMG-0063/01-frente.png",
+      "/products/EMG-0063/02-perfil.jpeg",
+      "/products/EMG-0063/03-lateral.png",
+      "/products/EMG-0063/04-interior.jpeg",
+      "/products/EMG-0063/05-acompanante.png",
+      "/products/EMG-0063/06-caja-manual.jpeg",
+      "/products/EMG-0063/07-asientos-traseros.jpeg",
+      "/products/EMG-0063/08-baul.jpeg"
+    ],
+    "publishedAt": "13/10/2026"
   }
 ]

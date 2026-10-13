@@ -15,5 +15,17 @@
       "/products/EMG-0009/2.jpg",
       "/products/EMG-0009/trasera-sin-patente.png"
     ]
+  },
+  "EMG-0063": {
+    "images": [
+      "/products/EMG-0063/01-frente.png",
+      "/products/EMG-0063/02-perfil.jpeg",
+      "/products/EMG-0063/03-lateral.png",
+      "/products/EMG-0063/04-interior.jpeg",
+      "/products/EMG-0063/05-acompanante.png",
+      "/products/EMG-0063/06-caja-manual.jpeg",
+      "/products/EMG-0063/07-asientos-traseros.jpeg",
+      "/products/EMG-0063/08-baul.jpeg"
+    ]
   }
 }
